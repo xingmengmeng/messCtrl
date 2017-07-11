@@ -1,0 +1,164 @@
+<template>
+    <div>
+        <section id="login" class="loginContainer">
+            <ul class="loginUl">
+                <li>
+                    <h2>国美金融天眼系统</h2>
+                </li>
+                <li>
+                    <input type="text" name="username" id="username" class="txt" placeholder="请输入账号" @keyup.enter="toNextText">
+                </li>
+                <li>
+                    <input type="password" name="password" id="password" class="txt" placeholder="请输入密码" @keyup.enter="saveInfo">
+                </li>
+                <li class="remLi clearfix">
+                    <span :class="isSaveCheck?'selectIcon':'noSelectIcon'"></span>
+                    <input type="checkbox" name="rememberPass" id="rememberPass" v-model="isSaveCheck">
+                    <label for="rememberPass" class="left">记住密码</label>
+                </li>
+                <li class="redF" v-cloak>
+                    {{errorMessage}}
+                </li>
+                <li>
+                    <input type="button" value="登录" id="loginBtn" @click="saveInfo">
+                </li>
+            </ul>
+        </section>
+        <img src="../../assets/images/ls_1.png" alt="" class="flowImg img1">
+        <img src="../../assets/images/ls_2.png" alt="" class="flowImg img2">
+        <img src="../../assets/images/ls_3.png" alt="" class="flowImg img3">
+        <img src="../../assets/images/star1.png" alt="" class="flowImg img6">
+        <img src="../../assets/images/star2.png" alt="" class="flowImg img7">
+
+        <footer class="footer">
+            Copyright © 2017 国美金控投资有限公司 | 津ICP备15008982号
+        </footer>
+    </div>
+
+</template>
+<script type='text/ecmascript-6'>
+    require('../../assets/css/reset.min.less')
+    require('../../assets/css/animate.less')
+    require('../../assets/css/login.less')
+    export default{
+        data(){
+            return {
+                errorMessage: '',
+                isCookerLogin:false,
+                cookieNm:'',
+                cookiePsd:'',
+                isSaveCheck:null,
+            }
+        },
+        mounted(){
+            this.getCookie();
+        },
+        methods:{
+            setCookie(usern,psw){
+                var Then = new Date()
+                Then.setTime(Then.getTime() + 1866240000000);
+                document.cookie ="biname=" + usern + "%%"+psw+";expires="+ Then.toGMTString();
+                console.log('设置cookie')
+            },
+            toNextText(){
+                var passTxt=document.querySelector('#password');
+                passTxt.focus();
+            },
+            getCookie(){
+                var nm,psd;
+                var cookieString = new String(document.cookie);
+                var cookieHeader = "biname="
+                var beginPosition = cookieString.indexOf(cookieHeader);
+                cookieString = cookieString.substring(beginPosition);
+                var ends=cookieString.indexOf(";");
+                console.log(ends,beginPosition);
+                if (ends!=-1){
+                    cookieString = cookieString.substring(0,ends);
+                    this.isCookerLogin=false;
+                }
+                if (beginPosition>-1){
+                    var nmpsd = cookieString.substring(cookieHeader.length);
+                    if (nmpsd!=""){
+                        beginPosition = nmpsd.indexOf("%%");
+                        nm=nmpsd.substring(0,beginPosition);
+                        psd=nmpsd.substring(beginPosition+2);
+                        document.getElementById('username').value=this.cookieNm=nm;
+                        /*document.getElementById('password').setAttribute("type","password");*/
+                        document.getElementById('password').value=this.cookiePsd=psd;
+                        if(nm!="" && psd!=""){
+                            document.getElementById('rememberPass').checked = true;
+                            this.isSaveCheck=true;
+                        }
+                    }
+                }
+            },
+            saveInfo(){
+                try{
+                    console.log('按钮点击')
+                    var isSave = document.getElementById('rememberPass').checked;   //保存按键是否选中
+                    var usernm = document.getElementById('username').value;
+                    var userpsw = document.getElementById('password').value;
+                    this.isSaveCheck=isSave;
+                    localStorage.userName=usernm;
+                    if(usernm==''||userpsw==''){
+                        this.errorMessage='用户名、密码不能为空'
+                    }else{
+                        if(usernm==this.cookieNm&&userpsw==this.cookiePsd){
+                            this.isCookerLogin=true;
+                        }else{
+                            this.isCookerLogin=false;
+                        }
+                        if (isSave) {
+                            console.log(usernm,userpsw);
+                            /*{'userName':usernm,'userPwd':userpsw,'isRemember':true,'isCookerLogin':false}*/
+                            /*登录接口*/
+                            this.$http.post('biPc/login/dologin.gm',{"userName":usernm,"userPwd":userpsw,"isRemember":true,"isCookerLogin":this.isCookerLogin},{emulateJSON:true}).then(function (response) {
+                                if(response.data.code!='200'){
+                                    this.errorMessage=response.data.msg;
+                                    return;
+                                }
+                                if(this.isCookerLogin==false){
+                                    userpsw=response.data.data.dataInfo.passWord;
+                                }
+                                if(response.data.code=='200'){
+                                    //console.log(usernm,userpsw);
+                                    this.setCookie(usernm,userpsw);
+                                    localStorage.meijieAdminFlag=response.data.data.dataInfo.meijieAdminFlag;
+                                    window.location.href='/#/index';
+                                }else{
+
+                                    console.log(response.data.data.dataInfo.responseMsg);
+                                    this.errorMessage=response.data.data.dataInfo.responseMsg
+                                }
+                            })
+
+                        }else {
+                            this.$http.post('biPc/login/dologin.gm',{"userName":usernm,"userPwd":userpsw,"isRemember":true,"isCookerLogin":this.isCookerLogin},{emulateJSON:true}).then(function (response) {
+                                console.log(response.data.data);
+                                if(response.data.code!='200'){
+                                    this.errorMessage=response.data.msg;
+                                    return;
+                                }
+                                if(response.data.code=='200'){
+                                    this.setCookie(usernm,userpsw);
+                                    localStorage.meijieAdminFlag=response.data.data.dataInfo.meijieAdminFlag;
+                                    window.location.href='/#/index';
+                                }else{
+                                    console.log(response.data.data.dataInfo.responseMsg);
+                                    this.errorMessage=response.data.data.dataInfo.responseMsg;
+                                }
+                                this.setCookie("","");
+                            })
+
+                        }
+                    }
+
+
+
+                }catch(e){
+
+                }
+            }
+        }
+    }
+</script>

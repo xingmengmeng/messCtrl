@@ -1,0 +1,246 @@
+[v-cloak]{
+  display:none;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  background-size: cover;
+}
+body{
+  color:#333;
+}
+input,select{
+  font-size: 13px;
+}
+.container{
+  width: 100%;
+  padding:0px;
+  box-sizing: border-box;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.clearfix:after{
+  content: '';
+  clear: both;
+  display: block;
+}
+.btnGray{
+  float: left;
+  width: 100px;
+  height:30px;
+  border:0;
+  background: #D8D8D8;
+  border-radius: 2px;
+  cursor:pointer;
+  color:#333;
+}
+.btnBlue{
+  .btnGray;
+  float: right;
+  background:#578DED;
+  color:#fff;
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  height:10px;
+  width:8px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  border-radius:10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius:10px;
+  background:rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background:rgba(0,0,0,0.3);
+}
+
+header{
+  position: relative;
+  margin-bottom: 10px;
+  z-index: 99;
+  height: 60px;
+  background: #578DED;;
+
+  .logo{
+    width: 180px;
+    height: 60px;
+    background: url(../images/logo.png) center no-repeat;
+    font-size: 0;
+  }
+  .headRight{
+    .headerIcon{
+      float: left;
+      margin-top: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .headerUserName{
+      float: left;
+      height: 60px;
+      line-height: 60px;
+      padding: 0 10px;
+      color:#fff;
+    }
+    .layoutIcon{
+      float: left;
+      margin: 20px 10px 0 0;
+      width: 20px;
+      height: 20px;
+      background: url(../images/Shape.png) no-repeat;
+      font-size: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+/*二级页面整体布局*/
+.leftSide{
+  position: relative;
+  width:180px;
+  float: left;
+  background: #242536;
+  color:#afb0b6;
+  font-size: 15px;
+  min-height: 800px;
+
+  .menuTop{
+    width: 100%;
+    li{
+      float: left;
+      width: 50%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-bottom: 1px #000 solid;
+      box-sizing: border-box;
+      cursor: pointer;
+      .mycenter{
+        padding-left: 20px;
+        background: url(../../assets/images/group2.png) left center no-repeat;
+      }
+      .comLine{
+        padding-left: 20px;
+        background: url(../../assets/images/moneyIcon2.png) left center no-repeat;
+      }
+      &.active{
+        height: 50px;
+        border-bottom: 2px #578ded solid;
+        box-sizing: border-box;
+        color: #fff;
+        .mycenter{
+          background: url(../../assets/images/group.png) left center no-repeat;
+        }
+        .comLine{
+          background: url(../../assets/images/moneyIcon.png) left center no-repeat;
+        }
+      }
+
+    }
+  }
+  .navMenu{
+    width: 100%;
+    li{
+      span {
+        display: inline-block;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px #000 solid;
+        box-sizing: border-box;
+        cursor: pointer;
+        &.firstLi{
+          padding-left: 40px;
+          background: url(../../assets/images/icon_9.png) 15px center no-repeat;
+          &.active{
+            color:#fff;
+            background: rgba(65,116,232,.5) url(../../assets/images/icon_10.png) 15px center no-repeat;
+            i{
+              background: url("../../assets/images/hideNext.png");
+            }
+          }
+        }
+        i{
+          float: right;
+          margin: 19px 60px 0 0px;
+          width: 13px;
+          height: 13px;
+          background: url("../../assets/images/showNext.png");
+        }
+      }
+      .newPageLink{
+        display: inline-block;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px #000 solid;
+        box-sizing: border-box;
+        cursor: pointer;
+        padding-left: 40px;
+        color:#fff;
+        background: rgba(65,116,232,.5) url(../../assets/images/icon_10.png) 15px center no-repeat;
+      }
+    }
+    .nextCom{
+      li{
+        a{
+          float: left;
+          width: 100%;
+          height: 50px;
+          line-height: 50px;
+          cursor: pointer;
+          background: #151524;
+          padding-left: 54px;
+          font-size: 13px;
+          box-sizing: border-box;
+          color:#afb0b6;
+          &.active{
+            padding-left: 48px;
+            border-left:6px #97BCFD solid;
+            box-sizing: border-box;
+            background: rgba(94,151,243,.7);
+            font-size: 13px;
+            color:#fff;
+          }
+        }
+      }
+    }
+  }
+}
+.rightSide{
+  margin-top: 10px;
+  width: 100%;
+  padding-left: 180px;
+  box-sizing: border-box;
+  min-height: 100%;
+
+  .app{
+    background: #fff;
+    width: 100%;
+    margin-bottom: 88px;
+  }
+}
+
+/*遮罩*/
+.overlay{
+  display: block;
+  position: fixed;
+  z-index: 10002;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
