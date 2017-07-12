@@ -1,7 +1,7 @@
 <template>
     <div>
         <my-head></my-head>
-        <left-menu></left-menu>
+        <!--<left-menu></left-menu>-->
         <router-view></router-view>
         <loading v-show="showLoading"></loading>
         <over-box-one-line v-show="noSelectT==1" @hideOverFn="hideMarkWrap" :mark-con="con"></over-box-one-line>

@@ -1,26 +1,76 @@
 <template>
-    <div>
-        <!--{{getNum}}
-        <cal-test></cal-test>-->
+    <div class="sixWrap">
+        <div class="sixDiv">
+            <h3>金控驾驶舱</h3>
+            <p>
+
+            </p>
+        </div>
+        <div class="sixDiv">
+            <h3>金控驾驶舱</h3>
+            <p>
+
+            </p>
+        </div>
+        <div class="sixDiv">
+            <h3>金控驾驶舱</h3>
+            <p>
+
+            </p>
+        </div>
+        <div class="sixDiv">
+            <h3>金控驾驶舱</h3>
+            <p>
+
+            </p>
+        </div>
+        <div class="sixDiv">
+            <h3>金控驾驶舱</h3>
+            <p>
+
+            </p>
+        </div>
+        <div class="sixDiv">
+            <h3>金控驾驶舱</h3>
+            <p>
+
+            </p>
+        </div>
     </div>
 </template>
+<style scoped lang="less">
+.sixWrap{
+    width: 100%;
+    padding:70px 170px;
+    box-sizing: border-box;
+    display: flex;
+    .sixDiv{
+        flex: 1;
+        background: #fff;
+        border:1px #daeeff solid;
+    }
+}
+
+</style>
+
 <script type="text/ecmascript-6">
-    import calTest from './calTest.vue';
     export default {
         data(){
             return{
-                getNum:'333333.333',
+                
             }
         },
         components:{
-            'calTest':calTest,
+            
         },
         mounted(){
-            this.getNum=Number(this.getNum).toFixed(2);
-            this.getNum=parseFloat(this.getNum)
+            this.setHeight();
         },
         methods:{
-
+            setHeight(){
+                var sixWrap=document.querySelector('.sixWrap');
+                sixWrap.style.height=document.documentElement.clientHeight-50+'px';
+            }
         }
     }
 </script>
