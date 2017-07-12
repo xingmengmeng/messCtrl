@@ -6,6 +6,7 @@
                 <img src="../assets/images/_header.png" >
             </div>-->
             <span class="headerUserName">{{userName}}</span>
+            <i class="line"></i>
             <div class="layoutIcon" @click="logoutFn($event)">退出</div>
         </div>
     </header>

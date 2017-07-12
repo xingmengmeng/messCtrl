@@ -27,18 +27,22 @@
         </div>
         <div class="sixDiv">
             <div class="conDiv">
-                <h3><span>自助分析平台</span></h3>
-                <p>
-                    提供全业务线实时，历史数据查询。定位任务跑批，源数据管理等综合数据查询分析平台
-                </p>
+                <a href="http://www.baidu.com" target="_blank">
+                    <h3><span>自助分析平台</span></h3>
+                    <p>
+                        提供全业务线实时，历史数据查询。定位任务跑批，源数据管理等综合数据查询分析平台
+                    </p>
+                </a>
             </div> 
         </div>
         <div class="sixDiv">
             <div class="conDiv">
-                <h3><span>标签工厂</span></h3>
-                <p>
-                    金控各业务线报表体系
-                </p>
+                <a href="http://tagbdc.gomefinance.com.cn" target="_blank">
+                    <h3><span>标签工厂</span></h3>
+                    <p>
+                        金控各业务线报表体系
+                    </p>
+                </a>
             </div> 
         </div>
         <div class="sixDiv">
@@ -107,7 +111,7 @@
             z-index: 2;
             width: 260px;
             height: 150px;
-            transform: translateY(150px);
+            transform: translateY(130px);
             opacity: 0;
             p{
                 padding-top:100px;
