@@ -477,7 +477,6 @@
 
     .year-box, .month-box{
         transition: all ease .1s;
-        font-family: Roboto, sans-serif;
         flex: 1;
         text-align: center;
         font-size: 20px;
@@ -490,7 +489,6 @@
         flex-flow: row wrap;
         justify-content: space-between;
         li{
-            font-family: Roboto, sans-serif;
             transition: all .45s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
             cursor: pointer;
             text-align: center;
@@ -540,9 +538,8 @@
                 margin-left: 10px;
             }
             .message{
-                font-family: Roboto, sans-serif;
                 font-weight: 300;
-                font-size: 14px;
+                font-size: 12px;
                 position: relative;
                 height: 30px;
                 &.selected{
@@ -610,7 +607,6 @@
             color: #ccc;
         }
         li{
-            font-family: Roboto;
             width: 30px;
             height: 30px;
             text-align: center;
