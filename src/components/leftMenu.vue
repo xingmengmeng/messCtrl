@@ -1,8 +1,7 @@
 <template>
     <div class="leftSide">
-        <ul class="menuTop clearfix" @click="changeNav($event)">
+        <!--<ul class="menuTop clearfix" @click="changeNav($event)">
             <li v-for="(item,index) in resDate" :key="index" :class="menuShow==(index+1)?'active':''"><span :class="index==0?'mycenter':'comLine'">{{item.name}}</span></li>
-            <!--<li class="active"><span class="comLine">{{businessName}}</span></li>-->
         </ul>
         <ul class="navMenu" v-show="menuShow==1" v-if="businessMenu">
             <li v-for="(item,index) in businessMenu" :key="index">
@@ -16,6 +15,44 @@
                     <li class="routerLi" v-for="(secItem,secindex) in item.children" :key="secindex">
                         <router-link :to="secItem.href" :key="secindex">{{secItem.name}}</router-link>
                     </li>
+                </ul>
+            </li>
+        </ul>-->
+        <!--<div class="selectLine">
+            <span></span>
+            <ul>
+                <li>美易理财</li>
+                <li>美借</li>
+                <li>美易分</li>
+            </ul>
+        </div>-->
+        <ul class="navMenu">
+            <li>
+                <span class="secSpan" :class="showIndex==1?'active':''" @click="showIndex=1">资产分析</span>
+                <ul class="nextCom" v-show="showIndex==1">
+                    <li class="routerLi">
+                        <router-link to="/businessLine/commonTab/tbTable">推标报表</router-link>
+                    </li>
+                    <!--<li>
+                        <a href="#">异常报表</a>
+                    </li>
+                    <li>
+                        <a href="#">异常报表</a>
+                    </li>-->
+                </ul>
+            </li>
+            <li>
+                <span class="secSpan" :class="showIndex==2?'active':''" @click="showIndex=2">贷后分析</span>
+                <ul class="nextCom" v-show="showIndex==2">
+                    <li class="routerLi">
+                        <router-link to="/businessLine/commonTab/urgeMoney">催收日常</router-link>
+                    </li>
+                    <!--<li>
+                        <a href="#">异常报表</a>
+                    </li>
+                    <li>
+                        <a href="#">异常报表</a>
+                    </li>-->
                 </ul>
             </li>
         </ul>
@@ -34,6 +71,7 @@
                 businessName:'',
                 menuShow:1,
                 userName:'',
+                showIndex:1,//默认显示哪个业务线下的哪个页面
             }
         },
         mounted(){
@@ -61,10 +99,8 @@
             changeNav(e){
                 if(e.target.innerHTML=='主页'&&e.target.tagName.toLowerCase()=='span'){
                     this.menuShow=1;
-                    //this.resetClass(e);
                 }else if(e.target.tagName.toLowerCase()=='span'){
                     this.menuShow=2;
-                    //this.resetClass(e);
                 }
             },
             resetClass(e){

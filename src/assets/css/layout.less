@@ -117,86 +117,24 @@ header{
   position: relative;
   width:180px;
   float: left;
-  background: #242536;
+  background: #fff;
+  box-shadow: 0 3px 11px 0 rgba(225,226,233,0.50);
   color:#afb0b6;
   font-size: 15px;
   min-height: 800px;
 
-  .menuTop{
-    width: 100%;
-    li{
-      float: left;
-      width: 50%;
-      height: 50px;
-      line-height: 50px;
-      text-align: center;
-      border-bottom: 1px #000 solid;
-      box-sizing: border-box;
-      cursor: pointer;
-      .mycenter{
-        padding-left: 20px;
-        background: url(../../assets/images/group2.png) left center no-repeat;
-      }
-      .comLine{
-        padding-left: 20px;
-        background: url(../../assets/images/moneyIcon2.png) left center no-repeat;
-      }
-      &.active{
-        height: 50px;
-        border-bottom: 2px #578ded solid;
-        box-sizing: border-box;
-        color: #fff;
-        .mycenter{
-          background: url(../../assets/images/group.png) left center no-repeat;
-        }
-        .comLine{
-          background: url(../../assets/images/moneyIcon.png) left center no-repeat;
-        }
-      }
-
-    }
-  }
   .navMenu{
     width: 100%;
-    li{
-      span {
-        display: inline-block;
-        width: 100%;
-        height: 50px;
-        line-height: 50px;
-        border-bottom: 1px #000 solid;
-        box-sizing: border-box;
-        cursor: pointer;
-        &.firstLi{
-          padding-left: 40px;
-          background: url(../../assets/images/icon_9.png) 15px center no-repeat;
-          &.active{
-            color:#fff;
-            background: rgba(65,116,232,.5) url(../../assets/images/icon_10.png) 15px center no-repeat;
-            i{
-              background: url("../../assets/images/hideNext.png");
-            }
-          }
-        }
-        i{
-          float: right;
-          margin: 19px 60px 0 0px;
-          width: 13px;
-          height: 13px;
-          background: url("../../assets/images/showNext.png");
-        }
-      }
-      .newPageLink{
-        display: inline-block;
-        width: 100%;
-        height: 50px;
-        line-height: 50px;
-        border-bottom: 1px #000 solid;
-        box-sizing: border-box;
-        cursor: pointer;
-        padding-left: 40px;
-        color:#fff;
-        background: rgba(65,116,232,.5) url(../../assets/images/icon_10.png) 15px center no-repeat;
+    .secSpan{
+      display: inline-block;
+      padding-left:60px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 15px;
+      background: url(../../assets/images/showNext2.png) 30px center no-repeat;
+      cursor: pointer;
+      &.active{
+        background: url(../../assets/images/hideNext2.png) 30px center no-repeat;
       }
     }
     .nextCom{
@@ -204,21 +142,18 @@ header{
         a{
           float: left;
           width: 100%;
-          height: 50px;
-          line-height: 50px;
+          height: 40px;
+          line-height: 40px;
           cursor: pointer;
-          background: #151524;
-          padding-left: 54px;
+          padding-left: 60px;
           font-size: 13px;
           box-sizing: border-box;
-          color:#afb0b6;
+          color:#969DAA;
           &.active{
-            padding-left: 48px;
-            border-left:6px #97BCFD solid;
             box-sizing: border-box;
-            background: rgba(94,151,243,.7);
+            background: #E6EBF9;
             font-size: 13px;
-            color:#fff;
+            color:#666;
           }
         }
       }

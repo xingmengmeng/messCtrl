@@ -12,6 +12,7 @@ import App from './views/app.vue'
 import Index from './views/index/indexMain.vue'
 import businessLine  from './views/businessLine/businessLine.vue';
 import taTable from './views/businessLine/commonTab/tbTable.vue';
+import urgeMoney from './views/businessLine/commonTab/urgeMoney.vue';
 /*const Index = resolve => require(['./views/index/indexMain.vue'], resolve);
 const businessLine = resolve => require(['./views/businessLine/businessLine.vue'], resolve);
 const taTable = resolve => require(['./views/businessLine/commonTab/tbTable.vue'], resolve);*/
@@ -30,7 +31,8 @@ const router = new VueRouter({
         {
             path:'/businessLine',component:businessLine,
             children:[
-                { path:'commonTab/tbTable',component:taTable}
+                { path:'commonTab/tbTable',component:taTable},
+                { path:'commonTab/urgeMoney',component:urgeMoney}
             ]
         }
     ]
