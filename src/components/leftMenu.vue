@@ -158,7 +158,7 @@
                     let aA=aLi[i].querySelectorAll('a');
                     for(let j=0;j<aA.length;j++){
                         if(aA[j].className=='active'){
-                            this.showIndex=i+1;
+                            this.showIndex=i+1;//找到索引  因为索引从0开始  所以设置的变量需要+1
                         }
                     }
                 }
