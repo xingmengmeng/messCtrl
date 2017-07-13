@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container clearfix">
         <left-menu></left-menu>
         <div class="rightSide clearfix">
             <router-view></router-view>
@@ -8,9 +8,11 @@
 </template>
 <style scoped lang="less">
 .container{
+    border:1px #FAFBFE solid;
     padding:0 10px;
     box-sizing: border-box;
     background:#FAFBFE url(../../assets/images/indexBg.png) center no-repeat;
+    box-sizing: border-box;
 }
 </style>
 

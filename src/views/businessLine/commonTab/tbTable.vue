@@ -1,9 +1,16 @@
 <template>
     <div class="clearfix rightWrap">
-        <ul class="rightTopUl clearfix">
-            <li class="active">推标报表</li>
-            <!--<li>xx报表</li>-->
-        </ul>
+        <!--面包屑-->
+        <section class="crumbsContainer">
+            <div class="crumbs">
+                <a href="#">美借</a>
+                <span>></span>
+                <a href="#">资产分析</a>
+                <span>></span>
+                <a href="#">推标报表</a>
+            </div>
+        </section>
+        
         <!--右侧主要内容 start-->
         <section class="mainContainer clearfix">
             <div class="divWrap">
@@ -285,6 +292,7 @@
 </template>
 <script type="text/ecmascript-6">
     require('../../../assets/css/tbTable.less');
+    require('../../../assets/css/layout.less');
 
     import pages from '../../../components/pages.vue';
     import datePicker from '../../../components/Datepicker.vue';
