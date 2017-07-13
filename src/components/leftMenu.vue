@@ -124,6 +124,7 @@
         mounted(){
             this.$nextTick(function(){
                 this.getMenu();
+                this.resetClass();
             })
         },
         methods:{
@@ -150,13 +151,17 @@
                     this.menuShow=2;
                 }
             },
+            /*设置哪个一级显示*/
             resetClass(e){
-                var oUl=document.querySelector('.menuTop');
-                var aLi=oUl.getElementsByTagName('li');
-                for(var i=0;i<aLi.length;i++){
-                    aLi[i].className='';
+                var aLi=document.querySelectorAll('.routerLi');
+                for(let i=0;i<aLi.length;i++){
+                    let aA=aLi[i].querySelectorAll('a');
+                    for(let j=0;j<aA.length;j++){
+                        if(aA[j].className=='active'){
+                            this.showIndex=i+1;
+                        }
+                    }
                 }
-                e.target.parentNode.className="active";
             },
             getLocal(){
                 this.userName=localStorage.userName;
