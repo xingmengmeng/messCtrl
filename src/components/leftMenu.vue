@@ -1,23 +1,5 @@
 <template>
     <div class="leftSide">
-        <!--<ul class="menuTop clearfix" @click="changeNav($event)">
-            <li v-for="(item,index) in resDate" :key="index" :class="menuShow==(index+1)?'active':''"><span :class="index==0?'mycenter':'comLine'">{{item.name}}</span></li>
-        </ul>
-        <ul class="navMenu" v-show="menuShow==1" v-if="businessMenu">
-            <li v-for="(item,index) in businessMenu" :key="index">
-                <a class="newPageLink" :href="'/'+item.href" target="_blank">{{item.name}}</a>
-            </li>
-        </ul>
-        <ul class="navMenu" v-show="menuShow==2" v-if="mainMenu">
-            <li v-for="(item,index) in mainMenu" :key="index">
-                <span class="firstLi active">{{item.name}} <i></i></span>
-                <ul class="nextCom">
-                    <li class="routerLi" v-for="(secItem,secindex) in item.children" :key="secindex">
-                        <router-link :to="secItem.href" :key="secindex">{{secItem.name}}</router-link>
-                    </li>
-                </ul>
-            </li>
-        </ul>-->
         <div class="selectLine">
             <div class="checkedLineDiv" @click="showLineFn">
                 <span class="checkedLine">美借</span>
@@ -50,12 +32,6 @@
                     <li class="routerLi">
                         <router-link to="/businessLine/commonTab/urgeMoney">催收日常</router-link>
                     </li>
-                    <!--<li>
-                        <a href="#">异常报表</a>
-                    </li>
-                    <li>
-                        <a href="#">异常报表</a>
-                    </li>-->
                 </ul>
             </li>
         </ul>
