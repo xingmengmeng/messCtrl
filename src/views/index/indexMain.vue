@@ -11,10 +11,12 @@
         </div>
         <div class="sixDiv">
             <div class="conDiv">
-                <h3><span>BI报表体系</span></h3>
-                <p>
-                    金控各业务线报表体系
-                </p>
+                <router-link to="/businessLine/commonTab/tbTable">
+                    <h3><span>BI报表体系</span></h3>
+                    <p>
+                        金控各业务线报表体系
+                    </p>
+                </router-link>
             </div> 
         </div>
         <div class="sixDiv">
@@ -27,7 +29,7 @@
         </div>
         <div class="sixDiv">
             <div class="conDiv">
-                <a href="http://www.baidu.com" target="_blank">
+                <a href="/selfHelp.html#/dataFactory" target="_blank">
                     <h3><span>自助分析平台</span></h3>
                     <p>
                         提供全业务线实时，历史数据查询。定位任务跑批，源数据管理等综合数据查询分析平台
