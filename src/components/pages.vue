@@ -19,12 +19,11 @@
             width: 40px;
             height: 24px;
             line-height: 24px;
-            border: 1px #6387d9 solid;
+            border: 1px #eef1f9 solid;
             text-align: center;
             font-size: 12px;
             color: #999;
             background: #fff;
-            border: 1px solid #6387D9;
         }
         span{
             float: left;
@@ -47,8 +46,8 @@
                 padding: 0 10px;
                 height: 24px;
                 line-height: 24px;
-                background: #f3f7fe;
-                border: 1px solid #749dde;
+                background: #fcfeff;
+                border: 1px solid #eef1f9;
                 cursor: pointer;
             }
             &.nextPage{
