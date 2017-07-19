@@ -58,8 +58,7 @@
             setCookie(usern,psw){
                 var Then = new Date()
                 Then.setTime(Then.getTime() + 1866240000000);
-                document.cookie ="biname=" + usern + "%%"+psw+";expires="+ Then.toGMTString()+';domain=bicc.com';
-                console.log('设置cookie')
+                document.cookie ="biname=" + usern + "%%"+psw+";expires="+ Then.toGMTString();
             },
             toNextText(){
                 var passTxt=document.querySelector('#password');
