@@ -30,6 +30,15 @@
         },
         mounted(){
             setLeftHeight.setLeftHeight.init();
+            this.setMenuName();
+        },
+        methods:{
+            setMenuName(){
+                if(this.$route.query.name){
+                    this.urlName= this.$route.query.name;
+                    localStorage.setItem('urlName',this.urlName);
+                }
+            }
         }
     }
 </script>

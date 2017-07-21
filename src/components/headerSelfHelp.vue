@@ -20,35 +20,36 @@
     </header>
 </template>
 <style scoped lang="less">
-header{
-    overflow: hidden;
-}
-.logo{
-    display: inline-block;
-    color:#fff;
-    font-size: 20px;
-    background: none;
-    margin: 16px 0 0 5px;
-}
-.nav{
-    padding:0 250px;
-    text-align: center;
-    box-sizing: border-box;
-    a{
-      display: inline-block;
-      height: 35px;
-      line-height: 35px;
-      padding: 12px 5px 0 5px;
-      margin: 0 20px;
-      opacity: 0.8;
-      font-size: 16px;
-      color: #FFFFFF;
+    header{
+        overflow: hidden;
     }
-    a:hover,a.active{
-      opacity: 1;
-      border-bottom: 1px #fff solid;
+    .logo{
+        display: inline-block;
+        width: 120px;
+        color:#03bbff;
+        font-size: 20px;
+        background: none;
+        margin: 16px 0 0 5px;
     }
-}
+    .nav{
+        padding:0 250px;
+        text-align: center;
+        box-sizing: border-box;
+        a{
+        display: inline-block;
+        height: 35px;
+        line-height: 35px;
+        padding: 12px 5px 0 5px;
+        margin: 0 20px;
+        opacity: 0.8;
+        font-size: 16px;
+        color: #FFFFFF;
+        }
+        a:hover,a.active{
+        opacity: 1;
+        border-bottom: 1px #fff solid;
+        }
+    }
 </style>
 <script type="text/ecmascript-6">
     require('../assets/css/reset.min.less');

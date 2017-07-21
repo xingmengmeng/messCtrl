@@ -7,11 +7,11 @@
                 <p>还没有权限哦！</p>
             </div>
             <div class="conDiv">
-                <router-link v-if="item.ocWbxtbs==0" :to="{path:item.vcUrl,query:{name:item.vcZxtmc}}">
+                <router-link v-if="item.ocWbxtbs==0" :to="{path:item.vcUrl,query:{name:item.NId}}" class="clearfix">
                     <h3><span>{{item.vcZxtmc}}</span></h3>
                     <p>{{item.vcMsxx}}</p>
                 </router-link>  
-                <a v-if="item.ocWbxtbs==1" :href="item.vcUrl" target="_blank">
+                <a v-if="item.ocWbxtbs==1" :href="item.vcUrl+'?name='+item.NId" target="_blank">
                     <h3><span>{{item.vcZxtmc}}</span></h3>
                     <p>{{item.vcMsxx}}</p>
                 </a>
