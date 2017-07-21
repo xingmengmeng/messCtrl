@@ -2,7 +2,7 @@
     <div class="leftSide">
         <div class="selectLine">
             <div class="checkedLineDiv" @click="showLineFn">
-                <span class="checkedLine">美借</span>
+                <span class="checkedLine">{{businessName}}</span>
             </div>
             
             <ul class="lineUl" v-show="showLineUl">
@@ -12,18 +12,26 @@
             </ul>
         </div>
         <ul class="navMenu">
-            <li>
+            <li v-for="(item,index) in businessMenu" :key="index">
+                <span class="secSpan" :class="showIndex==item.ocMenubm?'active':''" @click="showIndexFn(item.ocMenubm)">{{item.name}}</span>
+                <ul class="nextCom" v-show="showIndex==item.ocMenubm">
+                    <li class="routerLi" v-for="(thr,thrIndex) in item.children" :key="thrIndex" :data-menu="item.ocMenubm">
+                        <router-link :to="thr.href">{{thr.name}}</router-link>
+                    </li>
+                </ul>
+            </li>
+            <!--<li>
                 <span class="secSpan" :class="showIndex==1?'active':''" @click="showIndex=1">资产分析</span>
                 <ul class="nextCom" v-show="showIndex==1">
                     <li class="routerLi">
                         <router-link to="/businessLine/commonTab/tbTable">推标报表</router-link>
                     </li>
-                    <!--<li>
+                    <li>
                         <a href="#">异常报表</a>
                     </li>
                     <li>
                         <a href="#">异常报表</a>
-                    </li>-->
+                    </li>
                 </ul>
             </li>
             <li>
@@ -33,7 +41,7 @@
                         <router-link to="/businessLine/commonTab/urgeMoney">催收日常</router-link>
                     </li>
                 </ul>
-            </li>
+            </li>-->
         </ul>
     </div>
 </template>
@@ -88,28 +96,39 @@
         data(){
             return{
                 urlName:'',
-                resDate:[],
+                resData:[],
                 businessMenu:[],
                 mainMenu:[],
                 businessName:'',
                 menuShow:1,
                 userName:'',
-                showIndex:1,//默认显示哪个业务线下的哪个页面
+                showIndex:-1,//默认显示哪个业务线下的哪个页面
                 showLineUl:false,//是否显示选择业务线弹框
+                ocMenubm:'MENU170400006',
             }
         },
         mounted(){
             this.urlName= localStorage.getItem('urlName');
             this.$nextTick(function(){
                 this.getMenu();
-                this.resetClass();
             })
         },
         methods:{
             getMenu(){
                 this.getLocal();
-                this.$http.get('biPc/login/getZxtMenus2.gm?nId='+this.urlName).then(function(){
-
+                this.$http.get('biPc/login/getZxtMenus2.gm?nId='+this.urlName).then(function(res){
+                    if(res.data.code=='200'){
+                        this.resData=res.data.data.dataInfo[0].children;//得到所有的业务线
+                        this.resData.forEach((item)=> {
+                            if(item.ocMenubm==this.ocMenubm){
+                                this.businessMenu=item.children;//得到要显示的二级下所有
+                                this.businessName=item.name;
+                            }
+                            this.$nextTick(function(){
+                                this.resetClass();
+                            })
+                        }, this);
+                    }
                 })
                 /*this.$http.get('biPc/login/getMenus.gm?userName='+this.userName).then(function(res){
                     if(res.data.code=='200'){
@@ -125,13 +144,6 @@
                     }
                 });*/
             },
-            changeNav(e){
-                if(e.target.innerHTML=='主页'&&e.target.tagName.toLowerCase()=='span'){
-                    this.menuShow=1;
-                }else if(e.target.tagName.toLowerCase()=='span'){
-                    this.menuShow=2;
-                }
-            },
             /*设置哪个一级显示*/
             resetClass(e){
                 var aLi=document.querySelectorAll('.routerLi');
@@ -139,7 +151,8 @@
                     let aA=aLi[i].querySelectorAll('a');
                     for(let j=0;j<aA.length;j++){
                         if(aA[j].className=='active'){
-                            this.showIndex=i+1;//找到索引  因为索引从0开始  所以设置的变量需要+1
+                            var oLi=aA[j].parentNode;
+                            this.showIndex=oLi.dataset.menu;
                         }
                     }
                 }
@@ -150,6 +163,9 @@
             /*显示业务线弹框*/
             showLineFn(){
                 this.showLineUl=!this.showLineUl;
+            },
+            showIndexFn(menuBm){
+                this.showIndex=menuBm;
             }
         }
     }
