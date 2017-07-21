@@ -165,13 +165,17 @@
                 this.showLineUl=!this.showLineUl;
             },
             showIndexFn(menuBm){
+                if(this.showIndex==menuBm){
+                    this.showIndex=-1;
+                    return;
+                }
                 this.showIndex=menuBm;
             },
             //切换业务线
             changeBusinessLine(item){
                 this.showLineUl=false;
                 //改变显示的业务线
-                this.resData.forEach((item)=> {
+                this.resData.forEach(item=> {
                     if(item.ocMenubm==this.ocMenubm){
                         this.businessMenu=item.children;//得到要显示的二级下所有
                         this.businessName=item.name;
