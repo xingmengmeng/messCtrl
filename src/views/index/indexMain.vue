@@ -2,8 +2,8 @@
 <div class="sixContainer">
     <div class="sixWrap">
         <div class="sixDiv" v-for="(item,index) in resData" :key="index">
+            <div class="developing" v-if="item.ocZt==0">正在开发中...</div>
             <div class="newSixWrap">
-                <div class="developing" v-if="item.ocZt==0">正在开发中...</div>
                 <div class="noAuth" v-if="item.ocZt==1">
                     <p>还没有权限哦！</p>
                 </div>
