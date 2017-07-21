@@ -6,9 +6,9 @@
             </div>
             
             <ul class="lineUl" v-show="showLineUl">
-                <li>美易理财</li>
-                <li>美借</li>
-                <li>美易分</li>
+                <li v-for="(item,index) in resData" :key="index" @click="changeBusinessLine(item)">{{item.name}}</li>
+                <!--<li>美借</li>
+                <li>美易分</li>-->
             </ul>
         </div>
         <ul class="navMenu">
@@ -166,6 +166,20 @@
             },
             showIndexFn(menuBm){
                 this.showIndex=menuBm;
+            },
+            //切换业务线
+            changeBusinessLine(item){
+                this.showLineUl=false;
+                //改变显示的业务线
+                this.resData.forEach((item)=> {
+                    if(item.ocMenubm==this.ocMenubm){
+                        this.businessMenu=item.children;//得到要显示的二级下所有
+                        this.businessName=item.name;
+                    }
+                    this.$nextTick(function(){
+                        this.resetClass();
+                    })
+                }, this);
             }
         }
     }
