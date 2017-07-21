@@ -87,6 +87,7 @@
     export default {
         data(){
             return{
+                urlName:'',
                 resDate:[],
                 businessMenu:[],
                 mainMenu:[],
@@ -98,6 +99,7 @@
             }
         },
         mounted(){
+            this.urlName= this.$route.query.name;
             this.$nextTick(function(){
                 this.getMenu();
                 this.resetClass();
@@ -106,7 +108,10 @@
         methods:{
             getMenu(){
                 this.getLocal();
-                this.$http.get('biPc/login/getMenus.gm?userName='+this.userName).then(function(res){
+                this.$http.get('biPc/login/getZxtMenus.gm?vcZxtmc='+this.urlName).then(function(){
+
+                })
+                /*this.$http.get('biPc/login/getMenus.gm?userName='+this.userName).then(function(res){
                     if(res.data.code=='200'){
                         this.resDate=res.data.data.dataInfo[0].children;
                         if(this.resDate[0]){
@@ -118,7 +123,7 @@
                             this.mainMenu=this.resDate[1].children;
                         }
                     }
-                });
+                });*/
             },
             changeNav(e){
                 if(e.target.innerHTML=='主页'&&e.target.tagName.toLowerCase()=='span'){
