@@ -2,20 +2,23 @@
 <div class="sixContainer">
     <div class="sixWrap">
         <div class="sixDiv" v-for="(item,index) in resData" :key="index">
-            <div class="developing" v-if="item.ocZt==0">正在开发中...</div>
-            <div class="noAuth" v-if="item.ocZt==1">
-                <p>还没有权限哦！</p>
+            <div class="newSixWrap">
+                <div class="developing" v-if="item.ocZt==0">正在开发中...</div>
+                <div class="noAuth" v-if="item.ocZt==1">
+                    <p>还没有权限哦！</p>
+                </div>
+                <div class="conDiv">
+                    <router-link v-if="item.ocWbxtbs==0" :to="{path:item.vcUrl,query:{name:item.NId}}" class="clearfix">
+                        <h3><span>{{item.vcZxtmc}}</span></h3>
+                        <p>{{item.vcMsxx}}</p>
+                    </router-link>  
+                    <a v-if="item.ocWbxtbs==1" :href="item.vcUrl+'?name='+item.NId" target="_blank">
+                        <h3><span>{{item.vcZxtmc}}</span></h3>
+                        <p>{{item.vcMsxx}}</p>
+                    </a>
+                </div>
             </div>
-            <div class="conDiv">
-                <router-link v-if="item.ocWbxtbs==0" :to="{path:item.vcUrl,query:{name:item.NId}}" class="clearfix">
-                    <h3><span>{{item.vcZxtmc}}</span></h3>
-                    <p>{{item.vcMsxx}}</p>
-                </router-link>  
-                <a v-if="item.ocWbxtbs==1" :href="item.vcUrl+'?name='+item.NId" target="_blank">
-                    <h3><span>{{item.vcZxtmc}}</span></h3>
-                    <p>{{item.vcMsxx}}</p>
-                </a>
-            </div>
+            
         </div>
         <!--<div class="sixDiv">
             <div class="conDiv">
@@ -100,6 +103,13 @@
             padding:15px 20px;
             box-sizing: border-box;
             cursor: pointer;
+            overflow: hidden;
+            .newSixWrap{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
             .developing{
                 position: absolute;
                 z-index: 3;
@@ -117,7 +127,7 @@
                 .conDiv;
                 background:#fff url(../../assets/images/sixBg7.png);
                 position: absolute;
-                top:15px;
+                top:0px;
                 z-index: 2;
                 width: 260px;
                 height: 150px;
@@ -228,7 +238,7 @@
                 .noAuth{
                     height: 167px;
                     background-size:cover;
-                    top:25px;
+                    top:0px;
                     width: 290px;
                 }
                 .developing{

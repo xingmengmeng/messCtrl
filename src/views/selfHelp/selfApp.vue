@@ -24,7 +24,9 @@ export default {
             if(con){
                 this.con=con;
             }
-        })
+        });
+
+        this.getMenu();
     },
     components:{
         headerSelf,
@@ -34,6 +36,11 @@ export default {
         hideMarkWrap(){
             this.noSelectT=0;
             this.con='请求超时';
+        },
+        getMenu(){
+            this.$http.get('biPc/login/getZxtMenus2.gm?nId=4').then(function(res){
+
+            })
         }
     }
 }
