@@ -226,11 +226,16 @@ export default {
         },
         /*左侧菜单*/
         getLeftMenuData(){
-            this.$http.get('biPc/selfAnaPlatform/getMenus.gm?userName='+this.userName).then(function(res){
+            this.$http.get('biPc/login/getZxtMenus2.gm?nId=4').then(function(res){
+                if(res.data.code=='200'){
+                    this.menuData=res.data.data.dataInfo[0].children;
+                }
+            })
+            /*this.$http.get('biPc/selfAnaPlatform/getMenus.gm?userName='+this.userName).then(function(res){
                 if(res.data.code=='200'){
                     this.menuData=res.data.data.dataInfo;
                 } 
-            })
+            })*/
         },
         /*获取联动菜单*/
         getLinkMenu(){
