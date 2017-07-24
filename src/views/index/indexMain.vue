@@ -263,20 +263,22 @@
         },
         mounted(){
             this.setHeight();
-            this.$http.get('biPc/login/getPcMenus.gm').then(function(res){
-                if(res.data.code=='200'){
-                    this.resData=res.data.data.dataInfo;
-                }
-            });
+            this.$nextTick(function(){
+                this.getMenus();
+            });   
         },
         methods:{
+            //得到菜单值
+            getMenus(){
+                this.$http.get('biPc/login/getPcMenus.gm').then(function(res){
+                    if(res.data.code=='200'){
+                        this.resData=res.data.data.dataInfo;
+                    }
+                });
+            },
             setHeight(){
                 var sixWrap=document.querySelector('.sixContainer');
-                //var sixDiv=document.querySelectorAll('.conDiv');
                 sixWrap.style.height=document.documentElement.clientHeight-50+'px';
-                /*for(let i=0;i<sixDiv.length;i++){
-                    sixDiv[i].style.height=document.querySelector('.conDiv').offsetWidth*(15/26)+'px';
-                }*/
             }
         }
     }
