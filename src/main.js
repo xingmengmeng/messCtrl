@@ -45,7 +45,6 @@ var myVue=new Vue({
 });
 
 Vue.http.interceptors.push(function(request, next) {
-    console.log(request);
     myVue.$refs.app.$emit('toggleLoading',true);
     next(function(response) {
         //console.log(response);

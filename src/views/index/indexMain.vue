@@ -8,14 +8,18 @@
                     <p>还没有权限哦！</p>
                 </div>
                 <div class="conDiv">
-                    <router-link v-if="item.ocWbxtbs==0" :to="{path:item.vcUrl,query:{name:item.NId}}" class="clearfix">
+                    <router-link v-if="item.ocWbxtbs==0&&item.ocZt!=1" :to="{path:item.vcUrl,query:{name:item.NId}}" class="clearfix linkConten">
                         <h3><span>{{item.vcZxtmc}}</span></h3>
                         <p>{{item.vcMsxx}}</p>
                     </router-link>  
-                    <a v-if="item.ocWbxtbs==1" :href="item.vcUrl+'?name='+item.NId" target="_blank">
+                    <a v-if="item.ocWbxtbs==1&&item.ocZt!=1" :href="item.vcUrl+'?name='+item.NId" target="_blank" class="clearfix linkConten">
                         <h3><span>{{item.vcZxtmc}}</span></h3>
                         <p>{{item.vcMsxx}}</p>
                     </a>
+                    <div v-if="item.ocZt==1" class="clearfix linkConten"><!--无权限-->
+                        <h3><span>{{item.vcZxtmc}}</span></h3>
+                        <p>{{item.vcMsxx}}</p>
+                    </div>
                 </div>
             </div>
             
@@ -154,6 +158,11 @@
                 height: 150px;
                 border-radius: 10px;
                 box-sizing: border-box;
+                .linkConten{
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
                 &:hover{
                     transform: translateY(-1px);
                     box-shadow: 0 3px 11px 0 #E1E2E9;
