@@ -107,8 +107,8 @@
                         <a class="detailsNav" name="3" :class="{'active':showTab==3}">推标明细</a>
                     </div>
                     <div class="right">
-                        <span class="pushTabIcon" v-show="showTab==1" v-if="meijieAdminFlag==1" @click="pushBiFn">推标</span>
-                        <span class="outTabIcon" v-show="showTab==2" v-if="meijieAdminFlag==1" @click="outBiFn">退标</span>
+                        <span class="pushTabIcon" v-show="showTab==1" v-if="meijieAdminFlag" @click="pushBiFn">推标</span>
+                        <span class="outTabIcon" v-show="showTab==2" v-if="meijieAdminFlag" @click="outBiFn">退标</span>
                         <span class="backTabIcon" v-show="showTab==3" @click="goBackFn">返回</span>
                         <span class="downTabIcon" @click="exportTab">导出</span>
                     </div>
@@ -346,7 +346,7 @@
                 form3conCount:200,//分页  3表总条数
                 form3pageCount:6,//分页  3表总页数
 
-                meijieAdminFlag:0,//下载按钮显示控制
+                meijieAdminFlag:false,//下载按钮显示控制
             }
         },
         components:{
@@ -373,7 +373,17 @@
                         return;
                     }
                     this.defaultMes=res.data.data.dataInfo;
+                    this.getAdminFlag();
                 });
+            },
+            //得到是否可推标权限
+            getAdminFlag(){
+                this.$http.get('biPc/debtChange/isPushDebt.gm').then(function(res){
+                    if(res.data.code=='200'){
+                        this.meijieAdminFlag=res.data.data.dataInfo;
+                        localStorage.meijieAdminFlag=this.meijieAdminFlag;
+                    }
+                })
             },
             //得到默认时间
             getDefTime(def){
