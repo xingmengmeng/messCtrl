@@ -1,6 +1,7 @@
 <template>
     <header class="container" id="header">
-        <a href="javascript:;" class="logo left">logo</a>
+        <router-link to="/index" class="logo left">logo</router-link>
+        <!--<a href="javascript:;" class="logo left">logo</a>-->
         <div class="right headRight">
             <!--<div class="headerIcon">
                 <img src="../assets/images/_header.png" >
