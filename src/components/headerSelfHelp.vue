@@ -1,6 +1,6 @@
 <template>
     <header class="container" id="header">
-        <a href="javascript:;" class="left logo">自助分析平台</a>
+        <a href="/#/index" class="left logo">自助分析平台</a>
         <div class="right headRight">
             <!--<div class="headerIcon">
                 <img src="../assets/images/_header.png" >
