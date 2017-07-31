@@ -13,11 +13,11 @@
                 </ul>
                 <!--数据库源信息 start-->
                 <div v-show="showDataIndex==1" class="botDiv clearfix">
-                    <select name="messSelect" id="messSelect" v-model="selected" @change="selectVal('5',selected)">
+                    <select name="messSelect" id="messSelect" v-model="selected" @change="selectVal('3',selected)">
                         <option value="">选择业务线</option>
                         <option :value="op.ocMenubm" v-for="op in oneLevelMenus" :key="op">{{op.vcMenumc}}</option>
                     </select>
-                    <select name="dataLibrary" id="dataLibrary" v-model="selectedSecond" @change="selectVal('6',selectedSecond)">
+                    <select name="dataLibrary" id="dataLibrary" v-model="selectedSecond" @change="selectVal('4',selectedSecond)">
                         <option value="">选择数据库</option>
                         <option :value="op.ocMenubm" v-for="op in twoLevelMenus" :key="op">{{op.vcMenumc}}</option>
                     </select>
@@ -226,11 +226,16 @@ export default {
         },
         /*左侧菜单*/
         getLeftMenuData(){
-            this.$http.get('biPc/selfAnaPlatform/getMenus.gm?userName='+this.userName).then(function(res){
+            this.$http.get('biPc/login/getZxtMenus2.gm?nId=4').then(function(res){
+                if(res.data.code=='200'){
+                    this.menuData=res.data.data.dataInfo;
+                }
+            })
+            /*this.$http.get('biPc/selfAnaPlatform/getMenus.gm?userName='+this.userName).then(function(res){
                 if(res.data.code=='200'){
                     this.menuData=res.data.data.dataInfo;
                 } 
-            })
+            })*/
         },
         /*获取联动菜单*/
         getLinkMenu(){
@@ -245,9 +250,9 @@ export default {
         },
         /*联动菜单选择*/
         selectVal(level,menuNm){
-            if(level=='5'){
+            if(level=='3'){
                 this.menuShowSecond=menuNm;
-            }else if(level=='6'){
+            }else if(level=='4'){
                 this.twoLevelMenus.forEach((item) =>{
                     if(item.ocMenubm==menuNm){
                         this.menuShowSecond=item.ocParentbm;
@@ -257,11 +262,11 @@ export default {
             }
             this.$http.get('biPc/selfAnaPlatform/menusLink.gm?level='+level+'&ocMenubm='+menuNm).then(function(res){
                 if(res.data.code=='200'){
-                    if(level=='5'){
+                    if(level=='3'){
                         this.twoLevelMenus=res.data.data.dataInfo.twoLevelMenus;
                         this.threeLevelMenus=res.data.data.dataInfo.threeLevelMenus;
                         this.selectedSecond=this.selectedThree='';
-                    }else if(level=='6'){
+                    }else if(level=='4'){
                         this.threeLevelMenus=res.data.data.dataInfo.threeLevelMenus;
                         this.selectedThree='';
                     }
