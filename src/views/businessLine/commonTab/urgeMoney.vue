@@ -41,7 +41,7 @@
                         <input type="button" value="查询"  class="check1" @click="check('tab1')">
                     </li>
                   <!--  <li class="">指标解释</li>-->
-                    <li class="download" @click="downLoad">下载</li>
+                    <li class="download" @click="downLoad('tab1')">下载</li>
                 </ul>
             </div>
             <!--催收整体概览选项-->
@@ -166,7 +166,7 @@
                         <input type="button" value="查询"  class="check1" @click="check('tab2')">
                     </li>
                     <!--  <li class="">指标解释</li>-->
-                    <li class="download">下载</li>
+                    <li class="download" @click="downLoad('tab2')">下载</li>
                 </ul>
             </div>
             <!--催收整体概览选项-->
@@ -362,7 +362,7 @@
                         <input type="button" value="查询"  class="check1" @click="check('tab3')" />
                     </li>
                     <!--  <li class="">指标解释</li>-->
-                    <li class="download">下载</li>
+                    <li class="download" @click="downLoad('tab3')">下载</li>
                 </ul>
             </div>
             <!--催收人员明细选项-->
@@ -549,10 +549,10 @@
                     </li>
 
                     <li class="check">
-                        <input type="button" value="查询"  class="check1" @click="selectTimeFn('newUrl')">
+                        <input type="button" value="查询"  class="check1" @click="check('tab4')">
                     </li>
                     <!--  <li class="">指标解释</li>-->
-                    <li class="download">下载</li>
+                    <li class="download" @click="downLoad('tab4')">下载</li>
                 </ul>
             </div>
             <!--催收整体概览选项-->
@@ -827,7 +827,7 @@ export default {
               /*此处是默认催收人员明细*/
               this.getStaffData(this.selected9,this.selected10,this.selected11,this.selected12,this.ruyStartTime3,this.startEndRu3,this.chustartTime3,this.startEnd3,this.allName);
               /*此处是默认催收案件明细*/
-              this.getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
+              //this.getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
           });
       },
       choose(tab){
@@ -838,7 +838,7 @@ export default {
           }else if(tab=='tab3'){
               this.getStaffData(this.selected9,this.selected10,this.selected11,this.selected12,this.ruyStartTime3,this.startEndRu3,this.chustartTime3,this.startEnd3,this.allName);
           }else if(tab=='tab4'){
-              getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
+              //getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
           }
       },
       check(tab){
@@ -849,14 +849,27 @@ export default {
           }else if(tab=='tab3'){
               this.getStaffData(this.selected9,this.selected10,this.selected11,this.selected12,this.ruyStartTime3,this.startEndRu3,this.chustartTime3,this.startEnd3,this.allName);
           }else if(tab=='tab4'){
-              getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
+              //getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
           }
       },
-      /*downLoad(tab){
-          var downUrl='';
+      downLoad(tab){
+          if(tab=='tab1'){
+              var downUrl='collct/overall/glance/export.gm';
+              window.location.href=downUrl;
+              //this.$http.get('collct/overall/glance/export.gm');
+          }else if(tab=='tab2'){
+              var downUrl='collct/overall/detail/export.gm';
+              window.location.href=downUrl;
+          }else if(tab=='tab3'){
+              var downUrl='collct/user/detail/export.gm';
+              window.location.href=downUrl;
+          }else if(tab=='tab4'){
+              var downUrl='collct/case/detail/export.gm';
+              window.location.href=downUrl;
+          }
 
 
-      },*/
+      },
 
       /*得到催收整体概览信息*/
       getAllData(a,b,c,d,e,f,g,h){

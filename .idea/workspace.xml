@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b81e800-db89-4c68-8add-0b720cbeca8c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/images/xiazai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/urgeMoney.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue" afterPath="$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue" />
     </list>
     <ignored path="bi-pc-ui-2.0.iws" />
@@ -28,7 +27,7 @@
       <file leaf-file-name="urgeMoney.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/css/urgeMoney.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9565217">
+            <state vertical-scroll-proportion="0.0">
               <caret line="190" column="1" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="1" />
               <folding>
                 <element signature="e#1749#2735#0" expanded="false" />
@@ -41,7 +40,7 @@
       <file leaf-file-name="dataFactory.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/selfHelp/dataFactory.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7352941">
+            <state vertical-scroll-proportion="10.294118">
               <caret line="84" column="45" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="45" />
               <folding />
             </state>
@@ -51,8 +50,8 @@
       <file leaf-file-name="selfHelp.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/css/selfHelp.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="159" column="18" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="18" />
+            <state vertical-scroll-proportion="-3.8225806">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding>
                 <element signature="e#3462#4041#0" expanded="false" />
               </folding>
@@ -63,14 +62,15 @@
       <file leaf-file-name="urgeMoney.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7933579">
-              <caret line="579" column="41" selection-start-line="579" selection-start-column="41" selection-end-line="579" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.6494465">
+              <caret line="829" column="16" selection-start-line="829" selection-start-column="16" selection-end-line="829" selection-end-column="16" />
               <folding>
                 <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#43699#45282#0" expanded="false" />
-                <element signature="e#43750#44014#0" expanded="false" />
-                <element signature="e#45341#46065#0" expanded="false" />
-                <element signature="e#46172#46467#0" expanded="false" />
+                <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="e#44422#44686#0" expanded="false" />
+                <element signature="e#46013#46737#0" expanded="false" />
+                <element signature="e#46795#47575#0" expanded="false" />
+                <element signature="e#47632#48411#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -79,8 +79,8 @@
       <file leaf-file-name="tbTable.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3125">
-              <caret line="578" column="39" selection-start-line="578" selection-start-column="24" selection-end-line="578" selection-end-column="39" />
+            <state vertical-scroll-proportion="-105.14706">
+              <caret line="576" column="27" selection-start-line="576" selection-start-column="27" selection-end-line="576" selection-end-column="27" />
               <folding>
                 <element signature="e#17397#17591#0" expanded="false" />
               </folding>
@@ -220,7 +220,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="selfHelp" />
+              <option name="myItemId" value="businessLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bi-pc-ui-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bi-pc-ui-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="businessLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commonTab" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -346,7 +372,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1954612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -391,14 +417,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/views/selfHelp/dataFactory.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="45" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/selfHelp.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -415,10 +433,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -460,10 +479,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -505,10 +525,11 @@
           <caret line="1445" column="34" selection-start-line="1445" selection-start-column="34" selection-end-line="1445" selection-end-column="34" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -550,10 +571,11 @@
           <caret line="1445" column="34" selection-start-line="1445" selection-start-column="34" selection-end-line="1445" selection-end-column="34" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -595,10 +617,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -629,10 +652,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -674,10 +698,11 @@
           <caret line="42" column="39" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="39" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -719,10 +744,11 @@
           <caret line="42" column="39" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="39" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -764,10 +790,11 @@
           <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -861,37 +888,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/selfHelp.less">
+    <entry file="file://$USER_HOME$/Desktop/urgeMoney.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="159" column="18" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="18" />
-          <folding>
-            <element signature="e#3462#4041#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/selfHelp/dataFactory.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7352941">
-          <caret line="84" column="45" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3125">
-          <caret line="578" column="39" selection-start-line="578" selection-start-column="24" selection-end-line="578" selection-end-column="39" />
-          <folding>
-            <element signature="e#17397#17591#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-0.13111888">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/urgeMoney.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9565217">
+        <state vertical-scroll-proportion="0.0">
           <caret line="190" column="1" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="1" />
           <folding>
             <element signature="e#1749#2735#0" expanded="false" />
@@ -900,16 +906,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/selfHelp/dataFactory.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.294118">
+          <caret line="84" column="45" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/selfHelp.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8225806">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding>
+            <element signature="e#3462#4041#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-105.14706">
+          <caret line="576" column="27" selection-start-line="576" selection-start-column="27" selection-end-line="576" selection-end-column="27" />
+          <folding>
+            <element signature="e#17397#17591#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7933579">
-          <caret line="579" column="41" selection-start-line="579" selection-start-column="41" selection-end-line="579" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.6494465">
+          <caret line="829" column="16" selection-start-line="829" selection-start-column="16" selection-end-line="829" selection-end-column="16" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#43699#45282#0" expanded="false" />
-            <element signature="e#43750#44014#0" expanded="false" />
-            <element signature="e#45341#46065#0" expanded="false" />
-            <element signature="e#46172#46467#0" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#44422#44686#0" expanded="false" />
+            <element signature="e#46013#46737#0" expanded="false" />
+            <element signature="e#46795#47575#0" expanded="false" />
+            <element signature="e#47632#48411#0" expanded="false" />
           </folding>
         </state>
       </provider>
