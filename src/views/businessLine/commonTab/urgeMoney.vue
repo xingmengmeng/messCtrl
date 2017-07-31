@@ -3,11 +3,11 @@
         <!--面包屑-->
         <section class="crumbsContainer">
             <div class="crumbs">
-                <a href="javascript:;">美借</a>
+                <a href="#">美借</a>
                 <span>></span>
-                <a href="javascript:;">贷后分析</a>
+                <a href="#">贷后分析</a>
                 <span>></span>
-                <a href="javascript:;">催收日常</a>
+                <a href="#">催收日常</a>
             </div>
         </section>
        <!-- 催收整体概览-->
@@ -573,6 +573,7 @@
                 <select class="product" v-model="selected16" @change="choose('tab4')">
                     <option v-for="item in defaultMesAllProduct" v-bind:value="item.value">{{item.name}}</option>
                 </select>
+                <label>人员</label>
                 <input type="text"   @blur="choose('tab4')" @enter="choose('tab4')"  v-model="allName2"/>
             </div>
             <!--催收整体概览的表格-->
@@ -852,24 +853,6 @@ export default {
               //getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
           }
       },
-      downLoad(tab){
-          if(tab=='tab1'){
-              var downUrl='collct/overall/glance/export.gm';
-              window.location.href=downUrl;
-              //this.$http.get('collct/overall/glance/export.gm');
-          }else if(tab=='tab2'){
-              var downUrl='collct/overall/detail/export.gm';
-              window.location.href=downUrl;
-          }else if(tab=='tab3'){
-              var downUrl='collct/user/detail/export.gm';
-              window.location.href=downUrl;
-          }else if(tab=='tab4'){
-              var downUrl='collct/case/detail/export.gm';
-              window.location.href=downUrl;
-          }
-
-
-      },
 
       /*得到催收整体概览信息*/
       getAllData(a,b,c,d,e,f,g,h){
@@ -982,6 +965,71 @@ export default {
               this.defaultMes4=res.data.data.dataInfo.list_info;
               this.defaultMes4Zong=res.data.data.dataInfo.total_info;
           });
+      },
+      /*此处是下载功能*/
+      downLoad(tab){
+          if(tab=='tab1'){
+              var json={
+                  "collct_company":this.selected1,
+                  "collct_stage":this.selected2,
+                  "channel":this.selected3,
+                  "product":this.selected4,
+                  "in_start_time":this.ruyStartTime1,
+                  "in_end_time":this.startEndRu1,
+                  "out_start_time": this.chustartTime1,
+                  "out_end_time":this.startEnd1,
+              };
+              var param=encodeURI(JSON.stringify(json));
+              var downUrl='biPc/collct/overall/glance/export.gm?param='+param+'';
+              window.location.href=downUrl;
+          }else if(tab=='tab2'){
+              var json={
+                  "collct_company":this.selected5,
+                  "collct_stage":this.selected6,
+                  "channel":this.selected7,
+                  "product":this.selected8,
+                  "in_start_time":this.ruyStartTime2,
+                  "in_end_time":this.startEndRu2,
+                  "out_start_time": this.chustartTime2,
+                  "out_end_time":this.startEnd2,
+              };
+              var param=encodeURI(JSON.stringify(json));
+              var downUrl='biPc/collct/overall/detail/export.gm?param='+param+'';
+              window.location.href=downUrl;
+          }else if(tab=='tab3'){
+              var json={
+                  "collct_company":this.selected9,
+                  "collct_stage":this.selected10,
+                  "channel":this.selected11,
+                  "product":this.selected12,
+                  "in_start_time":this.ruyStartTime3,
+                  "in_end_time":this.startEndRu3,
+                  "out_start_time": this.chustartTime3,
+                  "out_end_time":this.startEnd3,
+                  "collct_user":this.allName,
+              };
+              var param=encodeURI(JSON.stringify(json));
+              var downUrl='biPc/collct/user/detail/export.gm?param='+param+'';
+              window.location.href=downUrl;
+          }else if(tab=='tab4'){
+              var json={
+                  "collct_company":this.selected13,
+                  "collct_stage":this.selected14,
+                  "channel":this.selected15,
+                  "product":this.selected16,
+                  "in_start_time":this.ruyStartTime4,
+                  "in_end_time":this.startEndRu4,
+                  "out_start_time": this.chustartTime4,
+                  "out_end_time":this.startEnd4,
+                  "collct_user":this.allName2,
+              };
+              var param=encodeURI(JSON.stringify(json));
+
+              var downUrl='biPc/collct/case/detail/export.gm?param='+param+'';
+              window.location.href=downUrl;
+          }
+
+
       },
 
 
