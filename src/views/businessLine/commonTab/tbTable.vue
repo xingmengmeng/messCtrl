@@ -23,6 +23,10 @@
                                 <li class="boldF">{{defaultMes.ktbTotalAmount}}万元</li>
                             </ul>
                             <ul class="everyUl">
+                                <li>国美可推资产</li>
+                                <li class="boldF">{{defaultMes.ktbGomePushAssertAmount}}万元</li>
+                            </ul>
+                            <ul class="everyUl">
                                 <li>总预计收益</li>
                                 <li class="boldF">{{defaultMes.ktbTotalProfit}}万元</li>
                             </ul>
@@ -40,6 +44,10 @@
                             <ul class="everyUl has28">
                                 <li>总资产</li>
                                 <li class="boldF">{{defaultMes.ytbTotalAmount}}万元</li>
+                            </ul>
+                            <ul class="everyUl has28">
+                                <li>国美已推资产</li>
+                                <li class="boldF">{{defaultMes.ytbGomePushAssertAmount}}万元</li>
                             </ul>
                             <ul class="everyUl has28">
                                 <li>总预计收益</li>
@@ -63,7 +71,8 @@
                             <ul class="everyUl allWidth">
                                 <li>
                                     <div class="inputDiv">
-                                        <datapicker v-model='startTime' :min='startMinTime'></datapicker>
+                                        {{startTime}}
+                                        <!--<datapicker v-model='startTime' :min='startMinTime'></datapicker>-->
                                     </div>
                                     <span class="inputCenterLine">-</span>
                                     <div class="inputDiv">
@@ -71,7 +80,7 @@
                                     </div>
                                 </li>
                                 <li class="clearfix">
-                                    <span class="left boldF14">区间到期应还款本金：{{resAmount}}万元</span>
+                                    <span class="left boldF14">区间到期国美可推资产：{{resAmount}}万元</span>
                                     <input type="button" value="查询" class="right btn" @click="selectTimeFn('newUrl')">
                                 </li>
                             </ul>
@@ -86,11 +95,12 @@
                                 <li>
                                     <span class="left boldF14">开始时间：</span>
                                     <div class="inputDiv">
-                                        <datapicker v-model='moneyStartTime' :min='moneyStartMinTime'></datapicker>
+                                        {{moneyStartTime}}
+                                        <!--<datapicker v-model='moneyStartTime' :min='moneyStartMinTime'></datapicker>-->
                                     </div>
                                 </li>
                                 <li class="clearfix">
-                                    <span class="left boldF14">到期应还款本金：<input type="text" class="txt" v-model="moneyTxt">万元</span>
+                                    <span class="left boldF14">到期国美可推资产：<input type="text" class="txt" v-model="moneyTxt">万元</span>
                                     <input type="button" value="查询" class="right btn" @click="selectMoneyFn('newUrl')">
                                 </li>
                             </ul>
@@ -135,6 +145,8 @@
 
                                 <th width="90">到期还款日期</th>
                                 <th>应还本金</th>
+                                <th>可推资产</th>
+                                <th>国美可推资产</th>
                                 <th>资产预计总收益</th>
                                 <th>资产预计收益率</th>
                                 <!--<th width="90">到期还款日期</th>-->
@@ -156,6 +168,8 @@
 
                                 <td>{{item.loanPmtDueDateStr}}</td>
                                 <td>{{item.loanTermInt}}</td>
+                                <td>{{item.pushAssertAmount}}</td><!--可推资产-->
+                                <td>{{item.gomePushAssertAmount}}</td><!--国美可推资产-->
                                 <td>{{item.totExpectedReturned}}</td>
                                 <td>{{item.totExpectedRate}}</td>
                                 <!--<td>{{item.loanPmtDueDateStr}}</td>-->
@@ -219,6 +233,8 @@
                                 <th>所属期数</th>
                                 <th width="100">到期还款日期</th>
                                 <th>应还本金</th>
+                                <th>可推资产</th>
+                                <th>国美可推资产</th>
                                 <th>资产预计总收益</th>
                                 <th>资产预计收益率</th>
                                 <th width="80">资产总天数</th>
@@ -251,8 +267,10 @@
                                 <td>{{item.loanAmount}}</td>
                                 <td>{{item.loanInitTerm}}</td>
                                 <td>{{item.currTerm}}</td>
-                                <td>{{item.loanPmtDueDateStr}}</td>
+                                <td>{{item.loanPmtDueDateStr}}</td><!--到期还款日-->
                                 <td>{{item.loanTermInt}}</td><!--loanTermInt-->
+                                <td>{{item.pushAssertAmount}}</td><!--可推资产-->
+                                <td>{{item.gomePushAssertAmount}}</td><!--国美可推资产-->
                                 <td>{{item.totExpectedReturned}}</td>
                                 <td>{{item.totExpectedRate}}</td>
                                 <td>{{item.totAssetDays}}</td>
@@ -439,7 +457,7 @@
                 if(!pushPackge){
                     this.showTab=1;
                 }
-
+                this.$emit('toggleLoading',true);
                 this.$http.get(this.selectUrl).then(function (res) {
                     if(res.data.code==200){
                         this.resDate=res.data.data.dataInfo;

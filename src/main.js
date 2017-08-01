@@ -43,12 +43,15 @@ var myVue=new Vue({
     router:router,
     components: { App },
 });
-
+var reqNum=1,nextNum=1;
 Vue.http.interceptors.push(function(request, next) {
+    reqNum++;
     myVue.$refs.app.$emit('toggleLoading',true);
     next(function(response) {
-        //console.log(response);
-        myVue.$refs.app.$emit('toggleLoading',false);
+        nextNum++;
+        if(reqNum==nextNum){
+            myVue.$refs.app.$emit('toggleLoading',false);
+        } 
         if(response.status=='504'||response.status=='404'){
             myVue.$refs.app.$emit('showOverTime');
         }
