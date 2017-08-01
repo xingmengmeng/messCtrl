@@ -17,23 +17,23 @@
                 <ul class="everyUl allWidth">
                     <li class="csgl">催收整体概览</li>
                     <li class="rustart">
-                        <div class="chub">入催起止时间</div>
-                        <div class="inputDiv">
-                            <datapicker v-model='ruyStartTime1' :min='rustartMinTime1'></datapicker>
+                        <div class="chub WZ">入催起止时间</div>
+                        <div class="inputDiv WZ">
+                            <datapicker v-model='ruyStartTime1' :min='rustartMinTime1' ></datapicker>
                         </div>
-                        <div class="inputCenterLine">-</div>
-                        <div class="inputDiv">
+                        <div class="inputCenterLine WZ">-</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='startEndRu1' :min="ruyStartTime1"></datapicker>
                         </div>
                     </li>
                     <li class="chustart">
-                        <div class="chub">出催起止时间</div>
-                        <div class="inputDiv">
+                        <div class="chub WZ">出催起止时间</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='chustartTime1' :min='chustartMinTime1'></datapicker>
                         </div>
-                        <div class="inputCenterLine">-</div>
-                        <div class="inputDiv">
-                            <datapicker v-model='startEnd1' :min="chustartTime1"></datapicker>
+                        <div class="inputCenterLine WZ">-</div>
+                        <div class="inputDiv WZ">
+                            <datapicker v-model='startEnd1' :min="chustartTime1" :max="chustartMaxTime1"></datapicker>
                         </div>
                     </li>
 
@@ -142,23 +142,23 @@
                 <ul class="everyUl allWidth">
                     <li class="csgl">催收整体明细</li>
                     <li class="rustart">
-                        <div class="chub">入催起止时间</div>
-                        <div class="inputDiv">
+                        <div class="chub WZ">入催起止时间</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='ruyStartTime2' :min='rustartMinTime2'></datapicker>
                         </div>
-                        <div class="inputCenterLine">-</div>
-                        <div class="inputDiv">
+                        <div class="inputCenterLine WZ">-</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='startEndRu2' :min="ruyStartTime2"></datapicker>
                         </div>
                     </li>
                     <li class="chustart">
-                        <div class="chub">出催起止时间</div>
-                        <div class="inputDiv">
+                        <div class="chub WZ">出催起止时间</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='chustartTime2' :min='chustartMinTime2'></datapicker>
                         </div>
-                        <div class="inputCenterLine">-</div>
-                        <div class="inputDiv">
-                            <datapicker v-model='startEnd2' :min="chustartTime2"></datapicker>
+                        <div class="inputCenterLine WZ">-</div>
+                        <div class="inputDiv WZ">
+                            <datapicker v-model='startEnd2' :min="chustartTime2" :max="chustartMaxTime2"></datapicker>
                         </div>
                     </li>
 
@@ -191,7 +191,7 @@
             </div>
             <!--催收整体概览的表格-->
             <div class="newTabls2 tableWrap">
-                <table class="cuishoubg">
+                <table class="cuishoubg cuishoubg2">
                     <thead class="cuishoubt">
                     <tr class="cuishoubt1" >
                         <th rowspan="2">催收公司</th>
@@ -338,23 +338,23 @@
                 <ul class="everyUl allWidth">
                     <li class="csgl">催收人员明细</li>
                     <li class="rustart">
-                        <div class="chub">入催起止时间</div>
-                        <div class="inputDiv">
+                        <div class="chub WZ">入催起止时间</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='ruyStartTime3' :min='rustartMinTime3'></datapicker>
                         </div>
-                        <div class="inputCenterLine">-</div>
-                        <div class="inputDiv">
+                        <div class="inputCenterLine WZ">-</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='startEndRu3' :min="ruyStartTime3"></datapicker>
                         </div>
                     </li>
                     <li class="chustart">
-                        <div class="chub">出催起止时间</div>
-                        <div class="inputDiv">
+                        <div class="chub WZ">出催起止时间</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='chustartTime3' :min='chustartMinTime3'></datapicker>
                         </div>
-                        <div class="inputCenterLine">-</div>
-                        <div class="inputDiv">
-                            <datapicker v-model='startEnd3' :min="chustartTime3"></datapicker>
+                        <div class="inputCenterLine WZ">-</div>
+                        <div class="inputDiv WZ">
+                            <datapicker v-model='startEnd3' :min="chustartTime3" :max="chustartMaxTime3"></datapicker>
                         </div>
                     </li>
 
@@ -385,12 +385,12 @@
                 </select>
                 <label>人员</label>
                <!-- @blur是vue中失去焦点，失去焦点后才能走接口，获取需要的名字的数据-->
-                <input type="text"   @blur="choose('tab3')" @enter="choose('tab3')"  v-model="allName"/>
+                <input type="text"   @blur="choose('tab3')" @enter="choose('tab3')"  v-model="allName" class="people"/>
 
             </div>
             <!--催收人员明细的表格-->
             <div class="newTabls3 tableWrap">
-                <table class="cuishoubg">
+                <table class="cuishoubg cuishoubg3">
                     <thead class="cuishoubt">
                     <tr class="cuishoubt1" >
                         <th rowspan="2">催收公司</th>
@@ -528,23 +528,23 @@
                 <ul class="everyUl allWidth">
                     <li class="csgl">催收案件明细</li>
                     <li class="rustart">
-                        <div class="chub">入催起止时间</div>
-                        <div class="inputDiv">
+                        <div class="chub WZ">入催起止时间</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='ruyStartTime4' :min='rustartMinTime4'></datapicker>
                         </div>
-                        <div class="inputCenterLine">-</div>
-                        <div class="inputDiv">
+                        <div class="inputCenterLine WZ">-</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='startEndRu4' :min="ruyStartTime4"></datapicker>
                         </div>
                     </li>
                     <li class="chustart">
-                        <div class="chub">出催起止时间</div>
-                        <div class="inputDiv">
+                        <div class="chub WZ">出催起止时间</div>
+                        <div class="inputDiv WZ">
                             <datapicker v-model='chustartTime4' :min='chustartMinTime4'></datapicker>
                         </div>
-                        <div class="inputCenterLine">-</div>
-                        <div class="inputDiv">
-                            <datapicker v-model='startEnd4' :min="chustartTime4"></datapicker>
+                        <div class="inputCenterLine WZ">-</div>
+                        <div class="inputDiv WZ">
+                            <datapicker v-model='startEnd4' :min="chustartTime4" :max="chustartMaxTime4"></datapicker>
                         </div>
                     </li>
 
@@ -574,11 +574,11 @@
                     <option v-for="item in defaultMesAllProduct" v-bind:value="item.value">{{item.name}}</option>
                 </select>
                 <label>人员</label>
-                <input type="text"   @blur="choose('tab4')" @enter="choose('tab4')"  v-model="allName2"/>
+                <input type="text"   @blur="choose('tab4')" @enter="choose('tab4')"  v-model="allName2" class="people"/>
             </div>
             <!--催收整体概览的表格-->
             <div class="newTabls4 tableWrap">
-                <table class="cuishoubg">
+                <table class="cuishoubg cuishoubg4">
                     <thead class="cuishoubt">
                     <tr class="cuishoubt1" >
                         <th rowspan="2">催收公司</th>
@@ -733,6 +733,10 @@ export default {
           chustartMinTime2:'',
           chustartMinTime3:'',
           chustartMinTime4:'',
+          chustartMaxTime1:'',
+          chustartMaxTime2:'',
+          chustartMaxTime3:'',
+          chustartMaxTime4:'',
           startEnd1:'',
           startEnd2:'',
           startEnd3:'',
@@ -820,7 +824,7 @@ export default {
               this.rustartMinTime1=this.rustartMinTime2=this.rustartMinTime3=this.rustartMinTime4=res.data.data.dataInfo.date_info.in_start_time;
               this.chustartMinTime1=this.chustartMinTime2=this.chustartMinTime3=this.chustartMinTime4=res.data.data.dataInfo.date_info.out_start_time;
               this.chustartTime1=this.chustartTime2=this.chustartTime3=this.chustartTime4=res.data.data.dataInfo.date_info.out_start_time;
-              this.startEnd1=this.startEnd2=this.startEnd3=this.startEnd4=res.data.data.dataInfo.date_info.out_end_time;
+              this.chustartMaxTime1=this.chustartMaxTime2=this.chustartMaxTime3=this.chustartMaxTime4=this.startEnd1=this.startEnd2=this.startEnd3=this.startEnd4=res.data.data.dataInfo.date_info.out_end_time;
               this.ruyStartTime1=this.ruyStartTime2=this.ruyStartTime3=this.ruyStartTime4=res.data.data.dataInfo.date_info.in_start_time;
               this.startEndRu1=this.startEndRu2=this.startEndRu3=this.startEndRu4=res.data.data.dataInfo.date_info.in_end_time;
               /*此处是默认催收整体概览*/
