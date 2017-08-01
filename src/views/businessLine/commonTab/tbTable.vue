@@ -20,7 +20,7 @@
                         <div v-cloak>
                             <ul class="everyUl">
                                 <li>总资产</li>
-                                <li class="boldF">{{defaultMes.ktbTotalAmount}}万元</li>
+                                <li class="boldF">{{defaultMes.ktbPushAssertAmount}}万元</li>
                             </ul>
                             <ul class="everyUl">
                                 <li>国美可推资产</li>
@@ -43,7 +43,7 @@
                         <div>
                             <ul class="everyUl has28">
                                 <li>总资产</li>
-                                <li class="boldF">{{defaultMes.ytbTotalAmount}}万元</li>
+                                <li class="boldF">{{defaultMes.ytbPushAssertAmount}}万元</li>
                             </ul>
                             <ul class="everyUl has28">
                                 <li>国美已推资产</li>
