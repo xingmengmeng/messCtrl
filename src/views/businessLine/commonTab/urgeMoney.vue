@@ -817,6 +817,8 @@ export default {
               this.defaultMesAllStage=res.data.data.dataInfo.stage_info;
               this.defaultMesAllChannel=res.data.data.dataInfo.channel_info;
               this.defaultMesAllProduct=res.data.data.dataInfo.product_info;
+              this.rustartMinTime1=this.rustartMinTime2=this.rustartMinTime3=this.rustartMinTime4=res.data.data.dataInfo.date_info.in_start_time;
+              this.chustartMinTime1=this.chustartMinTime2=this.chustartMinTime3=this.chustartMinTime4=res.data.data.dataInfo.date_info.out_start_time;
               this.chustartTime1=this.chustartTime2=this.chustartTime3=this.chustartTime4=res.data.data.dataInfo.date_info.out_start_time;
               this.startEnd1=this.startEnd2=this.startEnd3=this.startEnd4=res.data.data.dataInfo.date_info.out_end_time;
               this.ruyStartTime1=this.ruyStartTime2=this.ruyStartTime3=this.ruyStartTime4=res.data.data.dataInfo.date_info.in_start_time;
