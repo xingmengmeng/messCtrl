@@ -96,8 +96,8 @@
                     <tr v-for="item in defaultMes">
                         <td>{{item.collct_company}}</td>
                         <td>{{item.collct_stage}}</td>
-                        <td>{{item.channel}}</td>
                         <td>{{item.product}}</td>
+                        <td>{{item.channel}}</td>
                         <td>{{item.in_collct_user_count}}</td>
                         <td>{{item.in_collct_total_amount}}</td>
                         <td>{{item.out_collct_user_count}}</td>
@@ -246,8 +246,8 @@
                     <tr v-for="item in defaultMes2">
                         <td>{{item.collct_company}}</td>
                         <td>{{item.collct_stage}}</td>
-                        <td>{{item.channel}}</td>
                         <td>{{item.product}}</td>
+                        <td>{{item.channel}}</td>
                         <td>{{item.in_collct_user_count}}</td>
                         <td>{{item.in_collct_total_amount}}</td>
                         <td>{{item.in_collct_principal}}</td>
@@ -722,9 +722,9 @@
                     </tr>
                     </tfoot>-->
                 </table>
-                <pages :con-count="form4conCount" :page-count="form4pageCount" :current="form4CurrentPage" @changePage="changePageFn" ref="urlChange"></pages>
-            </div>
 
+            </div>
+            <pages :con-count="form4conCount" :page-count="form4pageCount" :current="form4CurrentPage" @changePage="changePageFn" ref="urlChange"></pages>
         </div>
 
     </div>
@@ -917,7 +917,7 @@ export default {
               if(res.data.code==203){
                   window.location.href='login.html';
                   return;
-              }
+              };
               this.defaultMes=res.data.data.dataInfo.list_info;
               this.defaultMesZong=res.data.data.dataInfo.total_info;
 
