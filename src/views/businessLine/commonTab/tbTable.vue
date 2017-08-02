@@ -41,19 +41,19 @@
                     <div class="everyDiv clearfix">
                         <h4>已推标</h4>
                         <div>
-                            <ul class="everyUl has28">
+                            <ul class="everyUl has23">
                                 <li>总资产</li>
                                 <li class="boldF">{{defaultMes.ytbPushAssertAmount}}万元</li>
                             </ul>
-                            <ul class="everyUl has28">
+                            <ul class="everyUl has23">
                                 <li>国美已推资产</li>
                                 <li class="boldF">{{defaultMes.ytbGomePushAssertAmount}}万元</li>
                             </ul>
-                            <ul class="everyUl has28">
+                            <ul class="everyUl has22">
                                 <li>总预计收益</li>
                                 <li class="boldF">{{defaultMes.ytbTotalProfit}}万元</li>
                             </ul>
-                            <ul class="everyUl has28">
+                            <ul class="everyUl has16">
                                 <li>总预计收益率</li>
                                 <li class="boldF">{{defaultMes.ytbTotalProfitRate}}</li>
                             </ul>
