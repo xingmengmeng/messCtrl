@@ -12,7 +12,7 @@
                         <h3><span>{{item.vcZxtmc}}</span></h3>
                         <p>{{item.vcMsxx}}</p>
                     </router-link>  
-                    <a v-if="item.ocWbxtbs==1&&item.ocZt!=1" :href="item.vcUrl+'?name='+item.NId" target="_blank" class="clearfix linkConten">
+                    <a v-if="item.ocWbxtbs==1&&item.ocZt!=1" :href="item.vcUrl+'?name='+item.NId" class="clearfix linkConten">
                         <h3><span>{{item.vcZxtmc}}</span></h3>
                         <p>{{item.vcMsxx}}</p>
                     </a>
