@@ -212,7 +212,6 @@ export default {
         this.getLocal();
         this.$nextTick(function(){
             this.getLeftMenuData();
-            this.getLinkMenu();
         });
 
         document.querySelector('.newTabls').addEventListener('scroll', function(e) {
@@ -229,6 +228,7 @@ export default {
             this.$http.get('biPc/login/getZxtMenus2.gm?nId=4').then(function(res){
                 if(res.data.code=='200'){
                     this.menuData=res.data.data.dataInfo;
+                    this.getLinkMenu();
                 }
             })
             /*this.$http.get('biPc/selfAnaPlatform/getMenus.gm?userName='+this.userName).then(function(res){
