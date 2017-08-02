@@ -588,15 +588,15 @@
                         <th rowspan="2">合同编号</th>
                         <th rowspan="2">产品类型</th>
                         <th rowspan="2">进件渠道</th>
-                        <th rowspan="2">客户姓名</th>
+                        <!--<th rowspan="2">客户姓名</th>
                         <th rowspan="2">客户性别</th>
                         <th rowspan="2">身份证号</th>
-                        <th rowspan="2">手机号</th>
+                        <th rowspan="2">手机号</th>-->
                         <th colspan="8">入催</th>
                         <th colspan="8">出催</th>
-                        <th colspan="2">出催率</th>
+                        <!--<th>出催率</th>-->
                         <th colspan="10">回款</th>
-                        <th colspan="2">回款率</th>
+                       <!-- <th colspan="2">回款率</th>-->
                     </tr>
                     <tr class="cuishoubt2" >
                         <th>总金额</th>
@@ -607,6 +607,7 @@
                         <th>管理费</th>
                         <th>罚息</th>
                         <th>滞纳金</th>
+                       <!-- <th>交易手续费</th>-->
                         <th>总金额</th>
                         <th>本金</th>
                         <th>延期服务费</th>
@@ -615,8 +616,9 @@
                         <th>管理费</th>
                         <th>罚息</th>
                         <th>滞纳金</th>
+                        <!--<th>交易手续费</th>-->
                         <!--<th>用户</th>-->
-                        <th>金额</th>
+                        <!--<th>金额</th>-->
                         <th>总金额</th>
                         <th>本金</th>
                         <th>延期服务费</th>
@@ -625,10 +627,12 @@
                         <th>管理费</th>
                         <th>罚息</th>
                         <th>滞纳金</th>
+                        <!--<th>交易手续费</th>-->
                         <th>提前回款本金</th>
                         <th>提前回款利息</th>
+                        <!--<th>提前回款交易手续费</th>-->
                         <!--<th>用户</th>-->
-                        <th>金额</th>
+                        <!--<th>金额</th>-->
                     </tr>
                     </thead>
                     <tbody class="cuishoubody">
@@ -640,10 +644,12 @@
                             <td>{{item.contract_no}}</td>
                             <td>{{item.product}}</td>
                             <td>{{item.channel}}</td>
-                            <td>{{item.custom_name}}</td>
+                            <!--<td>{{item.custom_name}}</td>
                             <td>{{item.gender}}</td>
                             <td>{{item.id_no}}</td>
-                            <td>{{item.mobile}}</td>
+                            <td>{{item.mobile}}</td>-->
+
+
                             <td>{{item.in_collct_total_amount}}</td>
                             <td>{{item.in_collct_principal}}</td>
                             <td>{{item.in_collct_ext_service_charges}}</td>
@@ -652,6 +658,9 @@
                             <td>{{item.in_collct_management_fee}}</td>
                             <td>{{item.in_collct_penalty}}</td>
                             <td>{{item.in_collct_late_fee}}</td>
+                            <!--<td>此处是入催交易手续费</td>-->
+
+
                             <td>{{item.out_collct_total_amount}}</td>
                             <td>{{item.out_collct_principal}}</td>
                             <td>{{item.out_collct_ext_service_charges}}</td>
@@ -660,7 +669,10 @@
                             <td>{{item.out_collct_management_fee}}</td>
                             <td>{{item.out_collct_penalty}}</td>
                             <td>{{item.out_collct_late_fee}}</td>
-                            <td>{{item.out_collct_rate_total_amount}}</td>
+                            <!--<td>此处是出催交易手续费</td>-->
+                            <!--<td>{{item.out_collct_rate_total_amount}}</td>-->
+
+
                             <td>{{item.payment_total_amount}}</td>
                             <td>{{item.payment_principal}}</td>
                             <td>{{item.payment_ext_service_charges}}</td>
@@ -671,11 +683,12 @@
                             <td>{{item.payment_late_fee}}</td>
                             <td>{{item.payment_adv_pay_principal}}</td>
                             <td>{{item.payment_adv_pay_interest}}</td>
-                            <td>{{item.payment_rate_total_amount}}</td>
+                            <!--<td>提前回款交易手续费</td>-->
+                            <!--<td>{{item.payment_rate_total_amount}}</td>-->
                     </tr>
 
                     </tbody>
-                    <tfoot class="cuishoufoot">
+                    <!--<tfoot class="cuishoufoot">
                     <tr>
                         <td  colspan="11">合计</td>
                         <td>{{defaultMes4Zong.in_collct_total_amount}}</td>
@@ -707,8 +720,9 @@
                         <td>{{defaultMes4Zong.payment_adv_pay_interest}}</td>
                         <td>{{defaultMes4Zong.payment_rate_total_amount}}</td>
                     </tr>
-                    </tfoot>
+                    </tfoot>-->
                 </table>
+                <pages :con-count="form4conCount" :page-count="form4pageCount" :current="form4CurrentPage" @changePage="changePageFn" ref="urlChange"></pages>
             </div>
 
         </div>
@@ -720,7 +734,9 @@
     require('../../../assets/css/tbTable.less');
     require('../../../assets/css/layout.less');
     require('../../../assets/css/urgeMoney.less');
+    import pages from '../../../components/pages.vue';
     import datePicker from '../../../components/Datepicker.vue';
+
 
 export default {
   data(){
@@ -782,17 +798,23 @@ export default {
           selected12:'',
           /*此处是催收案件明细的四个选项*/
           selected13:'',
-          selected14:'',
+          selected14:'M1',
           selected15:'',
           selected16:'',
           allName:'',//催收人员明细人员名字
           allName2:'',//催收案件明细人员名字
+          form4conCount:2,//分页  图表4的总条数
+          form4pageCount:0,//分页  图表4的总页数
+          form4CurrentPage:1,//分页   图表4的当前页
+
 
 
       }
   },
   components:{
       'datapicker':datePicker,
+      'pages':pages,
+
 
   },
   mounted(){
@@ -809,8 +831,10 @@ export default {
       });
       document.querySelector('.newTabls3').addEventListener('scroll',function(e){
           this.querySelector('thead').style.transform='translate(0,'+this.scrollTop+'px)'
-      })
-
+      });
+      document.querySelector('.newTabls4').addEventListener('scroll',function(e){
+          this.querySelector('thead').style.transform='translate(0,'+this.scrollTop+'px)'
+      });
   },
   methods:{
       /*得到页面默认的信息*/
@@ -834,7 +858,7 @@ export default {
               /*此处是默认催收人员明细*/
               this.getStaffData(this.selected9,this.selected10,this.selected11,this.selected12,this.ruyStartTime3,this.startEndRu3,this.chustartTime3,this.startEnd3,this.allName);
               /*此处是默认催收案件明细*/
-              //this.getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
+              this.getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2,this.form4CurrentPage);
           });
       },
       choose(tab){
@@ -845,7 +869,7 @@ export default {
           }else if(tab=='tab3'){
               this.getStaffData(this.selected9,this.selected10,this.selected11,this.selected12,this.ruyStartTime3,this.startEndRu3,this.chustartTime3,this.startEnd3,this.allName);
           }else if(tab=='tab4'){
-              //getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
+              this.getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2,this.form4CurrentPage);
           }
       },
       check(tab){
@@ -856,7 +880,7 @@ export default {
           }else if(tab=='tab3'){
               this.getStaffData(this.selected9,this.selected10,this.selected11,this.selected12,this.ruyStartTime3,this.startEndRu3,this.chustartTime3,this.startEnd3,this.allName);
           }else if(tab=='tab4'){
-              //getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2);
+              this.getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2,this.form4CurrentPage);
           }
       },
 
@@ -949,7 +973,7 @@ export default {
           });
       },
       /*得到催收案件明细*/
-      getCaseData(a,b,c,d,e,f,g,h,i){
+      getCaseData(a,b,c,d,e,f,g,h,i,j){
           //console.log(1);
           var json={
               "collct_company":a,
@@ -963,13 +987,15 @@ export default {
               "collct_user":i,
           };
           var param=encodeURI(JSON.stringify(json));
-          this.$http.get('biPc/collct/case/detail.gm?param='+param+'').then(function(res){
+          this.$http.get('biPc/collct/case/detail.gm?param='+param+'&curPage='+j+'').then(function(res){
               if(res.data.code==203){
                   window.location.href='login.html';
                   return;
               }
-              this.defaultMes4=res.data.data.dataInfo.list_info;
-              this.defaultMes4Zong=res.data.data.dataInfo.total_info;
+              this.defaultMes4=res.data.data.dataInfo.datas;
+              //this.defaultMes4Zong=res.data.data.dataInfo.datas;
+              this.form4conCount=res.data.data.dataInfo.total;//总条数
+              this.form4pageCount=res.data.data.dataInfo.totalPage;//总条数
           });
       },
       /*此处是下载功能*/
@@ -1031,11 +1057,15 @@ export default {
               };
               var param=encodeURI(JSON.stringify(json));
 
-              var downUrl='biPc/collct/case/detail/export.gm?param='+param+'';
+              var downUrl='biPc/collct/case/detail/export.gm?param='+param+'&curPage='+this.form4CurrentPage+'';
               window.location.href=downUrl;
-          }
+          };
 
 
+      },
+      changePageFn(res){
+          this.form4CurrentPage=res;
+          this.getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2,this.form4CurrentPage);
       },
 
 

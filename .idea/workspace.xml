@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1b81e800-db89-4c68-8add-0b720cbeca8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/urgeMoney.less" afterPath="$PROJECT_DIR$/src/assets/css/urgeMoney.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue" afterPath="$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue" />
     </list>
     <ignored path="bi-pc-ui-2.0.iws" />
@@ -25,14 +24,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urgeMoney.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urgeMoney.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/css/urgeMoney.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28404668">
-              <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+            <state vertical-scroll-proportion="-90.44118">
+              <caret line="128" column="25" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
               <folding>
                 <element signature="e#648#777#0" expanded="false" />
                 <element signature="e#3214#3358#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urgeMoney.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6808118">
+              <caret line="1061" column="12" selection-start-line="1061" selection-start-column="12" selection-end-line="1061" selection-end-column="12" />
+              <folding>
+                <element signature="e#45596#45860#0" expanded="false" />
+                <element signature="e#47208#47472#0" expanded="false" />
+                <element signature="e#48018#48313#0" expanded="false" />
+                <element signature="e#49826#50240#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -48,53 +62,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selfHelp.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/css/selfHelp.less">
+      <file leaf-file-name="tbTable.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-              <folding>
-                <element signature="e#3462#4041#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urgeMoney.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.765625">
-              <caret line="583" column="48" selection-start-line="583" selection-start-column="48" selection-end-line="583" selection-end-column="48" />
-              <folding>
-                <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#44570#44834#0" expanded="false" />
-                <element signature="e#46182#46446#0" expanded="false" />
-                <element signature="e#46992#47287#0" expanded="false" />
-                <element signature="e#47780#48559#0" expanded="false" />
-                <element signature="e#48650#49064#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Datepicker.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Datepicker.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.8125">
-              <caret line="515" column="12" selection-start-line="515" selection-start-column="5" selection-end-line="515" selection-end-column="12" />
+            <state vertical-scroll-proportion="-3.59375">
+              <caret line="498" column="41" selection-start-line="498" selection-start-column="41" selection-end-line="498" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tbTable.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue">
+      <file leaf-file-name="pages.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pages.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.2647057">
-              <caret line="294" column="40" selection-start-line="294" selection-start-column="40" selection-end-line="294" selection-end-column="40" />
-              <folding>
-                <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="32.441177">
+              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,10 +85,10 @@
       <file leaf-file-name="tbTable.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/css/tbTable.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-1.1612903">
               <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
               <folding>
-                <element signature="e#4808#4927#0" expanded="false" />
+                <element signature="e#4806#4925#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -119,9 +102,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/assets/css/urgeMoney.less" />
         <option value="$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue" />
         <option value="$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue" />
-        <option value="$PROJECT_DIR$/src/assets/css/urgeMoney.less" />
       </list>
     </option>
   </component>
@@ -231,7 +214,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="selfHelp" />
+              <option name="myItemId" value="businessLine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -254,6 +237,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="businessLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commonTab" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -295,8 +282,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,7 +399,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue</url>
-          <line>293</line>
+          <line>311</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="1" />
@@ -420,28 +407,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="66" selection-start-line="74" selection-start-column="64" selection-end-line="74" selection-end-column="66" />
-          <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -450,7 +420,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
           <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -471,12 +441,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
+            <element signature="e#45596#45860#0" expanded="false" />
+            <element signature="e#47208#47472#0" expanded="false" />
+            <element signature="e#48018#48313#0" expanded="false" />
+            <element signature="e#49826#50240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -485,9 +453,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="432" column="45" selection-start-line="432" selection-start-column="36" selection-end-line="432" selection-end-column="45" />
-          <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -496,7 +462,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
           <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -517,12 +483,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1445" column="34" selection-start-line="1445" selection-start-column="34" selection-end-line="1445" selection-end-column="34" />
           <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
+            <element signature="e#45596#45860#0" expanded="false" />
+            <element signature="e#47208#47472#0" expanded="false" />
+            <element signature="e#48018#48313#0" expanded="false" />
+            <element signature="e#49826#50240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -531,9 +495,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -542,7 +504,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
           <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -563,12 +525,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1445" column="34" selection-start-line="1445" selection-start-column="34" selection-end-line="1445" selection-end-column="34" />
           <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
+            <element signature="e#45596#45860#0" expanded="false" />
+            <element signature="e#47208#47472#0" expanded="false" />
+            <element signature="e#48018#48313#0" expanded="false" />
+            <element signature="e#49826#50240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -577,9 +537,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -588,7 +546,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
           <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -609,12 +567,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
+            <element signature="e#45596#45860#0" expanded="false" />
+            <element signature="e#47208#47472#0" expanded="false" />
+            <element signature="e#48018#48313#0" expanded="false" />
+            <element signature="e#49826#50240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -623,9 +579,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="380" column="54" selection-start-line="380" selection-start-column="40" selection-end-line="380" selection-end-column="54" />
-          <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -634,7 +588,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
           <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -644,12 +598,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
+            <element signature="e#45596#45860#0" expanded="false" />
+            <element signature="e#47208#47472#0" expanded="false" />
+            <element signature="e#48018#48313#0" expanded="false" />
+            <element signature="e#49826#50240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,9 +621,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="424" column="30" selection-start-line="424" selection-start-column="27" selection-end-line="424" selection-end-column="30" />
-          <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -680,7 +630,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
           <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -690,12 +640,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="39" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="39" />
           <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
+            <element signature="e#45596#45860#0" expanded="false" />
+            <element signature="e#47208#47472#0" expanded="false" />
+            <element signature="e#48018#48313#0" expanded="false" />
+            <element signature="e#49826#50240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -715,9 +663,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="424" column="30" selection-start-line="424" selection-start-column="27" selection-end-line="424" selection-end-column="30" />
-          <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +672,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
           <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -736,12 +682,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="39" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="39" />
           <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
+            <element signature="e#45596#45860#0" expanded="false" />
+            <element signature="e#47208#47472#0" expanded="false" />
+            <element signature="e#48018#48313#0" expanded="false" />
+            <element signature="e#49826#50240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -761,9 +705,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="424" column="30" selection-start-line="424" selection-start-column="27" selection-end-line="424" selection-end-column="30" />
-          <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -772,7 +714,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
           <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -782,12 +724,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
           <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
+            <element signature="e#45596#45860#0" expanded="false" />
+            <element signature="e#47208#47472#0" expanded="false" />
+            <element signature="e#48018#48313#0" expanded="false" />
+            <element signature="e#49826#50240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -807,9 +747,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="311" column="37" selection-start-line="310" selection-start-column="16" selection-end-line="311" selection-end-column="37" />
-          <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +756,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="230" column="3" selection-start-line="222" selection-start-column="2" selection-end-line="230" selection-end-column="3" />
           <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -871,23 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/tbTable.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
-          <folding>
-            <element signature="e#4808#4927#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/urgeMoney.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.13111888">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/selfHelp.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -898,21 +819,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/urgeMoney.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2297794">
+          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/urgeMoney.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-90.44118">
+          <caret line="128" column="25" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
+          <folding>
+            <element signature="e#648#777#0" expanded="false" />
+            <element signature="e#3214#3358#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Datepicker.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8125">
+        <state vertical-scroll-proportion="0.043706294">
           <caret line="515" column="12" selection-start-line="515" selection-start-column="5" selection-end-line="515" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue">
+    <entry file="file://$PROJECT_DIR$/src/assets/css/tbTable.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2647057">
-          <caret line="294" column="40" selection-start-line="294" selection-start-column="40" selection-end-line="294" selection-end-column="40" />
+        <state vertical-scroll-proportion="-1.1612903">
+          <caret line="265" column="21" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="21" />
           <folding>
-            <marker date="1501470627192" expanded="true" signature="18592:18606" placeholder="{...}" />
+            <element signature="e#4806#4925#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="32.441177">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -924,28 +871,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue">
+    <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/tbTable.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.765625">
-          <caret line="583" column="48" selection-start-line="583" selection-start-column="48" selection-end-line="583" selection-end-column="48" />
-          <folding>
-            <element signature="n#tbody#0;n#table#0;n#div#2;n#div#3;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#44570#44834#0" expanded="false" />
-            <element signature="e#46182#46446#0" expanded="false" />
-            <element signature="e#46992#47287#0" expanded="false" />
-            <element signature="e#47780#48559#0" expanded="false" />
-            <element signature="e#48650#49064#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-3.59375">
+          <caret line="498" column="41" selection-start-line="498" selection-start-column="41" selection-end-line="498" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/urgeMoney.less">
+    <entry file="file://$PROJECT_DIR$/src/views/businessLine/commonTab/urgeMoney.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28404668">
-          <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.6808118">
+          <caret line="1061" column="12" selection-start-line="1061" selection-start-column="12" selection-end-line="1061" selection-end-column="12" />
           <folding>
-            <element signature="e#648#777#0" expanded="false" />
-            <element signature="e#3214#3358#0" expanded="false" />
+            <element signature="e#45596#45860#0" expanded="false" />
+            <element signature="e#47208#47472#0" expanded="false" />
+            <element signature="e#48018#48313#0" expanded="false" />
+            <element signature="e#49826#50240#0" expanded="false" />
           </folding>
         </state>
       </provider>
