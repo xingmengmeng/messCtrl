@@ -19,7 +19,7 @@
                     <li class="rustart">
                         <div class="chub WZ">入催起止时间</div>
                         <div class="inputDiv WZ">
-                            <datapicker v-model='ruyStartTime1' :min='rustartMinTime1' ></datapicker>
+                            <datapicker v-model='ruyStartTime1' :min='rustartMinTime1' :max="startEndRu1"></datapicker>
                         </div>
                         <div class="inputCenterLine WZ">-</div>
                         <div class="inputDiv WZ">
@@ -29,7 +29,7 @@
                     <li class="chustart">
                         <div class="chub WZ">出催起止时间</div>
                         <div class="inputDiv WZ">
-                            <datapicker v-model='chustartTime1' :min='chustartMinTime1'></datapicker>
+                            <datapicker v-model='chustartTime1' :min='chustartMinTime1' :max="startEnd1"></datapicker>
                         </div>
                         <div class="inputCenterLine WZ">-</div>
                         <div class="inputDiv WZ">
@@ -144,7 +144,7 @@
                     <li class="rustart">
                         <div class="chub WZ">入催起止时间</div>
                         <div class="inputDiv WZ">
-                            <datapicker v-model='ruyStartTime2' :min='rustartMinTime2'></datapicker>
+                            <datapicker v-model='ruyStartTime2' :min='rustartMinTime2' :max="startEndRu2"></datapicker>
                         </div>
                         <div class="inputCenterLine WZ">-</div>
                         <div class="inputDiv WZ">
@@ -154,7 +154,7 @@
                     <li class="chustart">
                         <div class="chub WZ">出催起止时间</div>
                         <div class="inputDiv WZ">
-                            <datapicker v-model='chustartTime2' :min='chustartMinTime2'></datapicker>
+                            <datapicker v-model='chustartTime2' :min='chustartMinTime2' :max="startEnd2"></datapicker>
                         </div>
                         <div class="inputCenterLine WZ">-</div>
                         <div class="inputDiv WZ">
@@ -340,7 +340,7 @@
                     <li class="rustart">
                         <div class="chub WZ">入催起止时间</div>
                         <div class="inputDiv WZ">
-                            <datapicker v-model='ruyStartTime3' :min='rustartMinTime3'></datapicker>
+                            <datapicker v-model='ruyStartTime3' :min='rustartMinTime3' :max="startEndRu3"></datapicker>
                         </div>
                         <div class="inputCenterLine WZ">-</div>
                         <div class="inputDiv WZ">
@@ -350,7 +350,7 @@
                     <li class="chustart">
                         <div class="chub WZ">出催起止时间</div>
                         <div class="inputDiv WZ">
-                            <datapicker v-model='chustartTime3' :min='chustartMinTime3'></datapicker>
+                            <datapicker v-model='chustartTime3' :min='chustartMinTime3' :max="startEnd3"></datapicker>
                         </div>
                         <div class="inputCenterLine WZ">-</div>
                         <div class="inputDiv WZ">
@@ -385,7 +385,7 @@
                 </select>
                 <label>人员</label>
                <!-- @blur是vue中失去焦点，失去焦点后才能走接口，获取需要的名字的数据-->
-                <input type="text"   @blur="choose('tab3')" @enter="choose('tab3')"  v-model="allName" class="people"/>
+                <input type="text"   @blur="choose('tab3')" @enter="choose('tab3')"  @keyup.enter="choose('tab3')" v-model="allName" class="people"/>
 
             </div>
             <!--催收人员明细的表格-->
@@ -530,7 +530,7 @@
                     <li class="rustart">
                         <div class="chub WZ">入催起止时间</div>
                         <div class="inputDiv WZ">
-                            <datapicker v-model='ruyStartTime4' :min='rustartMinTime4'></datapicker>
+                            <datapicker v-model='ruyStartTime4' :min='rustartMinTime4' :max="startEndRu4"></datapicker>
                         </div>
                         <div class="inputCenterLine WZ">-</div>
                         <div class="inputDiv WZ">
@@ -540,7 +540,7 @@
                     <li class="chustart">
                         <div class="chub WZ">出催起止时间</div>
                         <div class="inputDiv WZ">
-                            <datapicker v-model='chustartTime4' :min='chustartMinTime4'></datapicker>
+                            <datapicker v-model='chustartTime4' :min='chustartMinTime4' :max="startEnd4"></datapicker>
                         </div>
                         <div class="inputCenterLine WZ">-</div>
                         <div class="inputDiv WZ">
@@ -574,7 +574,7 @@
                     <option v-for="item in defaultMesAllProduct" v-bind:value="item.value">{{item.name}}</option>
                 </select>
                 <label>人员</label>
-                <input type="text"   @blur="choose('tab4')" @enter="choose('tab4')"  v-model="allName2" class="people"/>
+                <input type="text"   @blur="choose('tab4')" @enter="choose('tab4')" @keyup.enter="choose('tab4')" v-model="allName2" class="people"/>
             </div>
             <!--催收整体概览的表格-->
             <div class="newTabls4 tableWrap">
@@ -745,10 +745,10 @@ export default {
           chustartTime2:'',
           chustartTime3:'',
           chustartTime4:'',
-          chustartMinTime1:'',
-          chustartMinTime2:'',
-          chustartMinTime3:'',
-          chustartMinTime4:'',
+          chustartMinTime1:'2017-6-1',
+          chustartMinTime2:'2017-6-1',
+          chustartMinTime3:'2017-6-1',
+          chustartMinTime4:'2017-6-1',
           chustartMaxTime1:'',
           chustartMaxTime2:'',
           chustartMaxTime3:'',
@@ -761,10 +761,10 @@ export default {
           ruyStartTime2:'',
           ruyStartTime3:'',
           ruyStartTime4:'',
-          rustartMinTime1:'',
-          rustartMinTime2:'',
-          rustartMinTime3:'',
-          rustartMinTime4:'',
+          rustartMinTime1:'2017-6-1',
+          rustartMinTime2:'2017-6-1',
+          rustartMinTime3:'2017-6-1',
+          rustartMinTime4:'2017-6-1',
           startEndRu1:'',
           startEndRu2:'',
           startEndRu3:'',
@@ -845,8 +845,8 @@ export default {
               this.defaultMesAllStage=res.data.data.dataInfo.stage_info;
               this.defaultMesAllChannel=res.data.data.dataInfo.channel_info;
               this.defaultMesAllProduct=res.data.data.dataInfo.product_info;
-              this.rustartMinTime1=this.rustartMinTime2=this.rustartMinTime3=this.rustartMinTime4=res.data.data.dataInfo.date_info.in_start_time;
-              this.chustartMinTime1=this.chustartMinTime2=this.chustartMinTime3=this.chustartMinTime4=res.data.data.dataInfo.date_info.out_start_time;
+              //this.rustartMinTime1=this.rustartMinTime2=this.rustartMinTime3=this.rustartMinTime4=res.data.data.dataInfo.date_info.in_start_time;
+              //this.chustartMinTime1=this.chustartMinTime2=this.chustartMinTime3=this.chustartMinTime4=res.data.data.dataInfo.date_info.out_start_time;
               this.chustartTime1=this.chustartTime2=this.chustartTime3=this.chustartTime4=res.data.data.dataInfo.date_info.out_start_time;
               this.chustartMaxTime1=this.chustartMaxTime2=this.chustartMaxTime3=this.chustartMaxTime4=this.startEnd1=this.startEnd2=this.startEnd3=this.startEnd4=res.data.data.dataInfo.date_info.out_end_time;
               this.ruyStartTime1=this.ruyStartTime2=this.ruyStartTime3=this.ruyStartTime4=res.data.data.dataInfo.date_info.in_start_time;
