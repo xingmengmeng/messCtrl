@@ -869,6 +869,8 @@ export default {
           }else if(tab=='tab3'){
               this.getStaffData(this.selected9,this.selected10,this.selected11,this.selected12,this.ruyStartTime3,this.startEndRu3,this.chustartTime3,this.startEnd3,this.allName);
           }else if(tab=='tab4'){
+              this.form4CurrentPage=1;
+              this.$refs.urlChange.$emit('urlChange');
               this.getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2,this.form4CurrentPage);
           }
       },
@@ -880,6 +882,8 @@ export default {
           }else if(tab=='tab3'){
               this.getStaffData(this.selected9,this.selected10,this.selected11,this.selected12,this.ruyStartTime3,this.startEndRu3,this.chustartTime3,this.startEnd3,this.allName);
           }else if(tab=='tab4'){
+              this.form4CurrentPage=1;
+              this.$refs.urlChange.$emit('urlChange');
               this.getCaseData(this.selected13,this.selected14,this.selected15,this.selected16,this.ruyStartTime4,this.startEndRu4,this.chustartTime4,this.startEnd4,this.allName2,this.form4CurrentPage);
           }
       },
