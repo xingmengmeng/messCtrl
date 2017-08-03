@@ -35,6 +35,7 @@
                 if(e.target.innerHTML=='退出'){
                     this.$http.get('biPc/login/logout.gm').then(function (res) {
                         if(res.data.code==200){
+                            localStorage.clear();
                             window.location.href='login.html';
                         }
                     })

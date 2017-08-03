@@ -116,7 +116,7 @@
         methods:{
             getMenu(){
                 this.getLocal();
-                this.$http.get('biPc/login/getZxtMenus2.gm?nId='+this.urlName).then(function(res){
+                this.$http.get('biPc/login/getZxtMenus2.gm?nId=2').then(function(res){
                     if(res.data.code=='200'){
                         this.resData=res.data.data.dataInfo[0].children;//得到所有的业务线
                         this.resData.forEach((item)=> {
@@ -127,6 +127,7 @@
                             this.$nextTick(function(){
                                 this.resetClass();
                             })
+                            localStorage.setItem('busLeftMenuRoute',this.businessMenu[0].children[0].href);
                         }, this);
                     }
                 })

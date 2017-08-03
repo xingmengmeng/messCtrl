@@ -29,7 +29,11 @@ const router = new VueRouter({
         { path: '/', redirect: '/index'},
         { path: '/index',component: Index},
         {
-            path:'/businessLine',component:businessLine,
+            path:'/businessLine',component:businessLine,redirect:to=>{
+                console.log(to);
+                var cc=localStorage.getItem('busLeftMenuRoute');
+                return cc;
+            },
             children:[
                 { path:'commonTab/tbTable',component:taTable},
                 { path:'commonTab/urgeMoney',component:urgeMoney}
@@ -42,6 +46,14 @@ var myVue=new Vue({
     el: '#app',
     router:router,
     components: { App },
+    mounted () {
+        this.$http.get('biPc/login/getZxtMenus2.gm?nId=2').then(function(res){
+            if(res.data.code=='200'){
+                localStorage.setItem('busLeftMenuRoute',res.data.data.dataInfo[0].children[0].children[0].children[0].href);
+            
+            }
+        })
+    }
 });
 var reqNum=1,nextNum=1;
 Vue.http.interceptors.push(function(request, next) {
@@ -58,6 +70,7 @@ Vue.http.interceptors.push(function(request, next) {
         if(response.status==200){
 
             if(response.body.code==203||response.body.code==undefined){
+                localStorage.clear();
                 window.location.href='login.html';
             }else if(response.body.code==200){
 
