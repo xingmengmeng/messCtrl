@@ -28,8 +28,13 @@
       <file leaf-file-name="urgeMoney.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assets/css/urgeMoney.less">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.47859922">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+=======
+            <state vertical-scroll-proportion="0.28404668">
+              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+>>>>>>> dev
               <folding />
             </state>
           </provider>
@@ -835,8 +840,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/urgeMoney.less">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.47859922">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+=======
+        <state vertical-scroll-proportion="0.28404668">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>

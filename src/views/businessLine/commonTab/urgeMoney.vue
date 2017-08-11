@@ -116,18 +116,21 @@
 
                     </tbody>
                     <tfoot class="cuishoufoot" >
-                    <tr>
+                    <tr v-if="defaultMesZong">
                         <td  colspan="4">合计</td>
                         <td>{{defaultMesZong.in_collct_user_count}}</td>
                         <td>{{defaultMesZong.in_collct_total_amount}}</td>
                         <td>{{defaultMesZong.out_collct_user_count }}</td>
                         <td>{{defaultMesZong.out_collct_total_amount }}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{defaultMesZong.out_collct_rate_user_count}}</td>
+                        <td>{{defaultMesZong.out_collct_rate_total_amount}}</td>
                         <td>{{defaultMesZong.payment_user_count}}</td>
                         <td>{{defaultMesZong.payment_total_amount}}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{defaultMesZong.payment_rate_user_count}}</td>
+                        <td>{{defaultMesZong.payment_rate_total_amount}}</td>
+                    </tr>
+                    <tr v-else>
+                        <td  colspan="14">暂无数据</td>
                     </tr>
                     </tfoot>
                 </table>
@@ -286,9 +289,8 @@
                     </tr>
                     </tbody>
                     <tfoot class="cuishoufoot">
-                    <tr>
+                    <tr v-if="defaultMes2Zong">
                         <td  colspan="4">合计</td>
-
                         <td>{{defaultMes2Zong.in_collct_user_count}}</td>
                         <td>{{defaultMes2Zong.in_collct_total_amount}}</td>
                         <td>{{defaultMes2Zong.in_collct_principal}}</td>
@@ -324,6 +326,9 @@
                         <td>{{defaultMes2Zong.payment_adv_pay_interest}}</td>
                         <td>{{defaultMes2Zong.payment_rate_user_count}}</td>
                         <td>{{defaultMes2Zong.payment_rate_total_amount}}</td>
+                    </tr>
+                    <tr v-else>
+                        <td  colspan="11">暂无数据</td>
                     </tr>
                     </tfoot>
                 </table>
@@ -479,7 +484,7 @@
                     </tr>
                     </tbody>
                     <tfoot class="cuishoufoot">
-                    <tr>
+                    <tr v-if="defaultMes3Zong">
                         <td  colspan="3">合计</td>
                         <td>{{defaultMes3Zong.in_collct_user_count}}</td>
                         <td>{{defaultMes3Zong.in_collct_total_amount}}</td>
@@ -514,6 +519,9 @@
                         <td>{{defaultMes3Zong.payment_adv_pay_interest}}</td>
                         <td>{{defaultMes3Zong.payment_rate_user_count}}</td>
                         <td>{{defaultMes3Zong.payment_rate_total_amount}}</td>
+                    </tr>
+                    <tr v-else>
+                        <td  colspan="14">暂无数据</td>
                     </tr>
                     </tfoot>
                 </table>
@@ -636,7 +644,7 @@
                     </tr>
                     </thead>
                     <tbody class="cuishoubody">
-                        <tr v-for="item in defaultMes4">
+                        <tr v-for="item in defaultMes4" v-if="defaultMes4.length!=0">
                             <td>{{item.collct_company}}</td>
                             <td>{{item.collct_stage}}</td>
                             <td>{{item.collct_user}}</td>
@@ -686,6 +694,9 @@
                             <!--<td>提前回款交易手续费</td>-->
                             <!--<td>{{item.payment_rate_total_amount}}</td>-->
                     </tr>
+                    <!--<tr v-else>
+                        <td  colspan="13">暂无数据</td>
+                    </tr>-->
 
                     </tbody>
                     <!--<tfoot class="cuishoufoot">
@@ -922,9 +933,13 @@ export default {
                   window.location.href='login.html';
                   return;
               };
+
               this.defaultMes=res.data.data.dataInfo.list_info;
               this.defaultMesZong=res.data.data.dataInfo.total_info;
-
+              /*if(this.defaultMesZong!=null){console.log("不是null");
+                  this.defaultMesZong=res.data.data.dataInfo.total_info;
+              }*/
+              //console.log(this.defaultMes.length);
 
           });
       },
@@ -997,6 +1012,7 @@ export default {
                   return;
               }
               this.defaultMes4=res.data.data.dataInfo.datas;
+              console.log(JSON.stringify(this.defaultMes4));
               //this.defaultMes4Zong=res.data.data.dataInfo.datas;
               this.form4conCount=res.data.data.dataInfo.total;//总条数
               this.form4pageCount=res.data.data.dataInfo.totalPage;//总条数
