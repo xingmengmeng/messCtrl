@@ -148,9 +148,8 @@
                         <td>{{defaultMesZong.payment_rate_user_count}}</td>
                         <td>{{defaultMesZong.payment_rate_total_amount}}</td>
                     </tr>
-                    <div v-else>
-                        <td  colspan="14">暂无数据</td>
-                        <!--<img src="../../../assets/images/nodata.png" />-->
+                    <div v-else class="noDate1">
+                        暂无数据......
                     </div>
                     </tfoot>
 
@@ -368,9 +367,9 @@
                         <td>{{defaultMes2Zong.payment_rate_user_count}}</td>
                         <td>{{defaultMes2Zong.payment_rate_total_amount}}</td>
                     </tr>
-                    <tr v-else>
-                        <td  colspan="11">暂无数据</td>
-                    </tr>
+                    <div v-else class="noDate2">
+                        暂无数据......
+                    </div>
                     </tfoot>
                 </table>
             </div>
@@ -456,10 +455,12 @@
                     <tr class="cuishoubt1" >
                         <th rowspan="2">催收公司</th>
                         <th rowspan="2">催收阶段</th>
-                        <th rowspan="2">催收人员</th>
                         <th rowspan="2">账龄</th>
                         <th rowspan="2">逾期类型</th>
                         <th rowspan="2">逾期次数</th>
+                        <th rowspan="2">产品类型</th>
+                        <th rowspan="2">进件渠道</th>
+                        <th rowspan="2">催收人员</th>
                         <th colspan="9">入催</th>
                         <th colspan="9">出催</th>
                         <th colspan="2">出催率</th>
@@ -506,10 +507,14 @@
                     <tr v-for="item in defaultMes3">
                         <td>{{item.collct_company}}</td>
                         <td>{{item.collct_stage}}</td>
-                        <td>{{item.collct_user}}</td>
                         <td>{{item.account_age}}</td>
                         <td>{{item.overdue_type}}</td>
                         <td>{{item.overdue_times}}</td>
+
+                        <td>{{item.product}}</td>
+                        <td>{{item.channel}}</td>
+
+                        <td>{{item.collct_user}}</td>
                         <td>{{item.in_collct_user_count}}</td>
                         <td>{{item.in_collct_total_amount}}</td>
                         <td>{{item.in_collct_principal}}</td>
@@ -547,7 +552,7 @@
                     </tbody>
                     <tfoot class="cuishoufoot">
                     <tr v-if="defaultMes3Zong">
-                        <td  colspan="6">合计</td>
+                        <td  colspan="8">合计</td>
                         <td>{{defaultMes3Zong.in_collct_user_count}}</td>
                         <td>{{defaultMes3Zong.in_collct_total_amount}}</td>
                         <td>{{defaultMes3Zong.in_collct_principal}}</td>
@@ -582,9 +587,9 @@
                         <td>{{defaultMes3Zong.payment_rate_user_count}}</td>
                         <td>{{defaultMes3Zong.payment_rate_total_amount}}</td>
                     </tr>
-                    <tr v-else>
-                        <td  colspan="14">暂无数据</td>
-                    </tr>
+                    <div v-else class="noDate3">
+                        暂无数据......
+                    </div>
                     </tfoot>
                 </table>
             </div>
@@ -732,8 +737,8 @@
                         <!--<th>金额</th>-->
                     </tr>
                     </thead>
-                    <tbody class="cuishoubody">
-                        <tr v-for="item in defaultMes4" v-if="defaultMes4.length!=0">
+                    <tbody class="cuishoubody" v-if="defaultMes4.length!=0">
+                        <tr v-for="item in defaultMes4" >
                             <td>{{item.collct_company}}</td>
                             <td>{{item.collct_stage}}</td>
                             <td>{{item.collct_user}}</td>
@@ -789,44 +794,10 @@
                             <!--<td>提前回款交易手续费</td>-->
                             <!--<td>{{item.payment_rate_total_amount}}</td>-->
                     </tr>
-                    <!--<tr v-else>
-                        <td  colspan="13">暂无数据</td>
-                    </tr>-->
-
                     </tbody>
-                    <!--<tfoot class="cuishoufoot">
-                    <tr>
-                        <td  colspan="11">合计</td>
-                        <td>{{defaultMes4Zong.in_collct_total_amount}}</td>
-                        <td>{{defaultMes4Zong.in_collct_principal}}</td>
-                        <td>{{defaultMes4Zong.in_collct_ext_service_charges}}</td>
-                        <td>{{defaultMes4Zong.in_collct_interest}}</td>
-                        <td>{{defaultMes4Zong.in_collct_service_charges}}</td>
-                        <td>{{defaultMes4Zong.in_collct_management_fee}}</td>
-                        <td>{{defaultMes4Zong.in_collct_penalty}}</td>
-                        <td>{{defaultMes4Zong.in_collct_late_fee}}</td>
-                        <td>{{defaultMes4Zong.out_collct_total_amount}}</td>
-                        <td>{{defaultMes4Zong.out_collct_principal}}</td>
-                        <td>{{defaultMes4Zong.out_collct_ext_service_charges}}</td>
-                        <td>{{defaultMes4Zong.out_collct_interest}}</td>
-                        <td>{{defaultMes4Zong.out_collct_service_charges}}</td>
-                        <td>{{defaultMes4Zong.out_collct_management_fee}}</td>
-                        <td>{{defaultMes4Zong.out_collct_penalty}}</td>
-                        <td>{{defaultMes4Zong.out_collct_late_fee}}</td>
-                        <td>{{defaultMes4Zong.out_collct_rate_total_amount}}</td>
-                        <td>{{defaultMes4Zong.payment_total_amount}}</td>
-                        <td>{{defaultMes4Zong.payment_principal}}</td>
-                        <td>{{defaultMes4Zong.payment_ext_service_charges}}</td>
-                        <td>{{defaultMes4Zong.payment_interest}}</td>
-                        <td>{{defaultMes4Zong.payment_service_charges}}</td>
-                        <td>{{defaultMes4Zong.payment_management_fee}}</td>
-                        <td>{{defaultMes4Zong.payment_penalty}}</td>
-                        <td>{{defaultMes4Zong.payment_late_fee}}</td>
-                        <td>{{defaultMes4Zong.payment_adv_pay_principal}}</td>
-                        <td>{{defaultMes4Zong.payment_adv_pay_interest}}</td>
-                        <td>{{defaultMes4Zong.payment_rate_total_amount}}</td>
-                    </tr>
-                    </tfoot>-->
+                    <div v-else class="noDate">
+                        暂无数据......
+                    </div>
                 </table>
 
             </div>
@@ -895,7 +866,7 @@ export default {
           selected2:'M1',
           selected3:'',
           selected4:'',
-          selectedAge1:'',
+          selectedAge1:'1',
           selectedoverdueType1:'',
           selectedoverdueTimes1:'',
 
@@ -904,7 +875,7 @@ export default {
           selected6:'M1',
           selected7:'',
           selected8:'',
-          selectedAge2:'',
+          selectedAge2:'1',
           selectedoverdueType2:'',
           selectedoverdueTimes2:'',
 
@@ -913,7 +884,7 @@ export default {
           selected10:'M1',
           selected11:'',
           selected12:'',
-          selectedAge3:'',
+          selectedAge3:'1',
           selectedoverdueType3:'',
           selectedoverdueTimes3:'',
           /*此处是催收案件明细的四个选项*/
@@ -921,7 +892,7 @@ export default {
           selected14:'M1',
           selected15:'',
           selected16:'',
-          selectedAge4:'',
+          selectedAge4:'1',
           selectedoverdueType4:'',
           selectedoverdueTimes4:'',
           allName:'',//催收人员明细人员名字
