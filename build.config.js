@@ -10,13 +10,14 @@ var config = {
     entry: { //配置入口文件，有几个写几个
         index: './src/main.js',
         login: './src/login.js',
+        selfHelp: './src/selfHelp.js',
     },
     // 编译的文件路径
     output: {
         path: path.join(__dirname, 'dist'), //打包后生成的目录
         publicPath: '',	//模板、样式、脚本、图片等资源对应的server上的路径
         filename: 'js/[name].[hash:6].js',	//根据对应入口名称，生成对应js名称
-        //chunkFilename: 'js/[id].chunk.js'   //chunk生成的配置
+        chunkFilename: 'js/[id].chunk.js'   //chunk生成的配置
     },
     resolve: {
         extensions: ['', '.js', '.vue'],
@@ -49,6 +50,17 @@ var config = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),// 清空dist文件夹
+        new webpack.optimize.UglifyJsPlugin({
+            comments: false,        //去掉注释
+            compress: {
+                warnings: false    //忽略警告,要不然会有一大堆的黄色字体出现……
+            }
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify("production"),
+            },
+        })
     ],
 }
 module.exports = config;
@@ -57,6 +69,7 @@ var pages = Object.keys(getEntry('./src/*.html'));
 var confTitle = [
     {name: 'index', title: '这是首页标题'},
     {name: 'login', title: '这是登录标题'},
+    {name:'selfHelp',title:'自助分析平台'}
 ]
 //生成HTML模板
 pages.forEach(function(pathname) {
