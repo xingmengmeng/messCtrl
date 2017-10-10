@@ -263,8 +263,8 @@
                         <th>管理费</th>
                         <th>罚息</th>
                         <th>滞纳金</th>
-                        <th>用户</th>
-                        <th>金额</th>
+                        <th>用户数</th>
+                        <th>总金额</th>
                         <th >用户数</th>
                         <th>总金额</th>
                         <th>本金</th>
@@ -278,8 +278,8 @@
                         <th>提前结清服务费</th>
                         <th>提前回款本金</th>
                         <th>提前回款利息</th>
-                        <th>用户</th>
-                        <th>金额</th>
+                        <th>用户数</th>
+                        <th>总金额</th>
                     </tr>
                     </thead>
                     <tbody class="cuishoubody">
@@ -486,8 +486,8 @@
                         <th>管理费</th>
                         <th>罚息</th>
                         <th>滞纳金</th>
-                        <th>用户</th>
-                        <th>金额</th>
+                        <th>用户数</th>
+                        <th>总金额</th>
                         <th >用户数</th>
                         <th>总金额</th>
                         <th>本金</th>
@@ -499,8 +499,8 @@
                         <th>滞纳金</th>
                         <th>提前回款本金</th>
                         <th>提前回款利息</th>
-                        <th>用户</th>
-                        <th>金额</th>
+                        <th>用户数</th>
+                        <th>总金额</th>
                     </tr>
                     </thead>
                     <tbody class="cuishoubody">
@@ -956,6 +956,7 @@ export default {
               this.ruyStartTime1=this.ruyStartTime2=this.ruyStartTime3=this.ruyStartTime4=res.data.data.dataInfo.date_info.in_start_time;
               this.startEndRu1=this.startEndRu2=this.startEndRu3=this.startEndRu4=res.data.data.dataInfo.date_info.in_end_time;
               /*此处是默认催收整体概览*/
+              //console.log(this.selectedoverdueType1);
               this.getAllData(this.selected1,this.selected2,this.selected3,this.selected4,this.selectedAge1,this.selectedoverdueType1,this.selectedoverdueTimes1,this.ruyStartTime1,this.startEndRu1,this.chustartTime1,this.startEnd1);
               /*此处是默认催收整体明细*/
               this.getDetailData(this.selected5,this.selected6,this.selected7,this.selected8,this.selectedAge2,this.selectedoverdueType2,this.selectedoverdueTimes2,this.ruyStartTime2,this.startEndRu2,this.chustartTime2,this.startEnd2);
@@ -967,6 +968,7 @@ export default {
       },
       choose(tab){
           if(tab=='tab1'){
+              //console.log(this.selectedoverdueType1);
               this.getAllData(this.selected1,this.selected2,this.selected3,this.selected4,this.selectedAge1,this.selectedoverdueType1,this.selectedoverdueTimes1,this.ruyStartTime1,this.startEndRu1,this.chustartTime1,this.startEnd1);
           }else if(tab=='tab2'){
               this.getDetailData(this.selected5,this.selected6,this.selected7,this.selected8,this.selectedAge2,this.selectedoverdueType2,this.selectedoverdueTimes2,this.ruyStartTime2,this.startEndRu2,this.chustartTime2,this.startEnd2);
@@ -982,6 +984,7 @@ export default {
       },
       check(tab){
           if(tab=='tab1'){
+              //console.log(this.selectedoverdueType1);
               this.getAllData(this.selected1,this.selected2,this.selected3,this.selected4,this.selectedAge1,this.selectedoverdueType1,this.selectedoverdueTimes1,this.ruyStartTime1,this.startEndRu1,this.chustartTime1,this.startEnd1);
           }else if(tab=='tab2'){
               this.getDetailData(this.selected5,this.selected6,this.selected7,this.selected8,this.selectedAge2,this.selectedoverdueType2,this.selectedoverdueTimes2,this.ruyStartTime2,this.startEndRu2,this.chustartTime2,this.startEnd2);
@@ -1012,6 +1015,7 @@ export default {
               "out_start_time": g,
               "out_end_time":h,
           };
+         // console.log(json);
           //console.log(json);
           /*var json={
               "collct_company":this.selected1,
@@ -1024,7 +1028,8 @@ export default {
               "out_end_time":this.startEnd1,
           }*/
          /* 将json格式转换为字符串类型，因为encodeURI只识别字符串*/
-          var param=encodeURI(JSON.stringify(json));
+          var param=encodeURIComponent(JSON.stringify(json));
+         // console.log(param);
           //console.log(param);
           //var allHttp=encodeURI('biPc/collct/overall/glance.gm?collct_company='+this.selected1+'&collct_stage='+this.selected2+'&channel='+this.selected3+'&product='+this.selected4+'&in_start_time='+this.ruyStartTime1+'&in_end_time='+this.startEndRu1+'');
           //var allHttp='biPc/collct/overall/glance.gm';
@@ -1058,7 +1063,8 @@ export default {
               "out_start_time": g,
               "out_end_time":h,
           };
-          var param=encodeURI(JSON.stringify(json));
+         // var param=encodeURI(JSON.stringify(json));
+          var param=encodeURIComponent(JSON.stringify(json));
 
           this.$http.get('biPc/collct/overall/detail.gm?param='+param+'').then(function(res){
               if(res.data.code==203){
@@ -1086,7 +1092,7 @@ export default {
               "out_end_time":h,
               "collct_user":i,
           };
-          var param=encodeURI(JSON.stringify(json));
+          var param=encodeURIComponent(JSON.stringify(json));
           this.$http.get('biPc/collct/user/detail.gm?param='+param+'&curPage='+m+'').then(function(res){
               if(res.data.code==203){
                   window.location.href='login.html';
@@ -1121,7 +1127,7 @@ export default {
               "collct_user":i,
 
           };
-          var param=encodeURI(JSON.stringify(json));
+          var param=encodeURIComponent(JSON.stringify(json));
           this.$http.get('biPc/collct/case/detail.gm?param='+param+'&curPage='+j+'').then(function(res){
               if(res.data.code==203){
                   window.location.href='login.html';
@@ -1150,7 +1156,7 @@ export default {
                   "out_start_time": this.chustartTime1,
                   "out_end_time":this.startEnd1,
               };
-              var param=encodeURI(JSON.stringify(json));
+              var param=encodeURIComponent(JSON.stringify(json));
               var downUrl='biPc/collct/overall/glance/export.gm?param='+param+'';
               window.location.href=downUrl;
           }else if(tab=='tab2'){
@@ -1167,7 +1173,7 @@ export default {
                   "out_start_time": this.chustartTime2,
                   "out_end_time":this.startEnd2,
               };
-              var param=encodeURI(JSON.stringify(json));
+              var param=encodeURIComponent(JSON.stringify(json));
               var downUrl='biPc/collct/overall/detail/export.gm?param='+param+'';
               window.location.href=downUrl;
           }else if(tab=='tab3'){
@@ -1185,7 +1191,7 @@ export default {
                   "out_end_time":this.startEnd3,
                   "collct_user":this.allName,
               };
-              var param=encodeURI(JSON.stringify(json));
+              var param=encodeURIComponent(JSON.stringify(json));
               var downUrl='biPc/collct/user/detail/export.gm?param='+param+'&curPage='+this.form3CurrentPage+'';
               window.location.href=downUrl;
           }else if(tab=='tab4'){
@@ -1198,15 +1204,15 @@ export default {
                   "overdue_type":this.selectedoverdueType4,
                   "overdue_times":this.selectedoverdueTimes4,
                   "custom_name":this.BigName,
-                  "id_no":this.phone,
-                  "mobile":this.identify,
+                  "id_no":this.identify,
+                  "mobile":this.phone,
                   "in_start_time":this.ruyStartTime4,
                   "in_end_time":this.startEndRu4,
                   "out_start_time": this.chustartTime4,
                   "out_end_time":this.startEnd4,
                   "collct_user":this.allName2,
               };
-              var param=encodeURI(JSON.stringify(json));
+              var param=encodeURIComponent(JSON.stringify(json));
 
               var downUrl='biPc/collct/case/detail/export.gm?param='+param+'&curPage='+this.form4CurrentPage+'';
               window.location.href=downUrl;
