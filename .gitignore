@@ -5,9 +5,9 @@ ehthumbs.db
 .project
 node_modules/
 build/
-dist/
 test.js
 test/
+dev/
 
 # Folder config file
 Desktop.ini
