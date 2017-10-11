@@ -119,19 +119,20 @@
                 this.$http.get('biPc/login/getZxtMenus2.gm?nId=2').then(function(res){
                     if(res.data.code=='200'){
                         this.resData=res.data.data.dataInfo[0].children;//得到所有的业务线
-                        /*this.resData.forEach((item)=> {
-                            if(item.ocMenubm==this.ocMenubm){
-                                this.businessMenu=item.children;//得到要显示的二级下所有
-                                this.businessName=item.name;
+                        //判断本地有没有存储业务线  没有则得到返回值的第一个子元素，即当前显示菜单
+                        if(localStorage.ocMenubm){
+                            for(let cur of this.resData){
+                                if(cur.ocMenubm==localStorage.ocMenubm){
+                                    this.businessMenu=cur.children;
+                                    this.businessName=cur.name;
+                                    
+                                }
                             }
-                            this.$nextTick(function(){
-                                this.resetClass();
-                            })
-                            localStorage.setItem('busLeftMenuRoute',this.businessMenu[0].children[0].href);
-                        }, this);*/
-                        //得到返回值的第一个子元素，即当前显示菜单
-                        this.businessMenu=this.resData[0].children;
-                        this.businessName=this.resData[0].name;
+                        }else{
+                            this.businessMenu=this.resData[0].children;
+                            this.businessName=this.resData[0].name;
+                            
+                        }
                         this.$nextTick(function(){
                             this.resetClass();
                         })
@@ -187,6 +188,7 @@
                     if(cur.ocMenubm==item.ocMenubm){
                         this.businessMenu=item.children;//得到要显示的二级下所有
                         this.businessName=item.name;
+                        localStorage.ocMenubm=item.ocMenubm;//存储当前显示业务线
                     }
                     this.$nextTick(function(){
                         this.resetClass();
