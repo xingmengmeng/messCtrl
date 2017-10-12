@@ -1,0 +1,167 @@
+.mainContainer{
+    width: 100%;
+    .mainTitle{
+        margin-top: 10px;
+        background: #fff;
+        box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 12px;
+        position: relative;
+        h4{
+            font-size: 16px;
+            font-weight: normal;
+        }
+    }
+    .download{
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        margin-top: -11px;
+        width: 22px;
+        height: 22px;
+        background: url(../images/icon_2.png);
+        font-size:0;
+        cursor: pointer;
+    }
+    .conditionChoose{
+        display: -webkit-flex;
+        height: 40px;
+        -webkit-align-items: center;
+        margin-top: 10px;
+        background: #fff;
+        box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        width: 100%;
+        padding-left: 1%;
+        .sel{
+            width: 24%;
+        }
+        .company{
+            padding: 0 5px;
+            height: 28px;
+            line-height: 28px;
+            box-sizing: border-box;
+            width: 60%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url(../../assets/images/downs.png) no-repeat 95% 55%;
+            border: 1px solid #D4D4D4;
+            border-radius: 2px;
+            option{
+                text-align: center;
+                font-size: 12px;
+                color: #666666;
+            }
+        }
+        .dateChoose{
+            width: 38%;
+            display: -webkit-flex;
+            -webkit-align-items: center;
+            span{
+                display: block;
+            }
+            .btns{
+                li{
+                    float: left;
+                    width: 58px;
+                    height: 28px;
+                    line-height: 28px;
+                    border: 1px solid #D4D4D4;
+                    border-radius: 2px;
+                    text-align: center;
+                    border-right: none;
+                }
+            }
+            input{
+                padding: 0 5px;
+                height: 29.5px;
+                line-height: 29.5px;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border: 1px solid #D4D4D4;
+                border-radius: 2px;
+            }
+        }
+        .intoPieces{
+            width: 38%;
+            text-align: right;
+            padding-right: 1%;
+            button{
+                width: 60px;
+                height: 30px;
+                border: 0;
+                margin-left: 4%;
+                cursor: pointer;
+                background: #03BBFF;
+                border-radius: 2px;
+                font-size: 14px;
+                color: #FFFFFF;
+            }
+            input{
+                padding: 0 5px;
+                height: 28px;
+                line-height: 28px;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border: 1px solid #D4D4D4;
+                border-radius: 2px;
+            }
+        }
+    }
+    .mainContent{
+        margin-top: 10px;
+        background: #fff;
+        box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        width: 100%;
+        height: 780px;
+        .tableBlock{
+            width: 100%;
+            overflow-x: scroll;
+            height: 90%;
+            table{
+                width:110%;
+                height: 99%;
+                th{
+                    border: 1px solid #eef1f9;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    background: #f9fafd;
+                    padding: 8px 10px;
+                    &:first-child{
+                        border-left: none;
+                    }
+                    &:last-child{
+                        border-right: none;
+                    }
+                }
+                tr{
+                    &:nth-of-type(even){
+                        background: #f9fafd;
+                    }
+                    &:nth-of-type(odd){
+                        background: #fff;
+                    }
+                    td{
+                        border: 1px solid #eef1f9;
+                        font-size: 14px;
+                        &:first-child{
+                            border-left: none;
+                        }
+                        &:last-child{
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

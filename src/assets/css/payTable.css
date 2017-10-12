@@ -1,0 +1,163 @@
+.mainContainer {
+  width: 100%;
+}
+.mainContainer .mainTitle {
+  margin-top: 10px;
+  background: #fff;
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 12px;
+  position: relative;
+}
+.mainContainer .mainTitle h4 {
+  font-size: 16px;
+  font-weight: normal;
+}
+.mainContainer .download {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  margin-top: -11px;
+  width: 22px;
+  height: 22px;
+  background: url(../images/icon_2.png);
+  font-size: 0;
+  cursor: pointer;
+}
+.mainContainer .conditionChoose {
+  display: -webkit-flex;
+  height: 40px;
+  -webkit-align-items: center;
+  margin-top: 10px;
+  background: #fff;
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 1%;
+}
+.mainContainer .conditionChoose .sel {
+  width: 24%;
+}
+.mainContainer .conditionChoose .company {
+  padding: 0 5px;
+  height: 28px;
+  line-height: 28px;
+  box-sizing: border-box;
+  width: 60%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../../assets/images/downs.png) no-repeat 95% 55%;
+  border: 1px solid #D4D4D4;
+  border-radius: 2px;
+}
+.mainContainer .conditionChoose .company option {
+  text-align: center;
+  font-size: 12px;
+  color: #666666;
+}
+.mainContainer .conditionChoose .dateChoose {
+  width: 38%;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+}
+.mainContainer .conditionChoose .dateChoose span {
+  display: block;
+}
+.mainContainer .conditionChoose .dateChoose .btns li {
+  float: left;
+  width: 58px;
+  height: 28px;
+  line-height: 28px;
+  border: 1px solid #D4D4D4;
+  border-radius: 2px;
+  text-align: center;
+  border-right: none;
+}
+.mainContainer .conditionChoose .dateChoose input {
+  padding: 0 5px;
+  height: 29.5px;
+  line-height: 29.5px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #D4D4D4;
+  border-radius: 2px;
+}
+.mainContainer .conditionChoose .intoPieces {
+  width: 38%;
+  text-align: right;
+  padding-right: 1%;
+}
+.mainContainer .conditionChoose .intoPieces button {
+  width: 60px;
+  height: 30px;
+  border: 0;
+  margin-left: 4%;
+  cursor: pointer;
+  background: #03BBFF;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+.mainContainer .conditionChoose .intoPieces input {
+  padding: 0 5px;
+  height: 28px;
+  line-height: 28px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #D4D4D4;
+  border-radius: 2px;
+}
+.mainContainer .mainContent {
+  margin-top: 10px;
+  background: #fff;
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+  height: 780px;
+}
+.mainContainer .mainContent .tableBlock {
+  width: 100%;
+  overflow-x: scroll;
+  height: 90%;
+}
+.mainContainer .mainContent .tableBlock table {
+  width: 110%;
+  height: 99%;
+}
+.mainContainer .mainContent .tableBlock table th {
+  border: 1px solid #eef1f9;
+  box-sizing: border-box;
+  font-size: 14px;
+  background: #f9fafd;
+  padding: 8px 10px;
+}
+.mainContainer .mainContent .tableBlock table th:first-child {
+  border-left: none;
+}
+.mainContainer .mainContent .tableBlock table th:last-child {
+  border-right: none;
+}
+.mainContainer .mainContent .tableBlock table tr:nth-of-type(even) {
+  background: #f9fafd;
+}
+.mainContainer .mainContent .tableBlock table tr:nth-of-type(odd) {
+  background: #fff;
+}
+.mainContainer .mainContent .tableBlock table tr td {
+  border: 1px solid #eef1f9;
+  font-size: 14px;
+}
+.mainContainer .mainContent .tableBlock table tr td:first-child {
+  border-left: none;
+}
+.mainContainer .mainContent .tableBlock table tr td:last-child {
+  border-right: none;
+}

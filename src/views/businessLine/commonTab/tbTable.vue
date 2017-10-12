@@ -309,16 +309,16 @@
     </div>
 </template>
 <script type="text/ecmascript-6">
-    require('../../../assets/css/tbTable.less');
-    require('../../../assets/css/layout.less');
+    require('../../../assets/css/tbTable.less');//推标特有的样式
+    require('../../../assets/css/layout.less');//全局样式
 
-    import pages from '../../../components/pages.vue';
-    import datePicker from '../../../components/Datepicker.vue';
-    import overBoxOneLine from '../../../components/overBoxOneLine.vue';
-    import pushMarker from '../../../components/pushMarker.vue';
-    import confirmCom from '../../../components/confirmCom.vue';
+    import pages from '../../../components/pages.vue';//分页组件
+    import datePicker from '../../../components/Datepicker.vue';//日历插件
+    import overBoxOneLine from '../../../components/overBoxOneLine.vue';//只有一行的提示框
+    import pushMarker from '../../../components/pushMarker.vue';//推标的提示
+    import confirmCom from '../../../components/confirmCom.vue';//确认的提示
 
-    import setLeftHeight from '../../../assets/js/setLeftHeight';
+    import setLeftHeight from '../../../assets/js/setLeftHeight';//设置左边栏的高度
 
     export default {
         data(){
