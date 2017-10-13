@@ -66,6 +66,7 @@
             }
             .btns{
                 li{
+                    cursor: pointer;
                     float: left;
                     width: 58px;
                     height: 28px;
@@ -74,6 +75,9 @@
                     border-radius: 2px;
                     text-align: center;
                     border-right: none;
+                    &.active{
+                        border-bottom: 3px solid #03BBFF;
+                    }
                 }
             }
             input{
@@ -86,6 +90,7 @@
                 appearance: none;
                 border: 1px solid #D4D4D4;
                 border-radius: 2px;
+                background: url(../../assets/images/canl.png) 96% center no-repeat;
             }
         }
         .intoPieces{

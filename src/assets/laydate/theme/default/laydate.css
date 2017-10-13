@@ -21,7 +21,7 @@
 .laydate-next-y{
     background: url(../../../images/timeRY.png) center no-repeat;
 }
-.laydate-theme-molv .layui-laydate-header i{
+.layui-laydate-main .layui-laydate-header i{
     display: inline-block;
     width: 13px;
     font-size: 0;

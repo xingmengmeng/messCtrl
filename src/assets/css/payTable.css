@@ -68,6 +68,7 @@
   display: block;
 }
 .mainContainer .conditionChoose .dateChoose .btns li {
+  cursor: pointer;
   float: left;
   width: 58px;
   height: 28px;
@@ -76,6 +77,9 @@
   border-radius: 2px;
   text-align: center;
   border-right: none;
+}
+.mainContainer .conditionChoose .dateChoose .btns li.active {
+  border-bottom: 3px solid #03BBFF;
 }
 .mainContainer .conditionChoose .dateChoose input {
   padding: 0 5px;
@@ -87,6 +91,7 @@
   appearance: none;
   border: 1px solid #D4D4D4;
   border-radius: 2px;
+  background: url(../../assets/images/canl.png) 96% center no-repeat;
 }
 .mainContainer .conditionChoose .intoPieces {
   width: 38%;
