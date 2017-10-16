@@ -19,7 +19,7 @@
         	<div class="conditionChoose">
         		<div class="sel">
         			<label class="companyp">业务主体：</label>
-	                <select class="company" >
+	                <select class="company" v-model="selectRe">
 	                    <option :value="items.value" v-if="defaultMes.incomeModelCom" v-for="items in defaultMes.incomeModelCom">{{items.text}}</option>
 	                </select>
         		</div>
@@ -40,8 +40,8 @@
         		</div>
         		<div class="intoPieces">
         			<label>进件编码：</label>
-        			<input type="text" />
-        			<button>查询</button>
+        			<input class="typeInput" type="text" v-model="intoPiecesRe"/>
+        			<input type="button" value="查询" class="btn" @click="inquireData">
         		</div>
         	</div>
         	<div class="mainContent">
@@ -60,22 +60,27 @@
         						<th>完成时间</th>
         					</tr>
         				</thead>
-        				<tbody>
+        				<tbody v-if="tableDetail.payChannelDetails && tableDetail.payChannelDetails.length != 0">
+        					<tr v-for="item in tableDetail.payChannelDetails">
+        						<td>{{items.appNo}}</td>
+        						<td>{{items.contractNo}}</td>
+        						<td>{{items.incomeModel}}</td>
+        						<td>{{items.orderId}}</td>
+        						<td>{{items.chnid}}</td>
+        						<td>{{items.bizidPayment}}</td>
+        						<td>{{items.bizidReceipt}}</td>
+        						<td>{{items.amount}}</td>
+        						<td>{{items.completetime}}</td>
+        					</tr>
+        				</tbody>
+        				<tbody v-else>
         					<tr>
-        						<td>进件编码</td>
-        						<td>合同编号</td>
-        						<td>业务主体</td>
-        						<td>核心账务订单编号</td>
-        						<td>三方支付渠道</td>
-        						<td>三方支付渠道放款订单号</td>
-        						<td>三方支付渠道汇款订单号</td>
-        						<td>交易金额</td>
-        						<td>完成时间</td>
+        						<td colspan="9">暂无业务数据</td>
         					</tr>
         				</tbody>
         			</table>
         		</div>
-        		<pages :con-count="1" :page-count="1" :current="1" @changePage="" ref=""></pages>
+        		<pages :con-count="formconCount" :page-count="formpageCount" :current="formCurrentPage" @changePage="" ref=""></pages>
         	</div>
         </section>
 	</div>
@@ -98,11 +103,17 @@
 				startYear: '',//日历默认显示日期		年
 				startRange: '',//日历默认显示日期		区间
 				defaultMes: '',//初始加载信息
-				initDate: '日'
+				initDate: '日',//默认显示的日历模式
+				sendData: '',//查询数据传的参数
+				selectRe: '',//业务主体的选中值
+				intoPiecesRe: '',//进件编码的输入值
+				formconCount: 0,//总条数
+				formpageCount: 1,//总页数
+				formCurrentPage: 1,//当前页
+				tableDetail:''//查询后的数据
 			}
 		},
 		mounted(){
-			this.showCalendar();//日历默认显示
 			this.getData();//获取默认信息
 		},
 		components:{
@@ -117,41 +128,107 @@
                         return;
                     }
 					this.defaultMes = res.data.data.dataInfo;
-					this.startDay = this.defaultMes.day;
-					this.startMonth = this.defaultMes.month;
-					this.startYear = this.defaultMes.year;
-					this.startRange = this.defaultMes.section.replace(',',' - ');
+					this.startDay = this.defaultMes.day;		//日
+					this.startMonth = this.defaultMes.month;	//月
+					this.startYear = this.defaultMes.year;		//年
+					this.startRange = this.defaultMes.section.replace(',',' - ');//区间
+					//日历默认显示
+					this.showCalendar();
+					//获取查询后的表格详情
+					this.sendData = {
+						incomeModel: this.selectRe,
+						appNo: this.intoPiecesRe,
+						date: this.startDay,
+						page: this.formCurrentPage,
+						row: 15
+					}
+					this.getDetail(encodeURIComponent(JSON.stringify(this.sendData)));
                 });
             },
+            //获取查询后的表格详情
+            getDetail(sendData){
+            	this.$http.get('biPc/payChannel/data.gm?pcQueryModel='+sendData).then(function (res) {
+                    if(res.data.code==203){
+                        window.location.href='login.html';
+                        return;
+                    }
+					this.tableDetail = res.data.data.dataInfo;
+					this.formconCount = this.tableDetail.totalRows,//总条数
+					this.formpageCount = this.tableDetail.totalPages,//总页数
+					this.formCurrentPage = this.tableDetail.page//当前页
+                });
+            },
+            //日历插件默认显示
             showCalendar(){
-            	//日历插件默认显示
-            	let aboutDay = laydate.render({
+       			let _this = this;
+            	var aboutDay = laydate.render({
 					elem: '#aboutDay',
 					theme: '#03BBFF',
-					value: this.startDay
+					value: _this.startDay,
+					btns: ['confirm'],
+					min: '2017-02-01',
+					max: _this.startDay,
+					ready: function(){
+						aboutDay.hint('日期可选值设定在 <br> 2017-02-01 到 '+_this.startDay);
+					},
+					done: function(value,date){
+						//console.log('你选择的日期是：' + value + '\n获得的对象是' + JSON.stringify(date));
+						_this.startDay = value;
+					}
 				})
 				let aboutMonth = laydate.render({
 					elem: '#aboutMonth',
 					theme: '#03BBFF',
 					type: 'month',
-					value: this.startMonth
+					value: _this.startMonth,
+					btns: ['confirm'],
+					min: '2017-02-01',
+					max: _this.startMonth,
+					ready: function(){
+						aboutMonth.hint('日期可选值设定在 <br> 2017-02 到 '+_this.startMonth);
+					},
+					done: function(value,date){
+						_this.startMonth = value;
+					}
 				})
 				let aboutYear = laydate.render({
 					elem: '#aboutYear',
 					theme: '#03BBFF',
 					type: 'year',
-					value: this.startYear
+					value: _this.startYear,
+					btns: ['confirm'],
+					min: '2017-02-01',
+					max: _this.startYear,
+					ready: function(){
+						aboutYear.hint('日期可选值设定在 <br> 2017 到 '+_this.startYear);
+					},
+					done: function(value,date){
+						_this.startYear = value;
+					}
 				})
 				let aboutRange = laydate.render({
 					elem: '#aboutRange',
 					theme: '#03BBFF',
 					range: true,
-					value: this.startYear
+					value: _this.startRange,
+					min: '2017-02-01',
+					max: _this.startDay,
+					ready: function(){
+						aboutRange.hint('日期可选值设定在 <br> 2017-02-01 到 '+_this.startDay);
+					},
+					done: function(value,date){
+						_this.startRange = value;
+					}
 				})
             },
+            //改变日、月、年、区间	高亮显示
             changeClass(event){
             	var curValue = event.target.getAttribute("data-value");
             	this.initDate = curValue;
+            },
+			//查询进件信息
+            inquireData(){
+            	
             }
 		}
 	}
