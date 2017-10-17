@@ -55,6 +55,12 @@ var myVue=new Vue({
             
             }
         })
+    },
+    watch:{
+        $route(cur){//回首页时 去掉存储的业务线存储菜单 回默认
+            console.log('path',cur);
+            if(cur.path=='/index') localStorage.removeItem('ocMenubm');
+        }
     }
 });
 var reqNum=1,nextNum=1;

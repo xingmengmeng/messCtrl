@@ -125,18 +125,16 @@
                                 if(cur.ocMenubm==localStorage.ocMenubm){
                                     this.businessMenu=cur.children;
                                     this.businessName=cur.name;
-                                    
                                 }
                             }
                         }else{
                             this.businessMenu=this.resData[0].children;
                             this.businessName=this.resData[0].name;
-                            
+                            localStorage.setItem('busLeftMenuRoute',this.businessMenu[0].children[0].href);
                         }
                         this.$nextTick(function(){
                             this.resetClass();
-                        })
-                        localStorage.setItem('busLeftMenuRoute',this.businessMenu[0].children[0].href);
+                        }) 
                     }
                 })
                 /*this.$http.get('biPc/login/getMenus.gm?userName='+this.userName).then(function(res){
