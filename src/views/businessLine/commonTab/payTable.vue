@@ -14,7 +14,7 @@
         <section class="mainContainer clearfix">
         	<div class="mainTitle">
         		<h4>三方支付渠道信息</h4>
-        		<span class="download"></span>
+        		<span class="download" @click="download" v-if="tableDetail.payChannelDetails && tableDetail.payChannelDetails.length != 0"></span>
         	</div>
         	<div class="conditionChoose">
         		<div class="sel">
@@ -61,7 +61,7 @@
         					</tr>
         				</thead>
         				<tbody v-if="tableDetail.payChannelDetails && tableDetail.payChannelDetails.length != 0">
-        					<tr v-for="item in tableDetail.payChannelDetails">
+        					<tr v-for="items in tableDetail.payChannelDetails">
         						<td>{{items.appNo}}</td>
         						<td>{{items.contractNo}}</td>
         						<td>{{items.incomeModel}}</td>
@@ -108,8 +108,8 @@
 				selectRe: '',//业务主体的选中值
 				intoPiecesRe: '',//进件编码的输入值
 				formconCount: 0,//总条数
-				formpageCount: 1,//总页数
-				formCurrentPage: 1,//当前页
+				formpageCount: 0,//总页数
+				formCurrentPage: 0,//当前页
 				tableDetail:''//查询后的数据
 			}
 		},
@@ -228,7 +228,54 @@
             },
 			//查询进件信息
             inquireData(){
-            	
+            	//获取查询后的表格详情
+            	let curDate;
+            	if(this.initDate == '日'){
+            		curDate = this.startDay;
+            	}else if(this.initDate == '月'){
+            		curDate = this.startMonth;
+            	}else if(this.initDate == '年'){
+            		curDate = this.startYear;
+            	}else if(this.initDate == '区间'){
+            		curDate = this.startRange.replace(' - ',',');
+            	}
+				this.sendData = {
+					incomeModel: this.selectRe,
+					appNo: this.intoPiecesRe,
+					date: curDate,
+					page: this.formCurrentPage,
+					row: 15
+				}
+				this.getDetail(encodeURIComponent(JSON.stringify(this.sendData)));
+            },
+            download(){
+            	//获取下载的信息
+            	let curDate,downData,downUrl;
+            	if(this.initDate == '日'){
+            		curDate = this.startDay;
+            	}else if(this.initDate == '月'){
+            		curDate = this.startMonth;
+            	}else if(this.initDate == '年'){
+            		curDate = this.startYear;
+            	}else if(this.initDate == '区间'){
+            		curDate = this.startRange.replace(' - ',',');
+            	}
+				downData = {
+					incomeModel: this.selectRe,
+					appNo: this.intoPiecesRe,
+					date: curDate
+				}
+				downData = encodeURIComponent(JSON.stringify(downData));
+				downUrl = 'biPc/payChannel/download.gm?pcQueryModel='+downData;
+            	//先判断是否登录
+                this.$http.get('biPc/login/isLogin.gm').then(function (res) {
+                	if(res.data.code!=200){
+                        return;
+                  	}else {
+                  		//登录成功后的逻辑
+		                window.location.href=downUrl;//下载文件
+                   	}
+                })
             }
 		}
 	}
