@@ -31,7 +31,6 @@ const router = new VueRouter({
         { path: '/index',component: Index},
         {
             path:'/businessLine',component:businessLine,redirect:to=>{
-                console.log(to);
                 var cc=localStorage.getItem('busLeftMenuRoute');
                 return cc;
             },
@@ -55,10 +54,10 @@ var myVue=new Vue({
             
             }
         })
+        if(this.$route.path=='/index') localStorage.removeItem('ocMenubm');  //回首页时 去掉存储的业务线存储菜单 回默认
     },
     watch:{
         $route(cur){//回首页时 去掉存储的业务线存储菜单 回默认
-            console.log('path',cur);
             if(cur.path=='/index') localStorage.removeItem('ocMenubm');
         }
     }
