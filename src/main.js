@@ -51,15 +51,8 @@ var myVue=new Vue({
         this.$http.get('biPc/login/getZxtMenus2.gm?nId=2').then(function(res){
             if(res.data.code=='200'){
                 localStorage.setItem('busLeftMenuRoute',res.data.data.dataInfo[0].children[0].children[0].children[0].href);
-            
             }
         })
-        if(this.$route.path=='/index') localStorage.removeItem('ocMenubm');  //回首页时 去掉存储的业务线存储菜单 回默认
-    },
-    watch:{
-        $route(cur){//回首页时 去掉存储的业务线存储菜单 回默认
-            if(cur.path=='/index') localStorage.removeItem('ocMenubm');
-        }
     }
 });
 var reqNum=1,nextNum=1;

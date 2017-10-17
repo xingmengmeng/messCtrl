@@ -119,37 +119,23 @@
                 this.$http.get('biPc/login/getZxtMenus2.gm?nId=2').then(function(res){
                     if(res.data.code=='200'){
                         this.resData=res.data.data.dataInfo[0].children;//得到所有的业务线
-                        //判断本地有没有存储业务线  没有则得到返回值的第一个子元素，即当前显示菜单
-                        if(localStorage.ocMenubm){
-                            for(let cur of this.resData){
-                                if(cur.ocMenubm==localStorage.ocMenubm){
-                                    this.businessMenu=cur.children;
-                                    this.businessName=cur.name;
+                        for(let business of this.resData){
+                            let curMenubm=business;
+                            for(let sectwo of business.children){
+                                for(let threeM of sectwo.children){
+                                    if(threeM.href==this.$route.path){
+                                        this.businessMenu=business.children;
+                                        this.businessName=business.name;
+                                        break;
+                                    }
                                 }
                             }
-                        }else{
-                            this.businessMenu=this.resData[0].children;
-                            this.businessName=this.resData[0].name;
-                            localStorage.setItem('busLeftMenuRoute',this.businessMenu[0].children[0].href);
                         }
                         this.$nextTick(function(){
                             this.resetClass();
-                        }) 
+                        })
                     }
                 })
-                /*this.$http.get('biPc/login/getMenus.gm?userName='+this.userName).then(function(res){
-                    if(res.data.code=='200'){
-                        this.resDate=res.data.data.dataInfo[0].children;
-                        if(this.resDate[0]){
-                            this.businessName=this.resDate[0].name;
-                            this.businessMenu=this.resDate[0].children;
-                        }
-                        if(this.resDate[1]){
-                            this.menuShow=2;
-                            this.mainMenu=this.resDate[1].children;
-                        }
-                    }
-                });*/
             },
             /*设置哪个一级显示*/
             resetClass(e){
