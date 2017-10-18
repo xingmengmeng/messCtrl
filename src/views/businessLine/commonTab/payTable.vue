@@ -133,7 +133,7 @@
 					this.startYear = this.defaultMes.year;		//年
 					this.startRange = this.defaultMes.section.replace(',',' - ');//区间
 					//日历默认显示
-					this.showCalendar();
+					this.showCalendar(this.defaultMes.day,this.defaultMes.month,this.defaultMes.year);
 					//获取查询后的表格详情
 					this.sendData = {
 						incomeModel: this.selectRe,
@@ -159,7 +159,7 @@
                 });
             },
             //日历插件默认显示
-            showCalendar(){
+            showCalendar(day,month,year){
        			let _this = this;
             	var aboutDay = laydate.render({
 					elem: '#aboutDay',
@@ -167,9 +167,9 @@
 					value: _this.startDay,
 					btns: ['confirm'],
 					min: '2017-02-01',
-					max: _this.startDay,
+					max: day,
 					ready: function(){
-						aboutDay.hint('日期可选值设定在 <br> 2017-02-01 到 '+_this.startDay);
+						aboutDay.hint('日期可选值设定在 <br> 2017-02-01 到 '+day);
 					},
 					done: function(value,date){
 						//console.log('你选择的日期是：' + value + '\n获得的对象是' + JSON.stringify(date));
@@ -183,9 +183,9 @@
 					value: _this.startMonth,
 					btns: ['confirm'],
 					min: '2017-02-01',
-					max: _this.startMonth,
+					max: month,
 					ready: function(){
-						aboutMonth.hint('日期可选值设定在 <br> 2017-02 到 '+_this.startMonth);
+						aboutMonth.hint('日期可选值设定在 <br> 2017-02 到 '+month);
 					},
 					done: function(value,date){
 						_this.startMonth = value;
@@ -198,9 +198,9 @@
 					value: _this.startYear,
 					btns: ['confirm'],
 					min: '2017-02-01',
-					max: _this.startYear,
+					max: year,
 					ready: function(){
-						aboutYear.hint('日期可选值设定在 <br> 2017 到 '+_this.startYear);
+						aboutYear.hint('日期可选值设定在 <br> 2017 到 '+year);
 					},
 					done: function(value,date){
 						_this.startYear = value;
@@ -212,9 +212,9 @@
 					range: true,
 					value: _this.startRange,
 					min: '2017-02-01',
-					max: _this.startDay,
+					max: day,
 					ready: function(){
-						aboutRange.hint('日期可选值设定在 <br> 2017-02-01 到 '+_this.startDay);
+						aboutRange.hint('日期可选值设定在 <br> 2017-02-01 到 '+day);
 					},
 					done: function(value,date){
 						_this.startRange = value;
