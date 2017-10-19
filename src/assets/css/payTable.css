@@ -60,17 +60,20 @@
   color: #666666;
 }
 .mainContainer .conditionChoose .dateChoose {
-  width: 38%;
+  width: 43%;
   display: -webkit-flex;
-  -webkit-align-items: center;
 }
 .mainContainer .conditionChoose .dateChoose span {
   display: block;
+  padding-top: 1%;
+}
+.mainContainer .conditionChoose .dateChoose .btns {
+  width: 84%;
 }
 .mainContainer .conditionChoose .dateChoose .btns li {
   cursor: pointer;
   float: left;
-  width: 58px;
+  width: 12%;
   height: 28px;
   line-height: 28px;
   border: 1px solid #D4D4D4;
@@ -80,6 +83,10 @@
 }
 .mainContainer .conditionChoose .dateChoose .btns li.active {
   border-bottom: 3px solid #03BBFF;
+}
+.mainContainer .conditionChoose .dateChoose .btns li:last-child {
+  border: none;
+  width: 28%;
 }
 .mainContainer .conditionChoose .dateChoose input {
   padding: 0 5px;
@@ -94,7 +101,7 @@
   background: url(../../assets/images/canl.png) 96% center no-repeat;
 }
 .mainContainer .conditionChoose .intoPieces {
-  width: 38%;
+  width: 33%;
   text-align: right;
   padding-right: 1%;
 }

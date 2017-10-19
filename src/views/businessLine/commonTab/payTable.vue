@@ -30,13 +30,13 @@
         				<li :class="initDate=='月'?'active':''" data-value="月" @click="changeClass($event)">月</li>
         				<li :class="initDate=='年'?'active':''" data-value="年" @click="changeClass($event)">年</li>
         				<li :class="initDate=='区间'?'active':''" data-value="区间" @click="changeClass($event)">区间</li>
-        			</ul>
-        			<div class="calendar">
-        				<input v-show="initDate == '日'" type="text" v-model="startDay" class="smallTxt" readonly id="aboutDay"/>
+        				<li>
+        					<input v-show="initDate == '日'" type="text" v-model="startDay" class="smallTxt" readonly id="aboutDay"/>
         				<input v-show="initDate == '月'" type="text" v-model="startMonth" class="smallTxt" readonly id="aboutMonth"/>
         				<input v-show="initDate == '年'" type="text" v-model="startYear" class="smallTxt" readonly id="aboutYear"/>
         				<input v-show="initDate == '区间'" type="text" v-model="startRange" class="smallTxt" readonly id="aboutRange"/>
-        			</div>
+        				</li>
+        			</ul>
         		</div>
         		<div class="intoPieces">
         			<label>进件编码：</label>

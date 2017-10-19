@@ -58,17 +58,19 @@
             }
         }
         .dateChoose{
-            width: 38%;
+            width: 43%;
             display: -webkit-flex;
-            -webkit-align-items: center;
+            //-webkit-align-items: center;
             span{
                 display: block;
+                padding-top: 1%;
             }
             .btns{
+                width: 84%;
                 li{
                     cursor: pointer;
                     float: left;
-                    width: 58px;
+                    width: 12%;
                     height: 28px;
                     line-height: 28px;
                     border: 1px solid #D4D4D4;
@@ -77,6 +79,10 @@
                     border-right: none;
                     &.active{
                         border-bottom: 3px solid #03BBFF;
+                    }
+                    &:last-child{
+                        border: none;
+                        width: 28%;
                     }
                 }
             }
@@ -94,7 +100,7 @@
             }
         }
         .intoPieces{
-            width: 38%;
+            width: 33%;
             text-align: right;
             padding-right: 1%;
             .btn{
