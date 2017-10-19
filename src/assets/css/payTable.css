@@ -160,6 +160,7 @@
   border: 1px solid #eef1f9;
   font-size: 14px;
   text-align: center;
+  padding: 8px 10px;
 }
 .mainContainer .mainContent .tableBlock table tr td:first-child {
   border-left: none;

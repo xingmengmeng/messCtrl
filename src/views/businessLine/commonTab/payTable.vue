@@ -80,7 +80,7 @@
         				</tbody>
         			</table>
         		</div>
-        		<pages :con-count="formconCount" :page-count="formpageCount" :current="formCurrentPage" @changePage="" ref=""></pages>
+        		<pages :con-count="formconCount" :page-count="formpageCount" :current="formCurrentPage" @changePage="changePageFn" ref=""></pages>
         	</div>
         </section>
 	</div>
@@ -109,7 +109,7 @@
 				intoPiecesRe: '',//进件编码的输入值
 				formconCount: 0,//总条数
 				formpageCount: 0,//总页数
-				formCurrentPage: 0,//当前页
+				formCurrentPage: 1,//当前页
 				tableDetail:''//查询后的数据
 			}
 		},
@@ -161,6 +161,15 @@
             //日历插件默认显示
             showCalendar(day,month,year){
        			let _this = this;
+       			let newStr = new Date(new Date(day).getTime()+24*60*60*1000);
+       			let newYear = newStr.getFullYear();
+       			let newMonth = (newStr.getMonth()+1)<10 ? ('0'+(newStr.getMonth()+1)) : (newStr.getMonth()+1);
+       			let newDay = (newStr.getDate())<10 ? ('0'+(newStr.getDate())) : (newStr.getDate());
+       			let rangeEnd = newYear +'-'+ newMonth +'-'+ newDay;//时间的最大值
+       			console.log(day)
+       			//console.log(rangeEnd)
+       			console.log(Math.random())
+       			//console.log(new Date().toLocaleDateString())
             	var aboutDay = laydate.render({
 					elem: '#aboutDay',
 					theme: '#03BBFF',
@@ -183,7 +192,7 @@
 					value: _this.startMonth,
 					btns: ['confirm'],
 					min: '2017-02-01',
-					max: month,
+					max: day,
 					ready: function(){
 						aboutMonth.hint('日期可选值设定在 <br> 2017-02 到 '+month);
 					},
@@ -198,7 +207,7 @@
 					value: _this.startYear,
 					btns: ['confirm'],
 					min: '2017-02-01',
-					max: year,
+					max: day,
 					ready: function(){
 						aboutYear.hint('日期可选值设定在 <br> 2017 到 '+year);
 					},
@@ -276,6 +285,12 @@
 		                window.location.href=downUrl;//下载文件
                    	}
                 })
+            },
+            //切换页数
+            changePageFn(res){
+            	//res为当前页
+            	this.formCurrentPage = res;//当前页
+            	this.inquireData();//查询数据
             }
 		}
 	}
