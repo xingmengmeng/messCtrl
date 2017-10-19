@@ -80,7 +80,7 @@
         				</tbody>
         			</table>
         		</div>
-        		<pages :con-count="formconCount" :page-count="formpageCount" :current="formCurrentPage" @changePage="changePageFn" ref=""></pages>
+        		<pages :con-count="formconCount" :page-count="formpageCount" :current="formCurrentPage" @changePage="changePageFn" ref="urlChange"></pages>
         	</div>
         </section>
 	</div>
@@ -236,7 +236,7 @@
             	this.initDate = curValue;
             },
 			//查询进件信息
-            inquireData(){
+            inquireData(newUrl){
             	//获取查询后的表格详情
             	let curDate;
             	if(this.initDate == '日'){
@@ -255,6 +255,11 @@
 					page: this.formCurrentPage,
 					row: 15
 				}
+				//判断是否需要重新开始查询
+				if(newUrl){
+                    this.formCurrentPage = 1;
+                    this.$refs.urlChange.$emit('urlChange');
+                }
 				this.getDetail(encodeURIComponent(JSON.stringify(this.sendData)));
             },
             download(){
