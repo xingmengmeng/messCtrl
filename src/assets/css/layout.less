@@ -65,7 +65,7 @@ input,select{
 }
 
 header{
-  position: relative;
+  position: fixed;
   z-index: 99;
   height: 50px;
   background: #fff;
@@ -114,15 +114,14 @@ header{
 
 /*二级页面整体布局*/
 .leftSide{
-  position: relative;
-  margin-top:10px;
+  position: fixed;
+  top:60px;
   width:180px;
   float: left;
   background: #fff;
   box-shadow: 0 3px 11px 0 rgba(225,226,233,0.50);
   color:#afb0b6;
   font-size: 15px;
-  min-height: 800px;
 
   .navMenu{
     width: 100%;
@@ -162,11 +161,12 @@ header{
   }
 }
 .rightSide{
-  margin-top: 10px;
+  margin-top:60px;
   width: 100%;
   padding-left: 190px;
   box-sizing: border-box;
-  min-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   .app{
     background: #fff;

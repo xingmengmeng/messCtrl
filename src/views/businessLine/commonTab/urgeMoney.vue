@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div>
         <!--面包屑-->
         <section class="crumbsContainer">
             <div class="crumbs">
