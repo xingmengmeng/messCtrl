@@ -60,7 +60,7 @@
         						<th>完成时间</th>
         					</tr>
         				</thead>
-        				<tbody v-if="tableDetail.payChannelDetails && tableDetail.payChannelDetails.length != 0">
+        				<tbody v-if="tableDetail && tableDetail.payChannelDetails && tableDetail.payChannelDetails.length != 0">
         					<tr v-for="items in tableDetail.payChannelDetails">
         						<td>{{items.appNo}}</td>
         						<td>{{items.contractNo}}</td>
@@ -220,6 +220,7 @@
 					theme: '#03BBFF',
 					range: true,
 					value: _this.startRange,
+					btns: ['confirm'],
 					min: '2017-02-01',
 					max: day,
 					ready: function(){
