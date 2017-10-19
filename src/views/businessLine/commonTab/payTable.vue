@@ -166,9 +166,9 @@
        			let newMonth = (newStr.getMonth()+1)<10 ? ('0'+(newStr.getMonth()+1)) : (newStr.getMonth()+1);
        			let newDay = (newStr.getDate())<10 ? ('0'+(newStr.getDate())) : (newStr.getDate());
        			let rangeEnd = newYear +'-'+ newMonth +'-'+ newDay;//时间的最大值
-       			console.log(day)
+       			//console.log(day)
        			//console.log(rangeEnd)
-       			console.log(Math.random())
+       			//console.log(Math.random())
        			//console.log(new Date().toLocaleDateString())
             	var aboutDay = laydate.render({
 					elem: '#aboutDay',
@@ -192,7 +192,7 @@
 					value: _this.startMonth,
 					btns: ['confirm'],
 					min: '2017-02-01',
-					max: day,
+					max: rangeEnd,
 					ready: function(){
 						aboutMonth.hint('日期可选值设定在 <br> 2017-02 到 '+month);
 					},
@@ -207,7 +207,7 @@
 					value: _this.startYear,
 					btns: ['confirm'],
 					min: '2017-02-01',
-					max: day,
+					max: rangeEnd,
 					ready: function(){
 						aboutYear.hint('日期可选值设定在 <br> 2017 到 '+year);
 					},
