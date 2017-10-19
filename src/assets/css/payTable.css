@@ -65,7 +65,7 @@
 }
 .mainContainer .conditionChoose .dateChoose span {
   display: block;
-  padding-top: 1%;
+  padding-top: 1.2%;
 }
 .mainContainer .conditionChoose .dateChoose .btns {
   width: 84%;
@@ -141,7 +141,7 @@
   height: 90%;
 }
 .mainContainer .mainContent .tableBlock table {
-  width: 110%;
+  width: 125%;
   height: 99%;
 }
 .mainContainer .mainContent .tableBlock table th {
