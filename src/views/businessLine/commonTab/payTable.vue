@@ -41,7 +41,7 @@
         		<div class="intoPieces">
         			<label>进件编码：</label>
         			<input class="typeInput" type="text" v-model="intoPiecesRe"/>
-        			<input type="button" value="查询" class="btn" @click="inquireData">
+        			<input type="button" value="查询" class="btn" @click="inquireData('newUrl')">
         		</div>
         	</div>
         	<div class="mainContent">
@@ -258,6 +258,7 @@
 				}
 				//判断是否需要重新开始查询
 				if(newUrl){
+                    this.sendData.page = 1;
                     this.formCurrentPage = 1;
                     this.$refs.urlChange.$emit('urlChange');
                 }
