@@ -75,7 +75,7 @@
         				</tbody>
         				<tbody v-else>
         					<tr>
-        						<td colspan="9">暂无业务数据</td>
+        						<td colspan="9" style="padding-right:24%">暂无业务数据</td>
         					</tr>
         				</tbody>
         			</table>
@@ -177,9 +177,6 @@
 					btns: ['confirm'],
 					min: '2017-02-01',
 					max: day,
-					ready: function(){
-						aboutDay.hint('日期可选值设定在 <br> 2017-02-01 到 '+day);
-					},
 					done: function(value,date){
 						//console.log('你选择的日期是：' + value + '\n获得的对象是' + JSON.stringify(date));
 						_this.startDay = value;
@@ -193,9 +190,6 @@
 					btns: ['confirm'],
 					min: '2017-02-01',
 					max: rangeEnd,
-					ready: function(){
-						aboutMonth.hint('日期可选值设定在 <br> 2017-02 到 '+month);
-					},
 					done: function(value,date){
 						_this.startMonth = value;
 					}
@@ -208,9 +202,6 @@
 					btns: ['confirm'],
 					min: '2017-02-01',
 					max: rangeEnd,
-					ready: function(){
-						aboutYear.hint('日期可选值设定在 <br> 2017 到 '+year);
-					},
 					done: function(value,date){
 						_this.startYear = value;
 					}
@@ -223,9 +214,6 @@
 					btns: ['confirm'],
 					min: '2017-02-01',
 					max: day,
-					ready: function(){
-						aboutRange.hint('日期可选值设定在 <br> 2017-02-01 到 '+day);
-					},
 					done: function(value,date){
 						_this.startRange = value;
 					}
