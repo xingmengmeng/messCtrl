@@ -211,7 +211,7 @@
 					theme: '#03BBFF',
 					range: true,
 					value: _this.startRange,
-					btns: ['confirm'],
+					//btns: ['confirm'],
 					min: '2017-02-01',
 					max: day,
 					done: function(value,date){
