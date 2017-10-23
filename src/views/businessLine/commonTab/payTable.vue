@@ -131,7 +131,7 @@
 					this.startDay = this.defaultMes.day;		//日
 					this.startMonth = this.defaultMes.month;	//月
 					this.startYear = this.defaultMes.year;		//年
-					this.startRange = this.defaultMes.section.replace(',',' - ');//区间
+					this.startRange = this.defaultMes.section.replace(',',' 至 ');//区间
 					//日历默认显示
 					this.showCalendar(this.defaultMes.day,this.defaultMes.month,this.defaultMes.year);
 					//获取查询后的表格详情
@@ -209,7 +209,7 @@
 				let aboutRange = laydate.render({
 					elem: '#aboutRange',
 					theme: '#03BBFF',
-					range: true,
+					range: '至',
 					value: _this.startRange,
 					//btns: ['confirm'],
 					min: '2017-02-01',
@@ -235,7 +235,7 @@
             	}else if(this.initDate == '年'){
             		curDate = this.startYear;
             	}else if(this.initDate == '区间'){
-            		curDate = this.startRange.replace(' - ',',');
+            		curDate = this.startRange.replace(' 至 ',',');
             	}
 				this.sendData = {
 					incomeModel: this.selectRe,
@@ -262,7 +262,7 @@
             	}else if(this.initDate == '年'){
             		curDate = this.startYear;
             	}else if(this.initDate == '区间'){
-            		curDate = this.startRange.replace(' - ',',');
+            		curDate = this.startRange.replace(' 至 ',',');
             	}
 				downData = {
 					incomeModel: this.selectRe,

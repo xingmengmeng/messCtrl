@@ -73,7 +73,7 @@
 .mainContainer .conditionChoose .dateChoose .btns li {
   cursor: pointer;
   float: left;
-  width: 12%;
+  width: 11%;
   height: 28px;
   line-height: 28px;
   border: 1px solid #D4D4D4;
@@ -89,7 +89,7 @@
   width: 28%;
 }
 .mainContainer .conditionChoose .dateChoose input {
-  padding: 0 5px;
+  padding: 0 12px;
   height: 29.5px;
   line-height: 29.5px;
   box-sizing: border-box;
