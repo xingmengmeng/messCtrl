@@ -202,7 +202,7 @@ export default{
                 return false;
             }*/
             this.loadOrMsg='Loading...';
-            this.$http.get('biPc/selfAnaPlatform/listTableMx.gm?ocMenubm='+this.id+'&page='+this.page+'&rows=100').then(function(res){
+            this.$http.get('/biPc/selfAnaPlatform/listTableMx.gm?ocMenubm='+this.id+'&page='+this.page+'&rows=100').then(function(res){
                 if(res.data.code==220){
                     this.loadOrMsg=res.data.msg;
                     this.showLoading=1;

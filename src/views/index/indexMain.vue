@@ -282,7 +282,7 @@
         methods:{
             //得到菜单值
             getMenus(){
-                this.$http.get('biPc/login/getPcMenus.gm').then(function(res){
+                this.$http.get('/biPc/login/getPcMenus.gm').then(function(res){
                     if(res.data.code=='200'){
                         this.resData=res.data.data.dataInfo;
                     }

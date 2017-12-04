@@ -14,6 +14,7 @@ import businessLine  from './views/businessLine/businessLine.vue';
 import taTable from './views/businessLine/commonTab/tbTable.vue';
 import urgeMoney from './views/businessLine/commonTab/urgeMoney.vue';
 import payTable from './views/businessLine/commonTab/payTable.vue';
+import setTable from './views/setTable/tabConfig.vue';
 /*const Index = resolve => require(['./views/index/indexMain.vue'], resolve);
 const businessLine = resolve => require(['./views/businessLine/businessLine.vue'], resolve);
 const taTable = resolve => require(['./views/businessLine/commonTab/tbTable.vue'], resolve);*/
@@ -21,10 +22,7 @@ const taTable = resolve => require(['./views/businessLine/commonTab/tbTable.vue'
 
 
 const router = new VueRouter({
-    /*mode: 'history',*/
-    // base: baseUrl,
-    hashbang:true,//路径已#/开头  防止刷新报404
-    history:true,
+    mode:'history',
     linkActiveClass:'active',//当前页的选中状态
     routes: [
         { path: '/', redirect: '/index'},
@@ -39,7 +37,8 @@ const router = new VueRouter({
                 { path:'commonTab/urgeMoney',component:urgeMoney},
                 { path:'commonTab/payTable',component:payTable}
             ]
-        }
+        },
+        { path: '/setTable',component: setTable},
     ]
 })
 
@@ -48,7 +47,7 @@ var myVue=new Vue({
     router:router,
     components: { App },
     mounted () {
-        this.$http.get('biPc/login/getZxtMenus2.gm?nId=2').then(function(res){
+        this.$http.get('/biPc/login/getZxtMenus2.gm?nId=2').then(function(res){
             if(res.data.code=='200'){
                 localStorage.setItem('busLeftMenuRoute',res.data.data.dataInfo[0].children[0].children[0].children[0].href);
             }
@@ -71,7 +70,7 @@ Vue.http.interceptors.push(function(request, next) {
 
             if(response.body.code==203||response.body.code==undefined){
                 localStorage.clear();
-                window.location.href='login.html';
+                window.location.href='/login.html';
             }else if(response.body.code==200){
 
             }else {

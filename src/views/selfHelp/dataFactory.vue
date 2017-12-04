@@ -225,7 +225,7 @@ export default {
         },
         /*左侧菜单*/
         getLeftMenuData(){
-            this.$http.get('biPc/login/getZxtMenus2.gm?nId=4').then(function(res){
+            this.$http.get('/biPc/login/getZxtMenus2.gm?nId=4').then(function(res){
                 if(res.data.code=='200'){
                     this.menuData=res.data.data.dataInfo;
                     this.getLinkMenu();
@@ -239,7 +239,7 @@ export default {
         },
         /*获取联动菜单*/
         getLinkMenu(){
-            this.$http.get('biPc/selfAnaPlatform/getLevelMenus.gm').then(function(res){
+            this.$http.get('/biPc/selfAnaPlatform/getLevelMenus.gm').then(function(res){
                 if(res.data.code=='200'){
                     this.linkMenu=res.data.data.dataInfo;
                     this.oneLevelMenus=this.linkMenu.oneLevelMenus;
@@ -260,7 +260,7 @@ export default {
                 }, this);
                 this.menuShowThree=menuNm;
             }
-            this.$http.get('biPc/selfAnaPlatform/menusLink.gm?level='+level+'&ocMenubm='+menuNm).then(function(res){
+            this.$http.get('/biPc/selfAnaPlatform/menusLink.gm?level='+level+'&ocMenubm='+menuNm).then(function(res){
                 if(res.data.code=='200'){
                     if(level=='3'){
                         this.twoLevelMenus=res.data.data.dataInfo.twoLevelMenus;
@@ -299,7 +299,7 @@ export default {
                     this.showIndex=2;
                     /*默认  如果列表为空  则查询信息显示*/
                     if(this.selectListData.length==0){
-                        this.$http.get('biPc/selfAnaPlatform/listSqlText.gm?vcRwmc='+this.vcRwmc+'&page=1&rows=15').then(function(res){
+                        this.$http.get('/biPc/selfAnaPlatform/listSqlText.gm?vcRwmc='+this.vcRwmc+'&page=1&rows=15').then(function(res){
                             if(res.data.code=='200'){
                                 this.selectListData=res.data.data.dataInfo.info;
                                 this.form3CurrentPage=res.data.data.dataInfo.page;
@@ -361,7 +361,7 @@ export default {
             var aTextarea=document.querySelectorAll('.textareaClass');
             this.sqlText=aTextarea[this.curShow].value;
             this.vcRwmc='';
-            var url=encodeURI('biPc/selfAnaPlatform/saveSqlText.gm?vcRwmc='+conName+'&sqlText='+this.sqlText);
+            var url=encodeURI('/biPc/selfAnaPlatform/saveSqlText.gm?vcRwmc='+conName+'&sqlText='+this.sqlText);
             this.$http.get(url).then(function(res){
                 if(res.data.code=='200'){
                     this.saveShow=0;
@@ -391,7 +391,7 @@ export default {
                 this.form3CurrentPage=curpage;
             }
             
-            this.$http.get('biPc/selfAnaPlatform/listSqlText.gm?vcRwmc='+this.vcRwmc+'&page='+this.form3CurrentPage+'&rows=15').then(function(res){
+            this.$http.get('/biPc/selfAnaPlatform/listSqlText.gm?vcRwmc='+this.vcRwmc+'&page='+this.form3CurrentPage+'&rows=15').then(function(res){
                 if(res.data.code=='200'){
                     this.selectListData=res.data.data.dataInfo.info;
                     this.form3CurrentPage=res.data.data.dataInfo.page;
@@ -405,7 +405,7 @@ export default {
         },
         /*删除查询列表 查询管理*/
         deleteList(id){
-            this.$http.get('biPc/selfAnaPlatform/deleteSqlText.gm?nId='+id).then(function(res){
+            this.$http.get('/biPc/selfAnaPlatform/deleteSqlText.gm?nId='+id).then(function(res){
                 if(res.data.code=='200'){
                     this.changeResData();
                 }
@@ -481,7 +481,7 @@ export default {
             this.downShowIndex=1;
 
             this.uuid=getUuid.getUuid();
-            var url=encodeURI('biPc/selfAnaPlatform/excuteSql.gm?sqlText='+this.selectedCon+'&exId='+this.uuid);
+            var url=encodeURI('/biPc/selfAnaPlatform/excuteSql.gm?sqlText='+this.selectedCon+'&exId='+this.uuid);
             this.$http.get(url).then(function(res){
                 clearInterval(timer);
                 this.seleSqling=false;
@@ -512,7 +512,7 @@ export default {
             this.seleSqling=false;/*白色透明遮罩 隐藏*/
             var aTextarea=document.querySelectorAll('.textareaClass');
             this.sqlText=aTextarea[this.curShow].value;
-            var url=encodeURI('biPc/selfAnaPlatform/endSql.gm?sqlText='+this.sqlText+'&exId='+this.uuid);
+            var url=encodeURI('/biPc/selfAnaPlatform/endSql.gm?sqlText='+this.sqlText+'&exId='+this.uuid);
             this.$http.get(url).then(function(res){
                 if(res.data.code=='200'){
                     document.querySelector('#log').innerHTML='执行sql:\n'+this.sqlText+'\n已终止执行';
@@ -521,7 +521,7 @@ export default {
         },
         /*下载*/
         downRes(){
-            var url=encodeURI('biPc/selfAnaPlatform/exportSqlResult.gm?sqlText='+this.sqlText);
+            var url=encodeURI('/biPc/selfAnaPlatform/exportSqlResult.gm?sqlText='+this.sqlText);
             window.location.href=url;
         },
     },

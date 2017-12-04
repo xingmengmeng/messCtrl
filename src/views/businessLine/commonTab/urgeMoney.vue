@@ -940,7 +940,7 @@ export default {
   methods:{
       /*得到页面默认的信息*/
       getStartData(){
-          this.$http.get('biPc/collct/dict.gm').then(function(res){
+          this.$http.get('/biPc/collct/dict.gm').then(function(res){
               this.defaultMesAllCompany=res.data.data.dataInfo.company_info;
               //console.log(JSON.stringify(this.defaultMesAllCompany));
               this.defaultMesAllStage=res.data.data.dataInfo.stage_info;
@@ -1033,9 +1033,9 @@ export default {
           //console.log(param);
           //var allHttp=encodeURI('biPc/collct/overall/glance.gm?collct_company='+this.selected1+'&collct_stage='+this.selected2+'&channel='+this.selected3+'&product='+this.selected4+'&in_start_time='+this.ruyStartTime1+'&in_end_time='+this.startEndRu1+'');
           //var allHttp='biPc/collct/overall/glance.gm';
-          this.$http.get('biPc/collct/overall/glance.gm?param='+param+'').then(function (res) {
+          this.$http.get('/biPc/collct/overall/glance.gm?param='+param+'').then(function (res) {
               if(res.data.code==203){
-                  window.location.href='login.html';
+                  window.location.href='/login.html';
                   return;
               };
 
@@ -1066,9 +1066,9 @@ export default {
          // var param=encodeURI(JSON.stringify(json));
           var param=encodeURIComponent(JSON.stringify(json));
 
-          this.$http.get('biPc/collct/overall/detail.gm?param='+param+'').then(function(res){
+          this.$http.get('/biPc/collct/overall/detail.gm?param='+param+'').then(function(res){
               if(res.data.code==203){
-                  window.location.href='login.html';
+                  window.location.href='/login.html';
                   return;
               }
               this.defaultMes2=res.data.data.dataInfo.list_info;
@@ -1093,9 +1093,9 @@ export default {
               "collct_user":i,
           };
           var param=encodeURIComponent(JSON.stringify(json));
-          this.$http.get('biPc/collct/user/detail.gm?param='+param+'&curPage='+m+'').then(function(res){
+          this.$http.get('/biPc/collct/user/detail.gm?param='+param+'&curPage='+m+'').then(function(res){
               if(res.data.code==203){
-                  window.location.href='login.html';
+                  window.location.href='/login.html';
                   return;
               }
               this.defaultMes3=res.data.data.dataInfo.datas;
@@ -1128,9 +1128,9 @@ export default {
 
           };
           var param=encodeURIComponent(JSON.stringify(json));
-          this.$http.get('biPc/collct/case/detail.gm?param='+param+'&curPage='+j+'').then(function(res){
+          this.$http.get('/biPc/collct/case/detail.gm?param='+param+'&curPage='+j+'').then(function(res){
               if(res.data.code==203){
-                  window.location.href='login.html';
+                  window.location.href='/login.html';
                   return;
               }
               this.defaultMes4=res.data.data.dataInfo.datas;
@@ -1157,7 +1157,7 @@ export default {
                   "out_end_time":this.startEnd1,
               };
               var param=encodeURIComponent(JSON.stringify(json));
-              var downUrl='biPc/collct/overall/glance/export.gm?param='+param+'';
+              var downUrl='/biPc/collct/overall/glance/export.gm?param='+param+'';
               window.location.href=downUrl;
           }else if(tab=='tab2'){
               var json={
@@ -1174,7 +1174,7 @@ export default {
                   "out_end_time":this.startEnd2,
               };
               var param=encodeURIComponent(JSON.stringify(json));
-              var downUrl='biPc/collct/overall/detail/export.gm?param='+param+'';
+              var downUrl='/biPc/collct/overall/detail/export.gm?param='+param+'';
               window.location.href=downUrl;
           }else if(tab=='tab3'){
               var json={
@@ -1192,7 +1192,7 @@ export default {
                   "collct_user":this.allName,
               };
               var param=encodeURIComponent(JSON.stringify(json));
-              var downUrl='biPc/collct/user/detail/export.gm?param='+param+'&curPage='+this.form3CurrentPage+'';
+              var downUrl='/biPc/collct/user/detail/export.gm?param='+param+'&curPage='+this.form3CurrentPage+'';
               window.location.href=downUrl;
           }else if(tab=='tab4'){
               var json={
@@ -1214,7 +1214,7 @@ export default {
               };
               var param=encodeURIComponent(JSON.stringify(json));
 
-              var downUrl='biPc/collct/case/detail/export.gm?param='+param+'&curPage='+this.form4CurrentPage+'';
+              var downUrl='/biPc/collct/case/detail/export.gm?param='+param+'&curPage='+this.form4CurrentPage+'';
               window.location.href=downUrl;
           };
 

@@ -122,9 +122,9 @@
 		methods:{
 			//获取默认信息	包括日、月、年、区间的默认值	以及	业务主体下拉框信息
             getData(){
-                this.$http.get('biPc/payChannel/init.gm').then(function (res) {
+                this.$http.get('/biPc/payChannel/init.gm').then(function (res) {
                     if(res.data.code==203){
-                        window.location.href='login.html';
+                        window.location.href='/login.html';
                         return;
                     }
 					this.defaultMes = res.data.data.dataInfo;
@@ -147,9 +147,9 @@
             },
             //获取查询后的表格详情
             getDetail(sendData){
-            	this.$http.get('biPc/payChannel/data.gm?pcQueryModel='+sendData).then(function (res) {
+            	this.$http.get('/biPc/payChannel/data.gm?pcQueryModel='+sendData).then(function (res) {
                     if(res.data.code==203){
-                        window.location.href='login.html';
+                        window.location.href='/login.html';
                         return;
                     }
 					this.tableDetail = res.data.data.dataInfo;
@@ -270,9 +270,9 @@
 					date: curDate
 				}
 				downData = encodeURIComponent(JSON.stringify(downData));
-				downUrl = 'biPc/payChannel/download.gm?pcQueryModel='+downData;
+				downUrl = '/biPc/payChannel/download.gm?pcQueryModel='+downData;
             	//先判断是否登录
-                this.$http.get('biPc/login/isLogin.gm').then(function (res) {
+                this.$http.get('/biPc/login/isLogin.gm').then(function (res) {
                 	if(res.data.code!=200){
                         return;
                   	}else {

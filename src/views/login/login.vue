@@ -112,7 +112,7 @@
                             console.log(usernm,userpsw);
                             /*{'userName':usernm,'userPwd':userpsw,'isRemember':true,'isCookerLogin':false}*/
                             /*登录接口*/
-                            this.$http.post('biPc/login/dologin.gm',{"userName":usernm,"userPwd":userpsw,"isRemember":true,"isCookerLogin":this.isCookerLogin},{emulateJSON:true}).then(function (response) {
+                            this.$http.post('/biPc/login/dologin.gm',{"userName":usernm,"userPwd":userpsw,"isRemember":true,"isCookerLogin":this.isCookerLogin},{emulateJSON:true}).then(function (response) {
                                 if(response.data.code!='200'){
                                     this.errorMessage=response.data.msg;
                                     return;
@@ -124,7 +124,7 @@
                                     //console.log(usernm,userpsw);
                                     this.setCookie(usernm,userpsw);
                                     localStorage.meijieAdminFlag=response.data.data.dataInfo.meijieAdminFlag;
-                                    window.location.href='/#/index';
+                                    window.location.href='/index';
                                 }else{
 
                                     console.log(response.data.data.dataInfo.responseMsg);
@@ -133,7 +133,7 @@
                             })
 
                         }else {
-                            this.$http.post('biPc/login/dologin.gm',{"userName":usernm,"userPwd":userpsw,"isRemember":true,"isCookerLogin":this.isCookerLogin},{emulateJSON:true}).then(function (response) {
+                            this.$http.post('/biPc/login/dologin.gm',{"userName":usernm,"userPwd":userpsw,"isRemember":true,"isCookerLogin":this.isCookerLogin},{emulateJSON:true}).then(function (response) {
                                 console.log(response.data.data);
                                 if(response.data.code!='200'){
                                     this.errorMessage=response.data.msg;
@@ -142,7 +142,7 @@
                                 if(response.data.code=='200'){
                                     this.setCookie(usernm,userpsw);
                                     localStorage.meijieAdminFlag=response.data.data.dataInfo.meijieAdminFlag;
-                                    window.location.href='/#/index';
+                                    window.location.href='/index';
                                 }else{
                                     console.log(response.data.data.dataInfo.responseMsg);
                                     this.errorMessage=response.data.data.dataInfo.responseMsg;

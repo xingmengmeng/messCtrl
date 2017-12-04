@@ -106,7 +106,7 @@
             subPushFn(){
                 var queryObj=JSON.stringify(this.queryCondition);
                 this.$emit('hidePushFn');
-                this.$http.post('biPc/debtChange/addAssetPack.gm',{'serialnum':this.mesNum,'queryCondition':queryObj,'pushtipsdateStr':this.startTime},{emulateJSON:true}).then(function (res) {
+                this.$http.post('/biPc/debtChange/addAssetPack.gm',{'serialnum':this.mesNum,'queryCondition':queryObj,'pushtipsdateStr':this.startTime},{emulateJSON:true}).then(function (res) {
                     if(res.data.code==200){
                         //alert(res.data.data.dataInfo);
                         //this.$emit('showPushMsg',res.data.data.dataInfo);

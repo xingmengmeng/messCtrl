@@ -385,9 +385,9 @@
         methods:{
             //得到默认信息
             getData(){
-                this.$http.get('biPc/debtChange/getBaseInfo.gm').then(function (res) {
+                this.$http.get('/biPc/debtChange/getBaseInfo.gm').then(function (res) {
                     if(res.data.code==203){
-                        window.location.href='login.html';
+                        window.location.href='/login.html';
                         return;
                     }
                     this.defaultMes=res.data.data.dataInfo;
@@ -396,7 +396,7 @@
             },
             //得到是否可推标权限
             getAdminFlag(){
-                this.$http.get('biPc/debtChange/isPushDebt.gm').then(function(res){
+                this.$http.get('/biPc/debtChange/isPushDebt.gm').then(function(res){
                     if(res.data.code=='200'){
                         this.meijieAdminFlag=res.data.data.dataInfo;
                         localStorage.meijieAdminFlag=this.meijieAdminFlag;
@@ -405,7 +405,7 @@
             },
             //得到默认时间
             getDefTime(def){
-                this.$http.get('biPc/debtChange/getTimeBaseInfo.gm').then(function (res) {
+                this.$http.get('/biPc/debtChange/getTimeBaseInfo.gm').then(function (res) {
                     this.startTime=this.moneyStartTime=this.startMinTime=this.moneyStartMinTime=res.data.data.dataInfo.ktbStartDate;
                     this.startEnd=res.data.data.dataInfo.ktbEndDate;
                     this.selectTimeFn();
@@ -430,7 +430,7 @@
                     this.noSelectT=1;
                     return;
                 }
-                this.selectUrl='biPc/debtChange/getPushDebtByTime.gm?rows=15&page='+this.form1CurrentPage+'&startDate='+this.startTime+'&endDate='+this.startEnd;
+                this.selectUrl='/biPc/debtChange/getPushDebtByTime.gm?rows=15&page='+this.form1CurrentPage+'&startDate='+this.startTime+'&endDate='+this.startEnd;
 
                 if(pushPackge){
                     this.getSelectData('times',pushPackge);
@@ -450,7 +450,7 @@
                     this.$refs.urlChange.$emit('urlChange');
                 }
                 this.resDateFrom=2;
-                this.selectUrl='biPc/debtChange/getPushDebtByAmount.gm?rows=15&page='+this.form1CurrentPage+'&startDate='+this.moneyStartTime+'&amount='+this.moneyTxt;
+                this.selectUrl='/biPc/debtChange/getPushDebtByAmount.gm?rows=15&page='+this.form1CurrentPage+'&startDate='+this.moneyStartTime+'&amount='+this.moneyTxt;
                 this.getSelectData();
             },
             getSelectData(myTime,pushPackge){
@@ -502,7 +502,7 @@
             //点击推标
             pushBiFn(){
                 var queryConStr=JSON.stringify(this.queryCondition);
-                this.$http.post('biPc/debtChange/loadAssetPackSerial.gm',{"queryCondition":queryConStr},{emulateJSON:true}).then(function (res) {
+                this.$http.post('/biPc/debtChange/loadAssetPackSerial.gm',{"queryCondition":queryConStr},{emulateJSON:true}).then(function (res) {
                     var resMes=res.data.data.dataInfo.serial;
                     var minTime=res.data.data.dataInfo.kssj;
                     var maxTime=res.data.data.dataInfo.jssj;
@@ -522,13 +522,13 @@
                 }
                 this.showTab=2;
                 //重新查询可推标与已推标
-                this.$http.get('biPc/debtChange/getBaseInfo.gm').then(function (res) {
+                this.$http.get('/biPc/debtChange/getBaseInfo.gm').then(function (res) {
                     this.defaultMes=res.data.data.dataInfo;
                 });
                 //重新查询
                 this.selectTimeFn('newUrl','pushPackge');
                 //查询资产包信息
-                this.$http.get('biPc/debtChange/listPackInfo.gm?page='+this.form2CurrentPage+'&rows=15').then(function (res) {
+                this.$http.get('/biPc/debtChange/listPackInfo.gm?page='+this.form2CurrentPage+'&rows=15').then(function (res) {
                     this.resDate2=res.data.data.dataInfo.info;
                     this.form2pageCount=res.data.data.dataInfo.totalPages;//分页  2表总页
                     this.form2conCount=res.data.data.dataInfo.totalRows;//分页  2表总条数
@@ -555,7 +555,7 @@
             //确认退标
             confirmTrueFn(){
                 this.hideMarkWrap();
-                this.$http.get('biPc/debtChange/reversePackInfo.gm?serialnums='+this.checkAry).then(function (res) {
+                this.$http.get('/biPc/debtChange/reversePackInfo.gm?serialnums='+this.checkAry).then(function (res) {
                     //code成功  隐藏弹框  重新查询退标概览
                     if(res.data.code==200){
                         this.checkAry='';
@@ -572,7 +572,7 @@
                 this.detailsFn();
             },
             detailsFn(){
-                this.$http.get('biPc/debtChange/listPackMxxx.gm?serialnum='+this.detailId+'&page='+this.form3CurrentPage+'&rows=15').then(function (res) {
+                this.$http.get('/biPc/debtChange/listPackMxxx.gm?serialnum='+this.detailId+'&page='+this.form3CurrentPage+'&rows=15').then(function (res) {
                     //code成功  隐藏弹框  重新查询退标概览
                     if(res.data.code==200){
                         this.showTab=3;
@@ -599,7 +599,7 @@
             //导出 下载
             exportTab(){
                 //判断是否登录
-                this.$http.get('biPc/login/isLogin.gm').then(function (res) {
+                this.$http.get('/biPc/login/isLogin.gm').then(function (res) {
                     if(res.data.code!=200){
                         return;
                     }else {
@@ -611,17 +611,17 @@
                                 alert('无下载结果');
                                 return;
                             }
-                            downUrl='biPc/debtChange/downloadPushDebtInfo.gm?queryCondition='+queryStr;
+                            downUrl='/biPc/debtChange/downloadPushDebtInfo.gm?queryCondition='+queryStr;
                             window.location.href=downUrl;
                         }else if(this.showTab==2){//推标概览及明细的下载导出
                             if(this.checkAry.length==0){
                                 this.noSelectM=1;
                                 return;
                             }
-                            downUrl='biPc/debtChange/downloadPackMxxx.gm?serialnum='+this.checkAry;
+                            downUrl='/biPc/debtChange/downloadPackMxxx.gm?serialnum='+this.checkAry;
                             window.location.href=downUrl;
                         }else{
-                            downUrl='biPc/debtChange/downloadPackMxxx.gm?serialnum='+this.detailId;
+                            downUrl='/biPc/debtChange/downloadPackMxxx.gm?serialnum='+this.detailId;
                             window.location.href=downUrl;
                         }
                         //window.location.href=downUrl;
