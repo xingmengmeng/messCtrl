@@ -36,13 +36,13 @@ const router = new VueRouter({
                 return cc;
             },
             children:[
-                { path:'commonTab/tbTable',component:taTable},
-                { path:'commonTab/urgeMoney',component:urgeMoney},
-                { path:'commonTab/payTable',component:payTable}
+                { path:'commonTab/tbTable',component:taTable},/*推标报表*/
+                { path:'commonTab/urgeMoney',component:urgeMoney},/*催收日常*/
+                { path:'commonTab/payTable',component:payTable},/*三方支付*/
+                { path:'commonTab/tabView' , component:tabView},/*配置报表路径*/
             ]
         },
         { path: '/setTable',component: setTable},
-        { path: '/tabView' , component:tabView},
         { path: '/configList',component: configList},
     ]
 })
