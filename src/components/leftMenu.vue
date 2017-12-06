@@ -113,6 +113,13 @@
                 this.getMenu();
             })
         },
+        watch:{
+            '$route':function(res){
+                this.$nextTick(function(){
+                    this.resetClass();
+                })
+            },
+        },
         methods:{
             getMenu(){
                 this.getLocal();
@@ -147,6 +154,7 @@
                         if(aA[j].className=='active'){
                             var oLi=aA[j].parentNode;
                             this.showIndex=oLi.dataset.menu;
+                            localStorage.setItem('tabName',aA[j].innerHTML);
                         }
                     }
                 }
