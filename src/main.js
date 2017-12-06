@@ -14,7 +14,10 @@ import businessLine  from './views/businessLine/businessLine.vue';
 import taTable from './views/businessLine/commonTab/tbTable.vue';
 import urgeMoney from './views/businessLine/commonTab/urgeMoney.vue';
 import payTable from './views/businessLine/commonTab/payTable.vue';
+
 import setTable from './views/setTable/tabConfig.vue';
+import tabView from './views/setTable/tabView.vue';
+import configList from './views/setTable/configList.vue';
 /*const Index = resolve => require(['./views/index/indexMain.vue'], resolve);
 const businessLine = resolve => require(['./views/businessLine/businessLine.vue'], resolve);
 const taTable = resolve => require(['./views/businessLine/commonTab/tbTable.vue'], resolve);*/
@@ -39,6 +42,8 @@ const router = new VueRouter({
             ]
         },
         { path: '/setTable',component: setTable},
+        { path: '/tabView' , component:tabView},
+        { path: '/configList',component: configList},
     ]
 })
 
