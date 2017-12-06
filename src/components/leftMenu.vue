@@ -123,7 +123,8 @@
                             let curMenubm=business;
                             for(let sectwo of business.children){
                                 for(let threeM of sectwo.children){
-                                    if(threeM.href==this.$route.path){
+                                    let reg=new RegExp(this.$route.path);
+                                    if((threeM.href==this.$route.path)||(reg.test(threeM.href))){
                                         this.businessMenu=business.children;
                                         this.businessName=business.name;
                                         break;

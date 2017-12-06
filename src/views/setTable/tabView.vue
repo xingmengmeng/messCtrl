@@ -1,6 +1,9 @@
 <template>
     <section class="mainApi">
-        图表渲染
+        <div class="mainTitle">
+            <h4>报名名称</h4>
+            <span class="download"></span>
+        </div>
         <div v-for="(curP,index) in resData" :key="index">
             <!--<input :value="curP" @input="param[index] = $event.target.value" />{{curP}}-->
             <label>{{curP.valueCn}}：</label>
@@ -9,7 +12,22 @@
                 <option v-for="(curOp,sxIndex) in curP.sxwds" :key="sxIndex" :value="curOp.key">{{curOp.value}}</option>
             </select>
         </div>
-        <input type="button" value="点击" @click="getParam">
+
+        <input type="button" value="查询" @click="getParam">
+        <div class="tableWrap">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <th v-for="(curTh,index) in tabList.head" :key="index">{{curTh}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(curTr,index) in tabList.data" :key="index">
+                        <td v-for="(curTd,tdIndex) in curTr" :key="tdIndex">{{curTd}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 </template>
 <script>
@@ -18,8 +36,10 @@
     export default {
         data(){
             return{
+                configReportBm:'',//配置报表编码
                 resData:[],
                 param:{},
+                tabList:{},
             }
         },
         mounted(){
@@ -28,9 +48,10 @@
         methods:{
             /*得到返回信息  获取参数对象*/
             setParam(){
-                this.$http.get('/configReport/dimension.gm?configReportBm=001').then(function(res){
-                    if(res.data.dimensionBOs){
-                        this.resData=res.data.dimensionBOs;
+                this.configReportBm=this.$route.query.configReportBm;
+                this.$http.get('/configReport/dimension.gm?configReportBm='+this.configReportBm).then(function(res){
+                    if(res.data.code==200){
+                        this.resData=res.data.data.dimensionBOs;
                         this.$nextTick(function(){
                             this.resData.forEach((item)=> {
                                 //得到查询参数列表
@@ -53,7 +74,18 @@
                 })
             },
             getParam(){
-                console.log(JSON.stringify(this.param));
+                let param={
+                    "page":1,
+                    "rows":15,
+                    "configReportBm":this.configReportBm,
+                    "queryCondition":this.param
+                }
+                let pushParam=encodeURI(JSON.stringify(param));
+                this.$http.get('/configReport/data.gm?param='+pushParam).then(function(res){
+                    if(res.data.code==200){
+                        this.tabList=res.data.data;
+                    }
+                })
             },
             showCalendar(id,val){//日历 区间  id==key
                 var _this=this;
@@ -87,7 +119,29 @@
     }
 </script>
 <style lang="less" scoped>
-    .mainApi{
-        padding-top: 60px;
+    .mainTitle {
+        background: #fff;
+        box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 12px;
+        position: relative;
+        h4 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        .download {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            margin-top: -11px;
+            width: 22px;
+            height: 22px;
+            background: url(../../assets/images/icon_2.png);
+            font-size: 0;
+            cursor: pointer;
+        }
     }
 </style>
